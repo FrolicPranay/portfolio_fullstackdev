@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "@/components/theme-toggle";
+import ScrollProgressLine from "@/components/scroll-progress-line";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -397,10 +398,18 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col px-4 pb-24 pt-4 sm:px-6 lg:px-8 lg:pb-32 lg:pt-4">
+      <div
+        className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col px-4 pb-24 pt-4 sm:px-6 lg:px-8 lg:pb-32 lg:pt-4"
+        data-scroll-root
+      >
+        
+        <ScrollProgressLine />
 
         {/* Hero */}
-        <section className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-neutral-200/80 bg-white shadow-md dark:border-white/15 dark:bg-neutral-900/60 lg:min-h-[calc(100svh-2rem)]">
+        <section
+          className="relative flex flex-col justify-between overflow-hidden border border-neutral-200/80 bg-white shadow-md dark:border-white/15 dark:bg-neutral-900/60 lg:min-h-[calc(100svh-2rem)]"
+          data-scroll-section
+        >
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <span className="grid-trace-horizontal absolute top-0 h-px w-28 bg-gradient-to-r from-transparent via-sky-400/80 to-transparent dark:via-sky-300/80" />
             <span className="grid-trace-horizontal absolute bottom-0 h-px w-24 bg-gradient-to-r from-transparent via-fuchsia-400/80 to-transparent dark:via-fuchsia-300/80 [animation-delay:1.4s]" />
@@ -439,7 +448,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="/Pranay-Langhe-Portfolio.pdf"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-amber-400 via-pink-500 to-violet-500 px-7 py-3 text-sm font-semibold text-black shadow-lg shadow-amber-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/50 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50 dark:focus-visible:ring-offset-neutral-950"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-amber-400 via-pink-500 to-violet-500 px-7 py-3 text-sm font-semibold text-black shadow-lg shadow-amber-400/40 transition-colors duration-200 hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50 dark:focus-visible:ring-offset-neutral-950"
               >
                 Download Portfolio
               </a>
@@ -456,18 +465,69 @@ export default function Home() {
 
             </div>
 
-            <div className="relative mx-auto mt-10 flex w-full max-w-sm items-center justify-center lg:mt-0 lg:max-w-none">
-              <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-amber-300/40 via-pink-300/10 to-violet-300/40 blur-3xl dark:from-emerald-500/25 dark:via-sky-500/10 dark:to-fuchsia-500/25" />
-              <div className="relative z-10 h-[300px] w-[300px] lg:h-[380px] lg:w-[380px]">
-                <div className="absolute inset-x-0 bottom-0 h-[78%] overflow-hidden rounded-full border border-neutral-300/80 bg-neutral-100 shadow-[0_20px_40px_rgba(236,72,153,0.15)] dark:border-white/20 dark:bg-neutral-900" />
-                <Image
-                  src="/pranay.png"
-                  alt="Portrait of Pranay Langhe"
-                  width={640}
-                  height={760}
-                  className="absolute inset-x-0 bottom-0 z-10 h-[120%] w-full object-contain object-bottom"
-                  priority
-                />
+            <div className="relative mx-auto mt-14 flex w-full max-w-sm items-center justify-center lg:mt-0 lg:max-w-none">
+              <div className="pointer-events-none absolute inset-0 -z-10 scale-125 bg-gradient-to-br from-amber-300/30 via-pink-300/20 to-violet-300/30 blur-3xl dark:from-emerald-500/20 dark:via-sky-500/20 dark:to-fuchsia-500/20" />
+              
+              <div className="relative z-10 h-[300px] w-[300px] sm:h-[340px] sm:w-[340px] lg:h-[400px] lg:w-[400px]">
+                
+                {/* Outer decorative ring */}
+                <div className="absolute -inset-4 rounded-full border-[1px] border-neutral-300/50 dark:border-neutral-700/50" />
+                <div className="absolute -inset-8 rounded-full border-[1px] border-neutral-300/30 dark:border-neutral-700/30" />
+                
+                {/* Main Circle (clips the body) */}
+                <div className="absolute inset-0 rounded-full border-[6px] border-white shadow-[0_20px_50px_-10px_rgba(0,0,0,0.1)] bg-gradient-to-b from-neutral-50 to-neutral-200 overflow-hidden dark:border-neutral-800 dark:bg-gradient-to-b dark:from-neutral-800 dark:to-neutral-900 dark:shadow-[0_20px_50px_-10px_rgba(255,255,255,0.05)]">
+                  {/* Inner Image (Clipped) */}
+                  <Image
+                    src="/pranay.png"
+                    alt="Portrait of Pranay Langhe"
+                    width={640}
+                    height={760}
+                    className="absolute bottom-0 left-1/2 h-[125%] w-auto max-w-none -translate-x-1/2 object-contain"
+                    priority
+                  />
+                </div>
+
+                {/* Outer 3D Image (Head bursting out) */}
+                <div className="absolute inset-0 z-10 pointer-events-none" style={{ clipPath: 'polygon(-50% -50%, 150% -50%, 150% 55%, -50% 55%)' }}>
+                  <Image
+                    src="/pranay.png"
+                    alt=""
+                    width={640}
+                    height={760}
+                    className="absolute bottom-0 left-1/2 h-[125%] w-auto max-w-none -translate-x-1/2 object-contain drop-shadow-2xl"
+                    priority
+                  />
+                </div>
+
+                {/* Floating Tech Badges */}
+                <div className="absolute left-[5%] top-[20%] z-20 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white shadow-xl dark:bg-neutral-800 ring-1 ring-black/5 dark:ring-white/10 animate-[bounce_4s_infinite]">
+                  <svg className="h-6 w-6 sm:h-7 sm:w-7 text-[#61DAFB]" viewBox="-11.5 -10.23174 23 20.46348" fill="none" stroke="currentColor" strokeWidth="1">
+                    <circle cx="0" cy="0" r="2.05" fill="currentColor" stroke="none"/>
+                    <ellipse rx="11" ry="4.2"/>
+                    <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
+                    <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
+                  </svg>
+                </div>
+                
+                <div className="absolute bottom-[10%] left-[2%] z-20 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white shadow-xl dark:bg-neutral-800 ring-1 ring-black/5 dark:ring-white/10 animate-[bounce_5s_infinite]">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5 sm:h-6 sm:w-6 text-[#339933]" fill="currentColor">
+                    <path d="M11.874 0c-1.259 0-2.457.195-3.538.55C3.39 2.213 0 6.649 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-6.627-5.373-12-12-12zm4.18 5.918h-.022A3.203 3.203 0 0 0 12.83 9.12v8.941c0 1.767 1.433 3.2 3.2 3.2s3.2-1.433 3.2-3.2V9.12a3.203 3.203 0 0 0-3.176-3.202M7.288 8.005h-.002a2.378 2.378 0 0 0-2.373 2.373v5.196c0 1.309 1.063 2.372 2.373 2.372 1.309 0 2.371-1.063 2.371-2.372v-5.196A2.378 2.378 0 0 0 7.288 8.005zm0 1.373a.998.998 0 0 1 .998.998v5.196a.998.998 0 0 1-1.996 0v-5.196a.998.998 0 0 1 .998-.998z" />
+                  </svg>
+                </div>
+
+                <div className="absolute right-[5%] bottom-[20%] z-20 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white shadow-xl dark:bg-neutral-800 ring-1 ring-black/5 dark:ring-white/10 animate-[bounce_4.5s_infinite]">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5 sm:h-6 sm:w-6 rounded-[4px] overflow-hidden">
+                    <rect width="24" height="24" fill="#000" />
+                    <path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855l-1.68 1.156c.375.584.764 1.05 1.17 1.409 1.636 1.155 3.346 1.155 4.396.15 1.095-1.08 1.02-3.21 1.02-4.996 0-1.921.031-3.886-.115-5.865z" fill="#F7DF1E" />
+                  </svg>
+                </div>
+
+                <div className="absolute right-[10%] top-[10%] z-20 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white shadow-xl dark:bg-neutral-800 ring-1 ring-black/5 dark:ring-white/10 animate-[bounce_5s_infinite]">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 sm:h-6 sm:w-6 text-black dark:text-white">
+                    <path d="M18.784 19.388c-1.823 1.558-4.212 2.502-6.811 2.502-5.748 0-10.435-4.664-10.457-10.407A10.428 10.428 0 0 1 11.973 1.05C17.72 1.05 22.4 5.753 22.4 11.48c0 2.378-.802 4.564-2.146 6.307l-7.398-9.988H10.16v8.941h1.996v-6.39l6.628 8.94zM14.621 11.666V7.798h1.996v5.826l-1.996-1.958zM11.973 0C5.358 0 0 5.378 0 11.995s5.36 12 11.973 12c3.279 0 6.252-1.325 8.423-3.483l-1.442-1.933a9.88 9.88 0 0 1-6.98 3.32C6.417 21.9 1.936 17.433 1.936 11.995 1.936 6.556 6.417 2.053 11.973 2.053c5.556 0 10.05 4.503 10.05 9.942 0 1.956-.566 3.778-1.536 5.309l1.493 2.016C23.235 17.15 24 14.671 24 11.995 24 5.378 18.643 0 11.973 0z"/>
+                  </svg>
+                </div>
+
               </div>
             </div>
           </div>
@@ -504,7 +564,10 @@ export default function Home() {
 
         {/* Professional Journey / Companies */}
         {companyLogos.length > 0 ? (
-          <section className="relative mt-20 border border-neutral-200/80 bg-white shadow-sm dark:border-white/15 dark:bg-neutral-900/60 sm:mt-28">
+          <section
+            className="relative mt-20 border border-neutral-200/80 bg-white shadow-sm dark:border-white/15 dark:bg-neutral-900/60 sm:mt-28"
+            data-scroll-section
+          >
             <div className="relative z-10 border-b border-neutral-200/80 px-7 pb-0 pt-8 dark:border-white/15 sm:px-10 sm:pt-10">
               <div className="text-center">
                 <p className="text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
@@ -543,7 +606,7 @@ export default function Home() {
                         alt={logo.name}
                         width={120}
                         height={40}
-                        className={`w-auto object-contain opacity-90 grayscale transition-all duration-300 hover:scale-110 hover:opacity-100 hover:grayscale-0 ${
+                        className={`w-auto object-contain opacity-90 grayscale transition-colors duration-200 hover:opacity-100 hover:grayscale-0 ${
                           isInat ? "h-40" : isBeyondwalls ? "h-28" : isLargeLogo ? "h-11" : "h-8"
                         }`}
                       />
@@ -557,7 +620,10 @@ export default function Home() {
           ) : null}
 
           {/* Core Capabilities / Skills */}
-          <section className="relative mt-20 border border-neutral-200/80 bg-white shadow-sm dark:border-white/15 dark:bg-neutral-900/60 sm:mt-28">
+          <section
+            className="relative mt-20 border border-neutral-200/80 bg-white shadow-sm dark:border-white/15 dark:bg-neutral-900/60 sm:mt-28"
+            data-scroll-section
+          >
           <div className="relative z-10 -mt-px border-b border-neutral-200/80 px-7 py-10 text-center dark:border-white/15 sm:px-10 sm:py-14">
             <p className="text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
               Core Capabilities
@@ -580,7 +646,7 @@ export default function Home() {
             {skillCards.map((card, index) => (
               <article
                 key={card.title}
-                className={`group relative flex min-h-[320px] flex-col bg-white px-6 py-7 transition-all duration-300 sm:px-7 sm:py-8 dark:bg-neutral-900/60 ${
+                className={`group relative flex min-h-[320px] flex-col bg-white px-6 py-7 transition-colors duration-200 sm:px-7 sm:py-8 dark:bg-neutral-900/60 ${
                   index < skillCards.length - 1
                     ? "border-b border-neutral-200/80 dark:border-white/20 lg:border-b-0"
                     : ""
@@ -588,7 +654,7 @@ export default function Home() {
                   index !== skillCards.length - 1
                     ? "lg:border-r lg:border-neutral-200/80 lg:dark:border-white/20"
                     : ""
-                } hover:-translate-y-1 hover:shadow-xl hover:shadow-sky-500/5 hover:bg-neutral-50/100 dark:hover:shadow-sky-500/10 dark:hover:bg-neutral-900/90 z-0 hover:z-10`}
+                } hover:bg-neutral-50/100 dark:hover:bg-neutral-900/90`}
               >
                 <CellDots />
                 <div className="flex items-center justify-between gap-3">
@@ -636,7 +702,10 @@ export default function Home() {
           </section>
 
           {/* Workflow Section */}
-          <section className="relative mt-20 border border-neutral-200/80 bg-white shadow-sm dark:border-white/15 dark:bg-neutral-900/60 sm:mt-28">
+          <section
+            className="relative mt-20 border border-neutral-200/80 bg-white shadow-sm dark:border-white/15 dark:bg-neutral-900/60 sm:mt-28"
+            data-scroll-section
+          >
           <div className="relative z-10 border-b border-neutral-200/80 px-7 py-8 dark:border-white/15 sm:px-10 sm:py-12">
             <div className="text-center">
               <p className="text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
@@ -674,7 +743,10 @@ export default function Home() {
           </section>
 
           {/* Portfolio Projects */}
-          <section className="relative mt-20 border border-neutral-200/80 bg-white shadow-sm dark:border-white/15 dark:bg-neutral-900/60 sm:mt-28">
+          <section
+            className="relative mt-20 border border-neutral-200/80 bg-white shadow-sm dark:border-white/15 dark:bg-neutral-900/60 sm:mt-28"
+            data-scroll-section
+          >
           <div className="relative z-10 border-b border-neutral-200/80 px-7 py-10 text-center dark:border-white/15 sm:px-10 sm:py-14">
             <p className="text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
               Portfolio
@@ -699,7 +771,7 @@ export default function Home() {
             {projects.map((project, index) => (
               <article
                 key={project.title}
-                className={`group relative flex min-h-[430px] flex-col bg-white p-7 transition-all duration-300 sm:p-8 dark:bg-neutral-900/60 ${
+                className={`group relative flex min-h-[430px] flex-col bg-white p-7 transition-colors duration-200 sm:p-8 dark:bg-neutral-900/60 ${
                   index < projects.length - 1
                     ? "border-b border-neutral-200/80 dark:border-white/20"
                     : ""
@@ -711,14 +783,8 @@ export default function Home() {
                   (index + 1) % 3 !== 0
                     ? "lg:border-r lg:border-neutral-200/80 lg:dark:border-white/20"
                     : ""
-                } hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(245,158,11,0.15)] dark:hover:shadow-[0_20px_40px_-15px_rgba(236,72,153,0.15)] z-0 hover:z-10`}
+                }`}
               >
-                <span className="pointer-events-none absolute inset-0 z-[1] opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
-                  <span className="diagonal-border-animate absolute inset-y-0 left-0 w-px bg-gradient-to-b from-pink-400/40 to-orange-400/40 dark:from-pink-300/45 dark:to-orange-300/45" />
-                  <span className="diagonal-border-animate absolute inset-y-0 right-0 w-px bg-gradient-to-b from-pink-400/40 to-orange-400/40 dark:from-pink-300/45 dark:to-orange-300/45" />
-                  <span className="diagonal-border-animate absolute inset-x-0 top-0 h-px bg-gradient-to-r from-pink-400/40 to-orange-400/40 dark:from-pink-300/45 dark:to-orange-300/45" />
-                  <span className="diagonal-border-animate absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-pink-400/40 to-orange-400/40 dark:from-pink-300/45 dark:to-orange-300/45" />
-                </span>
                 <CellDots />
                 <div className="mb-6 overflow-hidden border border-neutral-200/80 bg-neutral-100 dark:border-white/20 dark:bg-neutral-900">
                   <Image
@@ -726,7 +792,7 @@ export default function Home() {
                     alt={`${project.title} thumbnail`}
                     width={720}
                     height={420}
-                    className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="h-48 w-full object-cover"
                     loading="lazy"
                   />
                 </div>
