@@ -481,7 +481,7 @@ export default function Home() {
       
       {/* Fixed Theme Toggle */}
       <div className="fixed bottom-6 right-6 z-50 lg:bottom-10 lg:right-10">
-        <div className="rounded-full shadow-lg border border-neutral-200/80 bg-white/80 backdrop-blur-md dark:border-white/10 dark:bg-neutral-900/80">
+        <div className="ui-panel rounded-full">
           <ThemeToggle />
         </div>
       </div>
@@ -509,8 +509,10 @@ export default function Home() {
                   <span className="live-pulse h-2 w-2 rounded-full bg-emerald-500" />
                   Available for work
                 </div>
-                <div className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200/80 bg-white/70 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-neutral-500 dark:border-white/10 dark:bg-white/5 dark:text-neutral-400">
-                  Full Stack â€¢ AI â€¢ Next.js
+                <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200/80 bg-white/70 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-neutral-500 dark:border-white/10 dark:bg-white/5 dark:text-neutral-400">
+                  <span>Full-Stack Engineer</span>
+                  <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-600" />
+                  <span>AI-Ready Products</span>
                 </div>
               </div>
 
@@ -534,7 +536,7 @@ export default function Home() {
                 {["React", "Next.js", "Node.js", "TypeScript", "MongoDB", "AI Workflows"].map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-neutral-200/80 bg-white/80 px-3 py-1 text-xs font-medium text-neutral-600 dark:border-white/10 dark:bg-white/5 dark:text-neutral-300"
+                    className="ui-chip px-3 py-1"
                   >
                     {tag}
                   </span>
@@ -612,7 +614,7 @@ export default function Home() {
 
           {/* Ã¢â€â‚¬Ã¢â€â‚¬ Stats bar Ã¢â€â‚¬Ã¢â€â‚¬ */}
           <div className="relative z-10 hidden pt-3 text-sm sm:block">
-            <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-neutral-200/80 bg-white/82 shadow-[0_10px_30px_rgba(15,23,42,0.06)] backdrop-blur-sm dark:border-white/12 dark:bg-neutral-900/55 dark:shadow-[0_10px_30px_rgba(0,0,0,0.28)]">
+            <div className="ui-panel mx-auto max-w-6xl">
               <div className="relative grid overflow-hidden rounded-[1.75rem] sm:grid-cols-2 lg:grid-cols-4">
                 <div className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block">
                   <span className="grid-trace-vertical absolute left-1/4 h-20 w-px bg-gradient-to-b from-transparent via-sky-400/70 to-transparent dark:via-sky-300/70" />
@@ -644,6 +646,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+
         </section>
 
       {/* Ã¢â€â‚¬Ã¢â€â‚¬ Below-hero content container Ã¢â€â‚¬Ã¢â€â‚¬ */}
@@ -657,7 +660,7 @@ export default function Home() {
               className="relative mt-20 sm:mt-28"
               data-scroll-section
             >
-              <div className="relative z-10 px-1">
+              <div className="ui-section-shell relative z-10">
                 <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
                   <div>
                     <p className="ui-kicker">
@@ -672,13 +675,9 @@ export default function Home() {
                       across product, SaaS, and digital delivery.
                     </p>
                   </div>
-                  <div className="inline-flex w-fit items-center gap-2 rounded-full border border-neutral-200/80 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-neutral-600 shadow-sm dark:border-white/15 dark:bg-white/5 dark:text-neutral-300">
-                    <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
-                    {companyLogos.length} logos
-                  </div>
                 </div>
 
-                <div className="relative z-10 mt-8 overflow-hidden py-4">
+                <div className="ui-marquee-shell relative z-10 mt-8">
                   <div
                     className="pointer-events-none absolute inset-y-0 left-0 z-20 w-20"
                     style={{ background: "linear-gradient(to right, white 0%, transparent 100%)" }}
@@ -702,7 +701,7 @@ export default function Home() {
                         {companyLogos.map((logo, index) => (
                           <div
                             key={`${set}-${logo.src}`}
-                            className="group flex min-w-[180px] items-center justify-center px-6 py-5"
+                            className="group flex min-w-[180px] items-center justify-center rounded-2xl border border-neutral-200/70 bg-white/75 px-6 py-5 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:bg-white dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-white/20 dark:hover:bg-white/[0.07]"
                           >
                             <Image
                               src={logo.src}
@@ -753,7 +752,7 @@ export default function Home() {
                 {skillCards.map((card, index) => (
                   <article
                     key={card.title}
-                    className="group relative flex min-h-[320px] flex-col overflow-hidden rounded-3xl border border-neutral-200/80 bg-gradient-to-b from-white via-white to-neutral-50/70 p-6 shadow-[0_10px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:border-neutral-300 hover:shadow-[0_18px_36px_rgba(15,23,42,0.12)] dark:border-white/12 dark:from-neutral-900/85 dark:via-neutral-900/80 dark:to-neutral-950 dark:shadow-[0_10px_30px_rgba(0,0,0,0.35)] dark:hover:border-white/22"
+                    className="ui-card group relative flex min-h-[320px] flex-col overflow-hidden p-6"
                   >
                     <div
                       className={`absolute left-0 right-0 top-0 h-1 ${
@@ -794,13 +793,13 @@ export default function Home() {
                       {card.items.slice(0, card.maxItems).map((item) => (
                         <li
                           key={item}
-                          className="rounded-full border border-neutral-200/80 bg-white px-2.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-neutral-600 transition-colors group-hover:border-neutral-300 dark:border-white/18 dark:bg-white/5 dark:text-neutral-200 dark:group-hover:border-white/28"
+                          className="ui-chip px-2.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.08em] transition-colors group-hover:border-neutral-300 dark:group-hover:border-white/28"
                         >
                           {item}
                         </li>
                       ))}
                       {card.items.length > card.maxItems ? (
-                        <li className="rounded-full border border-neutral-200/80 bg-neutral-100 px-2.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-neutral-500 dark:border-white/18 dark:bg-white/5 dark:text-neutral-300">
+                        <li className="ui-chip bg-neutral-100 px-2.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-neutral-500 dark:border-white/18 dark:bg-white/5 dark:text-neutral-300">
                           +{card.items.length - card.maxItems} more
                         </li>
                       ) : null}
@@ -816,8 +815,8 @@ export default function Home() {
             className="relative mt-20 sm:mt-28"
             data-scroll-section
           >
-            <div className="relative z-10">
-              <div className="px-1">
+            <div className="ui-section-shell relative z-10">
+              <div>
                 <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
                   <div>
                     <p className="ui-kicker">
@@ -832,13 +831,9 @@ export default function Home() {
                       production-ready delivery with more speed and precision.
                     </p>
                   </div>
-                  <div className="inline-flex w-fit items-center gap-2 rounded-full border border-neutral-200/80 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-neutral-600 shadow-sm dark:border-white/15 dark:bg-white/5 dark:text-neutral-300">
-                    <span className="h-1.5 w-1.5 rounded-full bg-pink-400" />
-                    {aiProductivityTools.length} active tools
-                  </div>
                 </div>
 
-                <div className="relative mt-8 overflow-hidden">
+                <div className="ui-marquee-shell relative mt-8">
                   <div
                     className="pointer-events-none absolute inset-y-0 left-0 z-20 w-16"
                     style={{ background: "linear-gradient(to right, white 0%, transparent 100%)" }}
@@ -860,20 +855,21 @@ export default function Home() {
                     {[0, 1].map((set) => (
                       <div
                         key={set}
-                        className="flex items-center gap-3 pr-3 sm:gap-4 sm:pr-4"
+                        aria-hidden={set === 1}
+                        className="flex shrink-0 items-center gap-3 pr-3 sm:gap-4 sm:pr-4"
                       >
                         {aiProductivityTools.map((tool) => (
                           <div
                             key={`${set}-${tool.name}`}
-                            className="group flex min-w-fit items-center gap-3 rounded-full border border-neutral-200/80 bg-white/82 px-4 py-3 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-neutral-300 hover:bg-white dark:border-white/12 dark:bg-white/6 dark:hover:border-white/20 dark:hover:bg-white/8"
+                            className="group flex shrink-0 items-center gap-2 rounded-full border border-neutral-200/80 bg-white/88 px-3 py-2 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-neutral-300 hover:bg-white dark:border-white/12 dark:bg-white/6 dark:hover:border-white/20 dark:hover:bg-white/8"
                           >
                             <span
-                              className={`h-2.5 w-2.5 rounded-full bg-gradient-to-r ${tool.accent}`}
+                              className={`h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-r ${tool.accent}`}
                             />
-                            <span className="text-sm font-semibold tracking-[0.01em] text-neutral-900 dark:text-neutral-100">
+                            <span className="whitespace-nowrap text-sm font-semibold leading-none tracking-[0.01em] text-neutral-900 dark:text-neutral-100">
                               {tool.name}
                             </span>
-                            <span className="text-[0.62rem] font-bold uppercase tracking-[0.16em] text-neutral-400 dark:text-neutral-500">
+                            <span className="rounded-full bg-neutral-100 px-2.5 py-1 whitespace-nowrap text-[0.58rem] font-bold uppercase leading-none tracking-[0.14em] text-neutral-500 dark:bg-white/8 dark:text-neutral-400">
                               {tool.role}
                             </span>
                           </div>
@@ -906,10 +902,6 @@ export default function Home() {
                     and full-stack builds across different domains.
                   </p>
                 </div>
-                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-neutral-200/80 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-neutral-600 shadow-sm dark:border-white/15 dark:bg-white/5 dark:text-neutral-300">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                  {projects.length} shipped projects
-                </div>
               </div>
             </div>
 
@@ -917,7 +909,7 @@ export default function Home() {
                 {projects.map((project, index) => (
                   <article
                     key={project.title}
-                    className="group relative flex min-h-[460px] flex-col overflow-hidden rounded-3xl border border-neutral-200/80 bg-gradient-to-b from-white via-white to-neutral-50/80 p-5 shadow-[0_10px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:border-neutral-300 hover:shadow-[0_18px_36px_rgba(15,23,42,0.11)] dark:border-white/12 dark:from-neutral-900/90 dark:via-neutral-900/85 dark:to-neutral-950 dark:shadow-[0_10px_30px_rgba(0,0,0,0.35)] dark:hover:border-white/25"
+                    className="ui-card group relative flex min-h-[460px] flex-col overflow-hidden p-5"
                   >
                     <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent opacity-60 dark:via-white/30" />
                     <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-100 dark:border-white/10 dark:bg-neutral-900">
@@ -947,13 +939,13 @@ export default function Home() {
                         {project.points.slice(0, 4).map((point) => (
                           <li
                             key={point}
-                            className="rounded-full border border-neutral-200/80 bg-white px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-neutral-600 dark:border-white/20 dark:bg-white/5 dark:text-neutral-200"
+                            className="ui-chip px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.08em] dark:border-white/20"
                           >
                             {point}
                           </li>
                         ))}
                         {project.points.length > 4 ? (
-                          <li className="rounded-full border border-neutral-200/80 bg-neutral-100 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-neutral-500 dark:border-white/20 dark:bg-white/5 dark:text-neutral-300">
+                          <li className="ui-chip bg-neutral-100 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-neutral-500 dark:border-white/20 dark:bg-white/5 dark:text-neutral-300">
                             +{project.points.length - 4} more
                           </li>
                         ) : null}

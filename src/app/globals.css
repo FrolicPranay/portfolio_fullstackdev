@@ -9,6 +9,26 @@ body {
   @apply rounded-3xl border border-neutral-200/80 bg-white/75 p-6 shadow-[0_14px_36px_rgba(15,23,42,0.08)] backdrop-blur-sm dark:border-white/12 dark:bg-neutral-900/55 dark:shadow-[0_14px_36px_rgba(0,0,0,0.35)] sm:p-8;
 }
 
+.ui-panel {
+  @apply rounded-[1.75rem] border border-neutral-200/80 bg-white/82 shadow-[0_10px_30px_rgba(15,23,42,0.06)] backdrop-blur-sm dark:border-white/12 dark:bg-neutral-900/55 dark:shadow-[0_10px_30px_rgba(0,0,0,0.28)];
+}
+
+.ui-badge {
+  @apply inline-flex w-fit items-center gap-2 rounded-full border border-neutral-200/80 bg-white/85 px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-neutral-600 shadow-sm dark:border-white/15 dark:bg-white/5 dark:text-neutral-300;
+}
+
+.ui-chip {
+  @apply rounded-full border border-neutral-200/80 bg-white/80 px-3 py-1.5 text-xs font-medium text-neutral-600 dark:border-white/10 dark:bg-white/5 dark:text-neutral-300;
+}
+
+.ui-card {
+  @apply rounded-3xl border border-neutral-200/80 bg-gradient-to-b from-white via-white to-neutral-50/80 shadow-[0_10px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:border-neutral-300 hover:shadow-[0_18px_36px_rgba(15,23,42,0.11)] dark:border-white/12 dark:from-neutral-900/90 dark:via-neutral-900/85 dark:to-neutral-950 dark:shadow-[0_10px_30px_rgba(0,0,0,0.35)] dark:hover:border-white/25;
+}
+
+.ui-marquee-shell {
+  @apply overflow-hidden rounded-[1.75rem] border border-neutral-200/80 bg-white/82 px-4 py-4 shadow-[0_10px_30px_rgba(15,23,42,0.06)] backdrop-blur-sm dark:border-white/12 dark:bg-neutral-900/55 dark:shadow-[0_10px_30px_rgba(0,0,0,0.28)] sm:px-5;
+}
+
 .ui-kicker {
   @apply text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400;
 }
