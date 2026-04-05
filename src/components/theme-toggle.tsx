@@ -9,36 +9,22 @@ function applyTheme(theme: Theme) {
 }
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light");
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") return "light";
     const savedTheme = localStorage.getItem("theme") as Theme | null;
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initialTheme = savedTheme ?? (prefersDark ? "dark" : "light");
+    return savedTheme ?? (prefersDark ? "dark" : "light");
+  });
 
-    setTheme(initialTheme);
-    applyTheme(initialTheme);
-    setMounted(true);
-  }, []);
+  useEffect(() => {
+    applyTheme(theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   const handleToggle = () => {
     const nextTheme: Theme = theme === "dark" ? "light" : "dark";
     setTheme(nextTheme);
-    localStorage.setItem("theme", nextTheme);
-    applyTheme(nextTheme);
   };
-
-  if (!mounted) {
-    return (
-      <button
-        type="button"
-        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200/80 bg-white text-neutral-700"
-      >
-        <span className="h-2 w-2 rounded-full bg-gradient-to-r from-amber-400 to-pink-500" />
-      </button>
-    );
-  }
 
   return (
     <button
