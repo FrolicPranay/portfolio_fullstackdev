@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "@/components/theme-toggle";
-import ScrollReveal from "@/components/scroll-reveal";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -489,7 +488,7 @@ export default function Home() {
 
       {/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ HERO Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <section
-        className="relative flex min-h-[100svh] flex-col overflow-hidden pt-14 pb-12 sm:pt-16 sm:pb-14 lg:justify-between lg:pt-8 lg:pb-14"
+        className="relative flex min-h-[100svh] flex-col overflow-hidden pt-14 pb-12 sm:pt-16 sm:pb-14 lg:h-[100svh] lg:justify-between lg:pt-8 lg:pb-10"
         data-scroll-section
       >
           {/* Ã¢â€â‚¬Ã¢â€â‚¬ Background: ambient orbs Ã¢â€â‚¬Ã¢â€â‚¬ */}
@@ -534,7 +533,7 @@ export default function Home() {
               </p>
 
               <div className="hero-fade-4 flex flex-wrap gap-2">
-                {["JavaScript", "Node.js", "React", "Next.js", "TypeScript", "MongoDB", "AI Workflows"].map((tag) => (
+                {["JavaScript", "Node.js", "React", "Next.js", "TypeScript", "AI Workflows"].map((tag) => (
                   <span
                     key={tag}
                     className="ui-chip px-2.5 py-1 text-[0.72rem] sm:px-3 sm:text-xs"
@@ -614,7 +613,7 @@ export default function Home() {
           </div>
 
           {/* Ã¢â€â‚¬Ã¢â€â‚¬ Stats bar Ã¢â€â‚¬Ã¢â€â‚¬ */}
-          <div className="relative z-10 mt-5 shrink-0 px-4 pt-4 pb-6 text-sm sm:mt-7 sm:px-6 sm:pt-5 sm:pb-8 lg:mt-0 lg:px-8 lg:pb-12">
+          <div className="relative z-10 mt-8 px-4 pt-4 pb-6 text-sm sm:mt-10 sm:px-6 sm:pt-5 sm:pb-8 lg:mt-0 lg:px-8 lg:pb-0">
             <div className="ui-panel mx-auto max-w-6xl">
               <div className="relative grid overflow-hidden rounded-[1.75rem] grid-cols-2 lg:grid-cols-4">
                 <div className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block">
@@ -753,8 +752,10 @@ export default function Home() {
 
               <div className="ui-section-body grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {skillCards.map((card, index) => (
-                  <ScrollReveal key={card.title} className="h-full" delay={index * 90}>
-                    <article className="ui-card group relative flex h-full min-h-[250px] flex-col overflow-hidden p-5 sm:min-h-[320px] sm:p-6">
+                  <article
+                    key={card.title}
+                    className="ui-card group relative flex min-h-[250px] flex-col overflow-hidden p-5 sm:min-h-[320px] sm:p-6"
+                  >
                     <div
                       className={`absolute left-0 right-0 top-0 h-1 ${
                         card.icon === "frontend"
@@ -805,8 +806,7 @@ export default function Home() {
                         </li>
                       ) : null}
                     </ul>
-                    </article>
-                  </ScrollReveal>
+                  </article>
                 ))}
               </div>
             </div>
@@ -867,7 +867,7 @@ export default function Home() {
                         {aiProductivityTools.map((tool) => (
                           <div
                             key={`${set}-${tool.name}`}
-                            className="ui-tool-pill ui-workflow-pill group px-2.5 py-1.5 sm:px-3 sm:py-2"
+                            className="ui-tool-pill group px-2.5 py-1.5 sm:px-3 sm:py-2 dark:border-white/12 dark:bg-[#0f172a]/88 dark:shadow-[0_10px_22px_rgba(0,0,0,0.24)] dark:hover:border-sky-300/24 dark:hover:bg-[#111c31]"
                           >
                             <span
                               className={`h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-r shadow-[0_0_12px_rgba(255,255,255,0.08)] ${tool.accent}`}
@@ -875,7 +875,7 @@ export default function Home() {
                             <span className="whitespace-nowrap text-[0.82rem] font-semibold leading-none tracking-[0.01em] text-neutral-900 sm:text-sm dark:text-neutral-50">
                               {tool.name}
                             </span>
-                            <span className="ui-tool-pill-role ui-workflow-pill-role px-2 py-1 whitespace-nowrap text-[0.54rem] font-bold uppercase leading-none tracking-[0.14em] sm:px-2.5 sm:text-[0.58rem]">
+                            <span className="ui-tool-pill-role px-2 py-1 whitespace-nowrap text-[0.54rem] font-bold uppercase leading-none tracking-[0.14em] sm:px-2.5 sm:text-[0.58rem] dark:border dark:border-white/10 dark:bg-white/[0.06] dark:text-neutral-300">
                               {tool.role}
                             </span>
                           </div>
@@ -911,8 +911,10 @@ export default function Home() {
 
             <div className="ui-section-body grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {projects.map((project, index) => (
-                  <ScrollReveal key={project.title} className="h-full" delay={(index % 3) * 90}>
-                    <article className="ui-card group relative flex h-full min-h-[370px] flex-col overflow-hidden p-4 sm:min-h-[460px] sm:p-5">
+                  <article
+                    key={project.title}
+                    className="ui-card group relative flex min-h-[370px] flex-col overflow-hidden p-4 sm:min-h-[460px] sm:p-5"
+                  >
                     <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent opacity-60 dark:via-white/30" />
                     <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-100 dark:border-white/10 dark:bg-neutral-900">
                       <Image
@@ -975,8 +977,7 @@ export default function Home() {
                         </Link>
                       </div>
                     </div>
-                    </article>
-                  </ScrollReveal>
+                  </article>
                 ))}
             </div>
           </section>
