@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "@/components/theme-toggle";
+import ScrollReveal from "@/components/scroll-reveal";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -53,9 +54,9 @@ const skillCards: SkillCard[] = [
     summary:
       "Deployment, automation, testing, and collaboration tools for production delivery.",
     items: [
-      "Git & GitHub",
+      "GitHub",
       "Docker",
-      "Jenkins",
+      "Kubernetes",
       "CI/CD (GitHub Actions)",
       "Vercel",
       "DigitalOcean",
@@ -134,6 +135,7 @@ type AIProductivityTool = {
   role: string;
   focus: string;
   accent: string;
+  logo: string;
 };
 
 const aiProductivityTools: AIProductivityTool[] = [
@@ -142,54 +144,63 @@ const aiProductivityTools: AIProductivityTool[] = [
     role: "IDE Copilot",
     focus: "Fast edits, navigation, and multi-file implementation.",
     accent: "from-pink-400 via-fuchsia-400 to-violet-500",
+    logo: "https://www.google.com/s2/favicons?domain=cursor.com&sz=64",
   },
   {
     name: "GitHub Copilot",
     role: "Pair Programmer",
     focus: "Accelerates scaffolding, suggestions, and repetitive logic.",
     accent: "from-orange-400 via-amber-400 to-yellow-500",
+    logo: "https://www.google.com/s2/favicons?domain=github.com&sz=64",
   },
   {
     name: "Claude",
     role: "Reasoning Partner",
     focus: "Helps with architecture, debugging, and product thinking.",
     accent: "from-sky-400 via-cyan-400 to-blue-500",
+    logo: "https://www.google.com/s2/favicons?domain=claude.ai&sz=64",
   },
   {
     name: "OpenAI Codex",
     role: "Execution Agent",
     focus: "Speeds up code changes, refactors, and task completion.",
     accent: "from-emerald-400 via-teal-400 to-cyan-500",
+    logo: "https://www.google.com/s2/favicons?domain=openai.com&sz=64",
   },
   {
     name: "Augment Code",
     role: "Codebase Context",
     focus: "Useful for large-context analysis and implementation support.",
     accent: "from-rose-400 via-pink-400 to-orange-400",
+    logo: "https://www.google.com/s2/favicons?domain=augmentcode.com&sz=64",
   },
   {
     name: "LangChain",
     role: "Workflow Layer",
     focus: "Connects AI features into structured product workflows.",
     accent: "from-violet-400 via-purple-400 to-fuchsia-500",
+    logo: "https://www.google.com/s2/favicons?domain=langchain.com&sz=64",
   },
   {
     name: "Prompt Engineering",
     role: "Quality Control",
     focus: "Sharpens outputs for ideation, coding, and content generation.",
     accent: "from-cyan-400 via-sky-400 to-indigo-500",
+    logo: "https://www.google.com/s2/favicons?domain=promptingguide.ai&sz=64",
   },
   {
     name: "AI-Assisted Debugging",
     role: "Reliability Boost",
     focus: "Shortens the loop from issue discovery to validated fixes.",
     accent: "from-amber-400 via-orange-400 to-rose-500",
+    logo: "https://www.google.com/s2/favicons?domain=sentry.io&sz=64",
   },
   {
     name: "Code Refactoring",
     role: "Code Health",
     focus: "Keeps delivery fast while improving structure and maintainability.",
     accent: "from-lime-400 via-emerald-400 to-teal-500",
+    logo: "https://www.google.com/s2/favicons?domain=refactoring.guru&sz=64",
   },
 ];
 
@@ -400,6 +411,37 @@ const projects = [
   },
 ];
 
+const companyLogoLinks: Record<string, { name: string; href: string }> = {
+  "3e9a8f00-d0ed-425b-b7ce-8c356b184120.jpg": {
+    name: "Amura",
+    href: "https://www.amuratech.com/",
+  },
+  "4147e237-4ff3-4ced-b651-c67456a78a6d.jpg": {
+    name: "Lax Tech",
+    href: "https://laxtech.pro/",
+  },
+  "45a9f5e0-9fed-4cbe-8eae-4254cebb01e9.jpg": {
+    name: "Kylas",
+    href: "https://kylas.io/",
+  },
+  "90afae74-ed9d-4fe0-93b7-dfeaa4936de2.jpg": {
+    name: "Newgen",
+    href: "https://newgen.co/",
+  },
+  "d45183b6-85ba-4f15-8483-9267216cc737.jpg": {
+    name: "IDC Technologies",
+    href: "https://www.idctechnologies.com/",
+  },
+  "e3ff3a34-b00d-46ee-bcb6-e377141efbf7.jpg": {
+    name: "BeyondWalls",
+    href: "https://corporate.beyondwalls.com/",
+  },
+  "fec515a6-012e-4327-bf8a-16bbf6de4a5e.jpg": {
+    name: "INAT Technologies",
+    href: "https://itwebsoft.com/",
+  },
+};
+
 function getCompanyLogos() {
   const logosDir = path.join(process.cwd(), "public", "companylogos");
 
@@ -413,7 +455,8 @@ function getCompanyLogos() {
     .sort((a, b) => a.localeCompare(b))
     .map((file, index) => ({
       src: `/companylogos/${file}`,
-      alt: `Company logo ${String(index + 1).padStart(2, "0")}`,
+      alt: companyLogoLinks[file]?.name ?? `Company logo ${String(index + 1).padStart(2, "0")}`,
+      href: companyLogoLinks[file]?.href ?? "#",
     }));
 }
 
@@ -544,15 +587,16 @@ export default function Home() {
               </div>
 
               <div className="hero-fade-5 flex w-full flex-wrap gap-3">
-                <Link
-                  href="/resume"
+                <a
+                  href="/Resume-Pranay%20Langhe.pdf"
+                  download="Resume-Pranay-Langhe.pdf"
                   className="ui-button-primary w-full sm:w-auto"
                 >
                   View Resume
                   <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0-5 5m5-5H6" />
                   </svg>
-                </Link>
+                </a>
 
                 <Link
                   href="https://www.linkedin.com/in/pranay-langhe"
@@ -668,7 +712,7 @@ export default function Home() {
                       Experience
                     </p>
                     <h2 className="ui-title">
-                      Companies Worked With
+                      Companies and Client Worked With
                     </h2>
                     <div className="mt-3 h-px w-40 bg-gradient-to-r from-orange-400/70 via-amber-400/70 to-transparent" />
                     <p className="ui-subtitle">
@@ -677,7 +721,7 @@ export default function Home() {
                     </p>
                 </div>
 
-                <div className="ui-marquee-shell ui-workflow-shell ui-section-body">
+                <div className="ui-section-body relative overflow-hidden py-5 sm:py-6">
                   <div
                     className="pointer-events-none absolute inset-y-0 left-0 z-20 w-20"
                     style={{ background: "linear-gradient(to right, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0) 100%)" }}
@@ -697,30 +741,24 @@ export default function Home() {
 
                   <div className="marquee-rtl-track flex w-max items-center hover:[animation-play-state:paused]">
                     {[0, 1].map((set) => (
-                    <div key={set} className="flex items-center gap-3 pr-3 sm:gap-5 sm:pr-5">
-                        {companyLogos.map((logo, index) => (
-                          <div
+                    <div key={set} className="flex items-center gap-8 pr-8 sm:gap-12 sm:pr-12">
+                        {companyLogos.map((logo) => (
+                          <a
                             key={`${set}-${logo.src}`}
-                            className="ui-logo-card group min-w-[138px] px-4 py-4 sm:min-w-[180px] sm:px-6 sm:py-5"
+                            href={logo.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`Visit ${logo.alt}`}
+                            className="ui-logo-card w-36 sm:w-44"
                           >
-                            <div className="flex w-full items-center justify-center rounded-xl bg-white/70 px-3 py-2.5 transition-all duration-300 group-hover:bg-white/90 dark:bg-white/92 dark:shadow-[inset_0_0_0_1px_rgba(15,23,42,0.08)] dark:group-hover:bg-white">
-                              <Image
-                                src={logo.src}
-                                alt={logo.alt}
-                                width={180}
-                                height={72}
-                                className={`w-full object-contain opacity-80 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:opacity-95 dark:grayscale-0 ${
-                                  index % 4 === 0
-                                    ? "h-12 sm:h-16"
-                                    : index % 4 === 1
-                                      ? "h-10 sm:h-14"
-                                      : index % 4 === 2
-                                        ? "h-9 sm:h-12"
-                                        : "h-11 sm:h-15"
-                                }`}
-                              />
-                            </div>
-                          </div>
+                            <Image
+                              src={logo.src}
+                              alt={logo.alt}
+                              width={180}
+                              height={72}
+                              className="h-11 w-full object-contain opacity-100 sm:h-14"
+                            />
+                          </a>
                         ))}
                       </div>
                     ))}
@@ -752,61 +790,63 @@ export default function Home() {
 
               <div className="ui-section-body grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {skillCards.map((card, index) => (
-                  <article
+                  <ScrollReveal
                     key={card.title}
-                    className="ui-card group relative flex min-h-[250px] flex-col overflow-hidden p-5 sm:min-h-[320px] sm:p-6"
+                    delay={index * 90}
                   >
-                    <div
-                      className={`absolute left-0 right-0 top-0 h-1 ${
-                        card.icon === "frontend"
-                          ? "bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500"
-                          : card.icon === "backend"
-                            ? "bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-500"
-                            : "bg-gradient-to-r from-fuchsia-400 via-pink-400 to-violet-500"
-                      }`}
-                    />
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-2.5">
-                        <span className="rounded-xl border border-neutral-200/80 bg-white p-2 shadow-sm dark:border-white/15 dark:bg-white/5">
-                          <SkillIcon type={card.icon} />
+                    <article className="ui-card group relative flex min-h-[250px] flex-col overflow-hidden p-5 sm:min-h-[320px] sm:p-6">
+                      <div
+                        className={`absolute left-0 right-0 top-0 h-1 ${
+                          card.icon === "frontend"
+                            ? "bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500"
+                            : card.icon === "backend"
+                              ? "bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-500"
+                              : "bg-gradient-to-r from-fuchsia-400 via-pink-400 to-violet-500"
+                        }`}
+                      />
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-2.5">
+                          <span className="rounded-xl border border-neutral-200/80 bg-white p-2 shadow-sm dark:border-white/15 dark:bg-white/5">
+                            <SkillIcon type={card.icon} />
+                          </span>
+                          <h3
+                            className={`text-lg font-semibold leading-tight ${
+                              card.icon === "frontend"
+                                ? "text-sky-700 dark:text-sky-300"
+                                : card.icon === "backend"
+                                  ? "text-emerald-700 dark:text-emerald-300"
+                                  : "text-fuchsia-700 dark:text-fuchsia-300"
+                            }`}
+                          >
+                            {card.title}
+                          </h3>
+                        </div>
+                        <span className="text-xs font-semibold tracking-[0.16em] text-neutral-400 dark:text-neutral-500">
+                          {String(index + 1).padStart(2, "0")}
                         </span>
-                        <h3
-                          className={`text-lg font-semibold leading-tight ${
-                            card.icon === "frontend"
-                              ? "text-sky-700 dark:text-sky-300"
-                              : card.icon === "backend"
-                                ? "text-emerald-700 dark:text-emerald-300"
-                                : "text-fuchsia-700 dark:text-fuchsia-300"
-                          }`}
-                        >
-                          {card.title}
-                        </h3>
                       </div>
-                      <span className="text-xs font-semibold tracking-[0.16em] text-neutral-400 dark:text-neutral-500">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                    </div>
 
-                    <p className="mt-4 text-sm leading-6 text-neutral-600 dark:text-neutral-300">
-                      {card.summary}
-                    </p>
+                      <p className="mt-4 text-sm leading-6 text-neutral-600 dark:text-neutral-300">
+                        {card.summary}
+                      </p>
 
-                    <ul className="mt-6 flex flex-wrap gap-2">
-                      {card.items.slice(0, card.maxItems).map((item) => (
-                        <li
-                          key={item}
-                          className="ui-chip px-2.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.08em] transition-colors group-hover:border-neutral-300 dark:group-hover:border-white/28"
-                        >
-                          {item}
-                        </li>
-                      ))}
-                      {card.items.length > card.maxItems ? (
-                        <li className="ui-chip bg-neutral-100 px-2.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-neutral-500 dark:border-white/18 dark:bg-white/5 dark:text-neutral-300">
-                          +{card.items.length - card.maxItems} more
-                        </li>
-                      ) : null}
-                    </ul>
-                  </article>
+                      <ul className="mt-6 flex flex-wrap gap-2">
+                        {card.items.slice(0, card.maxItems).map((item) => (
+                          <li
+                            key={item}
+                            className="ui-chip px-2.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.08em] transition-colors group-hover:border-neutral-300 dark:group-hover:border-white/28"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                        {card.items.length > card.maxItems ? (
+                          <li className="ui-chip bg-neutral-100 px-2.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-neutral-500 dark:border-white/18 dark:bg-white/5 dark:text-neutral-300">
+                            +{card.items.length - card.maxItems} more
+                          </li>
+                        ) : null}
+                      </ul>
+                    </article>
+                  </ScrollReveal>
                 ))}
               </div>
             </div>
@@ -833,7 +873,7 @@ export default function Home() {
                     </p>
                 </div>
 
-                <div className="ui-marquee-shell ui-section-body relative dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(5,10,20,0.98)_0%,rgba(9,15,28,0.96)_50%,rgba(3,7,18,0.99)_100%)] dark:shadow-[0_24px_60px_rgba(0,0,0,0.46)]">
+                <div className="ui-section-body relative overflow-hidden py-5 sm:py-6">
                   <div className="pointer-events-none absolute inset-0 hidden dark:block">
                     <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-sky-300/35 to-transparent" />
                     <div className="absolute -left-12 top-0 h-32 w-32 rounded-full bg-sky-400/10 blur-3xl" />
@@ -862,20 +902,31 @@ export default function Home() {
                       <div
                         key={set}
                         aria-hidden={set === 1}
-                        className="flex shrink-0 items-center gap-3 pr-3 sm:gap-4 sm:pr-4"
+                        className="flex shrink-0 items-center gap-5 pr-5 sm:gap-8 sm:pr-8"
                       >
                         {aiProductivityTools.map((tool) => (
                           <div
                             key={`${set}-${tool.name}`}
-                            className="ui-tool-pill group px-2.5 py-1.5 sm:px-3 sm:py-2 dark:border-white/12 dark:bg-[#0f172a]/88 dark:shadow-[0_10px_22px_rgba(0,0,0,0.24)] dark:hover:border-sky-300/24 dark:hover:bg-[#111c31]"
+                            className="ui-tool-pill px-2 py-2 sm:px-3"
                           >
                             <span
-                              className={`h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-r shadow-[0_0_12px_rgba(255,255,255,0.08)] ${tool.accent}`}
-                            />
-                            <span className="whitespace-nowrap text-[0.82rem] font-semibold leading-none tracking-[0.01em] text-neutral-900 sm:text-sm dark:text-neutral-50">
+                              className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-gradient-to-r p-[1px] sm:h-12 sm:w-12 ${tool.accent}`}
+                              aria-hidden="true"
+                            >
+                              <span className="flex h-full w-full items-center justify-center rounded-[5px] bg-white dark:bg-[#0f172a]">
+                                <Image
+                                  src={tool.logo}
+                                  alt=""
+                                  width={32}
+                                  height={32}
+                                  className="h-7 w-7 object-contain sm:h-8 sm:w-8"
+                                />
+                              </span>
+                            </span>
+                            <span className="whitespace-nowrap text-base font-semibold leading-none tracking-[0.01em] text-neutral-900 sm:text-lg dark:text-neutral-50">
                               {tool.name}
                             </span>
-                            <span className="ui-tool-pill-role px-2 py-1 whitespace-nowrap text-[0.54rem] font-bold uppercase leading-none tracking-[0.14em] sm:px-2.5 sm:text-[0.58rem] dark:border dark:border-white/10 dark:bg-white/[0.06] dark:text-neutral-300">
+                            <span className="ui-tool-pill-role whitespace-nowrap text-[0.68rem] font-bold uppercase leading-none tracking-[0.14em] sm:text-xs">
                               {tool.role}
                             </span>
                           </div>
@@ -909,75 +960,78 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="ui-section-body grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            <div className="ui-section-body grid auto-rows-fr gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {projects.map((project, index) => (
-                  <article
+                  <ScrollReveal
                     key={project.title}
-                    className="ui-card group relative flex min-h-[370px] flex-col overflow-hidden p-4 sm:min-h-[460px] sm:p-5"
+                    delay={(index % 3) * 90}
+                    className="h-full"
                   >
-                    <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent opacity-60 dark:via-white/30" />
-                    <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-100 dark:border-white/10 dark:bg-neutral-900">
-                      <Image
-                        src={resolveProjectCover(project, projectCovers)}
-                        alt={`${project.title} thumbnail`}
-                        width={720}
-                        height={420}
-                        className="h-44 w-full object-cover sm:h-52"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
-                      <span className="absolute left-3 top-3 inline-flex items-center rounded-full border border-white/40 bg-black/40 px-2.5 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-white backdrop-blur-sm">
-                        Project {String(index + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-
-                    <div className="mt-5 flex flex-1 flex-col">
-                      <h3 className="text-lg font-bold leading-snug tracking-tight text-neutral-900 dark:text-neutral-50">
-                        {project.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-6 text-neutral-600 dark:text-neutral-300">
-                        {project.description}
-                      </p>
-
-                      <ul className="mt-4 flex flex-wrap gap-2">
-                        {project.points.slice(0, 4).map((point) => (
-                          <li
-                            key={point}
-                            className="ui-chip px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.08em] dark:border-white/20"
-                          >
-                            {point}
-                          </li>
-                        ))}
-                        {project.points.length > 4 ? (
-                          <li className="ui-chip bg-neutral-100 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-neutral-500 dark:border-white/20 dark:bg-white/5 dark:text-neutral-300">
-                            +{project.points.length - 4} more
-                          </li>
-                        ) : null}
-                      </ul>
-
-                      <div className="mt-auto pt-6">
-                        <Link
-                          href={project.href}
-                          target="_blank"
-                          className="inline-flex w-full items-center justify-between rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm font-semibold text-neutral-700 transition-all duration-300 hover:border-transparent hover:bg-gradient-to-r hover:from-sky-500 hover:via-fuchsia-500 hover:to-amber-400 hover:text-white dark:border-white/15 dark:bg-white/5 dark:text-neutral-200 dark:hover:border-transparent"
-                        >
-                          <span>Open Project</span>
-                          <svg
-                            viewBox="0 0 24 24"
-                            className="h-4 w-4"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            aria-hidden="true"
-                          >
-                            <path d="M7 17 17 7M8 7h9v9" />
-                          </svg>
-                        </Link>
+                    <article className="ui-card group relative flex h-full min-h-[370px] flex-col overflow-hidden p-4 sm:min-h-[460px] sm:p-5">
+                      <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent opacity-60 dark:via-white/30" />
+                      <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-100 dark:border-white/10 dark:bg-neutral-900">
+                        <Image
+                          src={resolveProjectCover(project, projectCovers)}
+                          alt={`${project.title} thumbnail`}
+                          width={720}
+                          height={420}
+                          className="h-44 w-full object-cover sm:h-52"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
+                        <span className="absolute left-3 top-3 inline-flex items-center rounded-full border border-white/40 bg-black/40 px-2.5 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-white backdrop-blur-sm">
+                          Project {String(index + 1).padStart(2, "0")}
+                        </span>
                       </div>
-                    </div>
-                  </article>
+
+                      <div className="mt-5 flex flex-1 flex-col">
+                        <h3 className="text-lg font-bold leading-snug tracking-tight text-neutral-900 dark:text-neutral-50">
+                          {project.title}
+                        </h3>
+                        <p className="mt-2 text-sm leading-6 text-neutral-600 dark:text-neutral-300">
+                          {project.description}
+                        </p>
+
+                        <ul className="mt-4 flex flex-wrap gap-2">
+                          {project.points.slice(0, 4).map((point) => (
+                            <li
+                              key={point}
+                              className="ui-chip px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.08em] dark:border-white/20"
+                            >
+                              {point}
+                            </li>
+                          ))}
+                          {project.points.length > 4 ? (
+                            <li className="ui-chip bg-neutral-100 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-neutral-500 dark:border-white/20 dark:bg-white/5 dark:text-neutral-300">
+                              +{project.points.length - 4} more
+                            </li>
+                          ) : null}
+                        </ul>
+
+                        <div className="mt-auto pt-6">
+                          <Link
+                            href={project.href}
+                            target="_blank"
+                            className="inline-flex w-full items-center justify-between rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm font-semibold text-neutral-700 transition-all duration-300 hover:border-transparent hover:bg-gradient-to-r hover:from-sky-500 hover:via-fuchsia-500 hover:to-amber-400 hover:text-white dark:border-white/15 dark:bg-white/5 dark:text-neutral-200 dark:hover:border-transparent"
+                          >
+                            <span>Open Project</span>
+                            <svg
+                              viewBox="0 0 24 24"
+                              className="h-4 w-4"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="1.8"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              aria-hidden="true"
+                            >
+                              <path d="M7 17 17 7M8 7h9v9" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </div>
+                    </article>
+                  </ScrollReveal>
                 ))}
             </div>
           </section>

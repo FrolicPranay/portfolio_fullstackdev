@@ -49,15 +49,15 @@ body {
 }
 
 .ui-logo-card {
-  @apply flex items-center justify-center rounded-2xl border border-neutral-200/70 bg-white/75 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:bg-white dark:border-white/10 dark:bg-gradient-to-b dark:from-white/[0.08] dark:via-white/[0.05] dark:to-white/[0.03] dark:shadow-[0_12px_28px_rgba(0,0,0,0.28)] dark:hover:border-white/20 dark:hover:from-white/[0.12] dark:hover:via-white/[0.08] dark:hover:to-white/[0.05];
+  @apply flex shrink-0 items-center justify-center;
 }
 
 .ui-tool-pill {
-  @apply flex shrink-0 items-center gap-2 rounded-full border border-neutral-200/80 bg-white/88 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-neutral-300 hover:bg-white dark:border-white/12 dark:bg-gradient-to-r dark:from-white/[0.08] dark:via-white/[0.05] dark:to-white/[0.04] dark:text-neutral-100 dark:shadow-[0_10px_24px_rgba(0,0,0,0.24)] dark:hover:border-white/20 dark:hover:from-white/[0.12] dark:hover:via-white/[0.08] dark:hover:to-white/[0.06];
+  @apply flex shrink-0 items-center gap-2;
 }
 
 .ui-tool-pill-role {
-  @apply rounded-full bg-neutral-100 text-neutral-500 dark:bg-white/[0.08] dark:text-neutral-300;
+  @apply text-neutral-500 dark:text-neutral-300;
 }
 
 .ui-workflow-shell {
@@ -177,16 +177,6 @@ body {
 }
 
 /* Company logo card â€” 400ms ease */
-.duration-400 {
-  transition-duration: 400ms;
-}
-
-/* Company card logo hover: remove grayscale + restore color in dark mode */
-@keyframes logo-glow {
-  0%, 100% { filter: drop-shadow(0 0 0px rgba(251,146,60,0)); }
-  50%       { filter: drop-shadow(0 0 8px rgba(251,146,60,0.35)); }
-}
-
 @keyframes diagonal-border-shift {
   0% {
     background-position: 0% 0%;
