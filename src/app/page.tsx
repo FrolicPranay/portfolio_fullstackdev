@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "@/components/theme-toggle";
+import ScrollReveal from "@/components/scroll-reveal";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -480,15 +481,15 @@ export default function Home() {
     <main className="relative isolate min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
       
       {/* Fixed Theme Toggle */}
-      <div className="fixed bottom-6 right-6 z-50 lg:bottom-10 lg:right-10">
-        <div className="ui-panel rounded-full">
+      <div className="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6 lg:bottom-10 lg:right-10">
+        <div className="ui-panel rounded-full p-0.5 sm:p-1">
           <ThemeToggle />
         </div>
       </div>
 
       {/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ HERO Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <section
-        className="relative flex h-[100svh] min-h-[100svh] flex-col justify-between overflow-hidden pt-14 pb-4 sm:pt-16 sm:pb-6 lg:pt-8"
+        className="relative flex min-h-[100svh] flex-col overflow-hidden pt-14 pb-12 sm:pt-16 sm:pb-14 lg:justify-between lg:pt-8 lg:pb-14"
         data-scroll-section
       >
           {/* Ã¢â€â‚¬Ã¢â€â‚¬ Background: ambient orbs Ã¢â€â‚¬Ã¢â€â‚¬ */}
@@ -502,14 +503,14 @@ export default function Home() {
             <span className="grid-trace-vertical absolute right-0 h-24 w-px bg-gradient-to-b from-transparent via-sky-400/70 to-transparent dark:via-sky-300/70 [animation-delay:2s]" />
           </div>
 
-          <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-6 py-4 sm:py-6 lg:grid lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-14 lg:px-8 lg:py-4">
-            <div className="flex max-w-xl flex-col gap-7">
-              <div className="hero-fade-1 flex flex-wrap items-center gap-3">
-                <div className="inline-flex items-center gap-2.5 rounded-full border border-emerald-200/80 bg-gradient-to-r from-emerald-50 to-teal-50 px-4 py-1.5 text-xs font-semibold text-emerald-700 shadow-sm shadow-emerald-100 dark:border-emerald-500/30 dark:from-emerald-500/10 dark:to-teal-500/10 dark:text-emerald-300 dark:shadow-none">
+          <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col justify-center px-4 py-4 sm:px-6 sm:py-6 lg:flex-1 lg:grid lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-14 lg:px-8 lg:py-4">
+            <div className="flex max-w-xl flex-col gap-6 sm:gap-7">
+              <div className="hero-fade-1 flex flex-wrap items-center gap-2.5 sm:gap-3">
+                <div className="inline-flex items-center gap-2.5 rounded-full border border-emerald-200/80 bg-gradient-to-r from-emerald-50 to-teal-50 px-3.5 py-1.5 text-[11px] font-semibold text-emerald-700 shadow-sm shadow-emerald-100 sm:px-4 sm:text-xs dark:border-emerald-500/30 dark:from-emerald-500/10 dark:to-teal-500/10 dark:text-emerald-300 dark:shadow-none">
                   <span className="live-pulse h-2 w-2 rounded-full bg-emerald-500" />
                   Available for work
                 </div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200/80 bg-white/70 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-neutral-500 dark:border-white/10 dark:bg-white/5 dark:text-neutral-400">
+                <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200/80 bg-white/70 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-neutral-500 sm:px-3.5 sm:text-[10px] sm:tracking-[0.18em] dark:border-white/10 dark:bg-white/5 dark:text-neutral-400">
                   <span>Full-Stack Engineer</span>
                   <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-600" />
                   <span>AI-Ready Products</span>
@@ -520,7 +521,7 @@ export default function Home() {
                 <p className="text-sm font-bold uppercase tracking-[0.23em] text-neutral-400 dark:text-neutral-500">
                   Hi, I&apos;m Pranay Langhe
                 </p>
-                <h1 className="max-w-2xl text-4xl font-extrabold leading-[1.04] tracking-tight sm:text-5xl lg:text-[3.35rem]">
+                <h1 className="max-w-2xl text-[2.2rem] font-extrabold leading-[1.04] tracking-tight sm:text-5xl lg:text-[3.35rem]">
                   Building reliable web products
                   <span className="animate-gradient-text block bg-gradient-to-r from-amber-400 via-rose-500 to-violet-500 bg-clip-text text-transparent">
                     with speed and taste.
@@ -528,15 +529,15 @@ export default function Home() {
                 </h1>
               </div>
 
-              <p className="hero-fade-3 max-w-xl text-base leading-relaxed text-neutral-600 dark:text-neutral-300">
+              <p className="hero-fade-3 max-w-xl text-[0.98rem] leading-relaxed text-neutral-600 sm:text-base dark:text-neutral-300">
                 Full-stack engineer focused on high-performance MERN and Next.js systems. I ship polished interfaces, scalable APIs, and AI-powered workflows for teams that move fast.
               </p>
 
-              <div className="hero-fade-4 flex flex-wrap gap-2.5">
-                {["React", "Next.js", "Node.js", "TypeScript", "MongoDB", "AI Workflows"].map((tag) => (
+              <div className="hero-fade-4 flex flex-wrap gap-2">
+                {["JavaScript", "Node.js", "React", "Next.js", "TypeScript", "MongoDB", "AI Workflows"].map((tag) => (
                   <span
                     key={tag}
-                    className="ui-chip px-3 py-1"
+                    className="ui-chip px-2.5 py-1 text-[0.72rem] sm:px-3 sm:text-xs"
                   >
                     {tag}
                   </span>
@@ -546,7 +547,7 @@ export default function Home() {
               <div className="hero-fade-5 flex w-full flex-wrap gap-3">
                 <Link
                   href="/resume"
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-neutral-900/20 transition-all duration-300 hover:shadow-neutral-900/40 sm:w-auto dark:bg-white dark:text-neutral-900 dark:shadow-white/10 dark:hover:shadow-white/20"
+                  className="ui-button-primary w-full sm:w-auto"
                 >
                   View Resume
                   <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -558,16 +559,16 @@ export default function Home() {
                   href="https://www.linkedin.com/in/pranay-langhe"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300/80 bg-white/85 px-6 py-3 text-sm font-semibold text-neutral-800 transition-all duration-300 hover:border-neutral-400 hover:bg-white sm:w-auto dark:border-white/15 dark:bg-white/5 dark:text-neutral-100 dark:hover:bg-white/10"
+                  className="ui-button-secondary w-full sm:w-auto"
                 >
                   Connect on LinkedIn
                 </Link>
               </div>
             </div>
 
-            <div className="relative mx-auto mt-8 flex w-full max-w-[300px] items-center justify-center sm:max-w-[330px] lg:mt-0 lg:max-w-none">
+            <div className="relative mx-auto mt-10 flex w-full max-w-[260px] items-center justify-center sm:max-w-[330px] md:max-w-[360px] lg:mt-0 lg:max-w-none">
               <div className="pointer-events-none absolute inset-0 -z-10 scale-110 bg-gradient-to-br from-amber-300/35 via-pink-300/20 to-violet-400/25 blur-3xl dark:from-amber-500/18 dark:via-pink-500/14 dark:to-violet-500/16" />
-              <div className="relative h-[250px] w-[250px] sm:h-[320px] sm:w-[320px] lg:h-[360px] lg:w-[360px]">
+              <div className="relative h-[240px] w-[240px] sm:h-[320px] sm:w-[320px] md:h-[340px] md:w-[340px] lg:h-[360px] lg:w-[360px]">
                 <div className="animate-ring-spin absolute -inset-3 rounded-full bg-gradient-to-r from-amber-400 via-fuchsia-500 to-sky-400 p-[2px] opacity-55 blur-[1px]" />
                 <div className="absolute -inset-6 rounded-full border border-neutral-300/30 dark:border-neutral-700/30" />
                 <div className="absolute inset-0 overflow-hidden rounded-full border-4 border-white bg-gradient-to-b from-neutral-100 to-neutral-200 shadow-2xl dark:border-neutral-800 dark:from-neutral-800 dark:to-neutral-900">
@@ -596,16 +597,16 @@ export default function Home() {
                   />
                 </div>
 
-                <div className="badge-float-a absolute -left-1 top-[18%] z-20 hidden rounded-full border border-white/80 bg-white/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-sky-700 shadow-lg sm:block dark:border-white/15 dark:bg-neutral-900/90 dark:text-sky-300">
+                <div className="badge-float-a absolute -left-5 top-[12%] z-20 rounded-full border border-white/80 bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-sky-700 shadow-lg sm:-left-1 sm:top-[18%] sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em] dark:border-white/15 dark:bg-neutral-900/90 dark:text-sky-300">
                   Create
                 </div>
-                <div className="badge-float-b absolute right-0 top-[15%] z-20 hidden rounded-full border border-white/80 bg-white/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-fuchsia-700 shadow-lg sm:block dark:border-white/15 dark:bg-neutral-900/90 dark:text-fuchsia-300">
+                <div className="badge-float-b absolute -right-4 top-[10%] z-20 rounded-full border border-white/80 bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-fuchsia-700 shadow-lg sm:right-0 sm:top-[15%] sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em] dark:border-white/15 dark:bg-neutral-900/90 dark:text-fuchsia-300">
                   Build
                 </div>
-                <div className="badge-float-d absolute -left-1 bottom-[18%] z-20 hidden rounded-full border border-white/80 bg-white/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-amber-700 shadow-lg sm:block dark:border-white/15 dark:bg-neutral-900/90 dark:text-amber-300">
+                <div className="badge-float-d absolute -left-5 bottom-[14%] z-20 rounded-full border border-white/80 bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-amber-700 shadow-lg sm:-left-1 sm:bottom-[18%] sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em] dark:border-white/15 dark:bg-neutral-900/90 dark:text-amber-300">
                   Evolve
                 </div>
-                <div className="badge-float-c absolute right-0 bottom-[16%] z-20 hidden rounded-full border border-white/80 bg-white/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-emerald-700 shadow-lg sm:block dark:border-white/15 dark:bg-neutral-900/90 dark:text-emerald-300">
+                <div className="badge-float-c absolute -right-4 bottom-[12%] z-20 rounded-full border border-white/80 bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-emerald-700 shadow-lg sm:right-0 sm:bottom-[16%] sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em] dark:border-white/15 dark:bg-neutral-900/90 dark:text-emerald-300">
                   Inspire
                 </div>
               </div>
@@ -613,9 +614,9 @@ export default function Home() {
           </div>
 
           {/* Ã¢â€â‚¬Ã¢â€â‚¬ Stats bar Ã¢â€â‚¬Ã¢â€â‚¬ */}
-          <div className="relative z-10 hidden pt-3 text-sm sm:block">
+          <div className="relative z-10 mt-5 shrink-0 px-4 pt-4 pb-6 text-sm sm:mt-7 sm:px-6 sm:pt-5 sm:pb-8 lg:mt-0 lg:px-8 lg:pb-12">
             <div className="ui-panel mx-auto max-w-6xl">
-              <div className="relative grid overflow-hidden rounded-[1.75rem] sm:grid-cols-2 lg:grid-cols-4">
+              <div className="relative grid overflow-hidden rounded-[1.75rem] grid-cols-2 lg:grid-cols-4">
                 <div className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block">
                   <span className="grid-trace-vertical absolute left-1/4 h-20 w-px bg-gradient-to-b from-transparent via-sky-400/70 to-transparent dark:via-sky-300/70" />
                   <span className="grid-trace-vertical absolute left-2/4 h-24 w-px bg-gradient-to-b from-transparent via-amber-400/70 to-transparent dark:via-amber-300/70 [animation-delay:1.1s]" />
@@ -629,18 +630,20 @@ export default function Home() {
                 ].map((stat, i) => (
                   <div
                     key={stat.label}
-                    className={`relative px-5 py-4 transition-colors hover:bg-neutral-50/70 dark:hover:bg-white/[0.03] ${
-                      i < 3 ? "border-b border-neutral-200/80 dark:border-white/10 lg:border-b-0 lg:border-r" : ""
-                    } ${i === 1 || i === 3 ? "sm:border-l lg:border-l-0" : ""}`}
+                    className={`relative px-4 py-4 transition-colors hover:bg-neutral-50/70 sm:px-5 dark:hover:bg-white/[0.03] ${
+                      i < 2 ? "border-b border-neutral-200/80 dark:border-white/10 lg:border-b-0" : ""
+                    } ${i % 2 === 0 ? "border-r border-neutral-200/80 dark:border-white/10 lg:border-r" : ""} ${
+                      i < 3 ? "lg:border-r lg:border-neutral-200/80 lg:dark:border-white/10" : "lg:border-r-0"
+                    }`}
                   >
                     <CellDots />
                     <div className="flex items-end gap-2.5">
-                      <p className="text-[2rem] font-extrabold leading-none tracking-tighter">{stat.value}</p>
-                      <svg className={`mb-1 h-5 w-5 ${stat.color}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <p className="text-[1.65rem] font-extrabold leading-none tracking-tighter sm:text-[2rem]">{stat.value}</p>
+                      <svg className={`mb-1 h-4 w-4 sm:h-5 sm:w-5 ${stat.color}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={stat.icon} />
                       </svg>
                     </div>
-                    <p className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-neutral-400">{stat.label}</p>
+                    <p className="mt-1.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-neutral-400 sm:text-[10px]">{stat.label}</p>
                   </div>
                 ))}
               </div>
@@ -657,12 +660,11 @@ export default function Home() {
           {/* Companies Section */}
           {companyLogos.length > 0 ? (
             <section
-              className="relative mt-20 sm:mt-28"
+              className="ui-section-divider"
               data-scroll-section
             >
-              <div className="ui-section-shell relative z-10">
-                <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-                  <div>
+              <div className="relative z-10 px-1">
+                <div className="ui-section-head">
                     <p className="ui-kicker">
                       Experience
                     </p>
@@ -674,50 +676,51 @@ export default function Home() {
                       A selection of brands and teams I&apos;ve contributed to
                       across product, SaaS, and digital delivery.
                     </p>
-                  </div>
                 </div>
 
-                <div className="ui-marquee-shell relative z-10 mt-8">
+                <div className="ui-marquee-shell ui-workflow-shell ui-section-body">
                   <div
                     className="pointer-events-none absolute inset-y-0 left-0 z-20 w-20"
-                    style={{ background: "linear-gradient(to right, white 0%, transparent 100%)" }}
+                    style={{ background: "linear-gradient(to right, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0) 100%)" }}
                   />
                   <div
                     className="pointer-events-none absolute inset-y-0 right-0 z-20 w-20"
-                    style={{ background: "linear-gradient(to left, white 0%, transparent 100%)" }}
+                    style={{ background: "linear-gradient(to left, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0) 100%)" }}
                   />
                   <div
                     className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-20 dark:block"
-                    style={{ background: "linear-gradient(to right, rgb(10,10,10) 0%, transparent 100%)" }}
+                    style={{ background: "linear-gradient(to right, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0) 100%)" }}
                   />
                   <div
                     className="pointer-events-none absolute inset-y-0 right-0 z-20 hidden w-20 dark:block"
-                    style={{ background: "linear-gradient(to left, rgb(10,10,10) 0%, transparent 100%)" }}
+                    style={{ background: "linear-gradient(to left, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0) 100%)" }}
                   />
 
                   <div className="marquee-rtl-track flex w-max items-center hover:[animation-play-state:paused]">
                     {[0, 1].map((set) => (
-                      <div key={set} className="flex items-center gap-4 pr-4 sm:gap-5 sm:pr-5">
+                    <div key={set} className="flex items-center gap-3 pr-3 sm:gap-5 sm:pr-5">
                         {companyLogos.map((logo, index) => (
                           <div
                             key={`${set}-${logo.src}`}
-                            className="group flex min-w-[180px] items-center justify-center rounded-2xl border border-neutral-200/70 bg-white/75 px-6 py-5 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:bg-white dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-white/20 dark:hover:bg-white/[0.07]"
+                            className="ui-logo-card group min-w-[138px] px-4 py-4 sm:min-w-[180px] sm:px-6 sm:py-5"
                           >
-                            <Image
-                              src={logo.src}
-                              alt={logo.alt}
-                              width={180}
-                              height={72}
-                              className={`w-full object-contain opacity-75 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:brightness-0 dark:invert dark:group-hover:brightness-100 dark:group-hover:invert-0 ${
-                                index % 4 === 0
-                                  ? "h-16"
-                                  : index % 4 === 1
-                                    ? "h-14"
-                                    : index % 4 === 2
-                                      ? "h-12"
-                                      : "h-15"
-                              }`}
-                            />
+                            <div className="flex w-full items-center justify-center rounded-xl bg-white/70 px-3 py-2.5 transition-all duration-300 group-hover:bg-white/90 dark:bg-white/92 dark:shadow-[inset_0_0_0_1px_rgba(15,23,42,0.08)] dark:group-hover:bg-white">
+                              <Image
+                                src={logo.src}
+                                alt={logo.alt}
+                                width={180}
+                                height={72}
+                                className={`w-full object-contain opacity-80 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 dark:opacity-95 dark:grayscale-0 ${
+                                  index % 4 === 0
+                                    ? "h-12 sm:h-16"
+                                    : index % 4 === 1
+                                      ? "h-10 sm:h-14"
+                                      : index % 4 === 2
+                                        ? "h-9 sm:h-12"
+                                        : "h-11 sm:h-15"
+                                }`}
+                              />
+                            </div>
                           </div>
                         ))}
                       </div>
@@ -730,11 +733,11 @@ export default function Home() {
 
           {/* Core Capabilities / Skills */}
           <section
-            className="relative mt-20 sm:mt-28"
+            className="ui-section-divider"
             data-scroll-section
           >
             <div className="relative z-10 px-1">
-              <div className="mb-8">
+              <div className="ui-section-head">
                 <p className="ui-kicker">
                   Core Capabilities
                 </p>
@@ -748,12 +751,10 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              <div className="ui-section-body grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {skillCards.map((card, index) => (
-                  <article
-                    key={card.title}
-                    className="ui-card group relative flex min-h-[320px] flex-col overflow-hidden p-6"
-                  >
+                  <ScrollReveal key={card.title} className="h-full" delay={index * 90}>
+                    <article className="ui-card group relative flex h-full min-h-[250px] flex-col overflow-hidden p-5 sm:min-h-[320px] sm:p-6">
                     <div
                       className={`absolute left-0 right-0 top-0 h-1 ${
                         card.icon === "frontend"
@@ -804,7 +805,8 @@ export default function Home() {
                         </li>
                       ) : null}
                     </ul>
-                  </article>
+                    </article>
+                  </ScrollReveal>
                 ))}
               </div>
             </div>
@@ -812,13 +814,12 @@ export default function Home() {
 
           {/* Workflow Section */}
           <section
-            className="relative mt-20 sm:mt-28"
+            className="ui-section-divider"
             data-scroll-section
           >
-            <div className="ui-section-shell relative z-10">
+            <div className="relative z-10 px-1">
               <div>
-                <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-                  <div>
+                <div className="ui-section-head">
                     <p className="ui-kicker">
                       Workflow
                     </p>
@@ -830,25 +831,30 @@ export default function Home() {
                       A premium toolchain for moving from concept to clean,
                       production-ready delivery with more speed and precision.
                     </p>
-                  </div>
                 </div>
 
-                <div className="ui-marquee-shell relative mt-8">
+                <div className="ui-marquee-shell ui-section-body relative dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(5,10,20,0.98)_0%,rgba(9,15,28,0.96)_50%,rgba(3,7,18,0.99)_100%)] dark:shadow-[0_24px_60px_rgba(0,0,0,0.46)]">
+                  <div className="pointer-events-none absolute inset-0 hidden dark:block">
+                    <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-sky-300/35 to-transparent" />
+                    <div className="absolute -left-12 top-0 h-32 w-32 rounded-full bg-sky-400/10 blur-3xl" />
+                    <div className="absolute -right-10 bottom-0 h-32 w-32 rounded-full bg-fuchsia-400/10 blur-3xl" />
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:22px_22px] opacity-35 [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0.55),transparent)]" />
+                  </div>
                   <div
                     className="pointer-events-none absolute inset-y-0 left-0 z-20 w-16"
-                    style={{ background: "linear-gradient(to right, white 0%, transparent 100%)" }}
+                    style={{ background: "linear-gradient(to right, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0) 100%)" }}
                   />
                   <div
                     className="pointer-events-none absolute inset-y-0 right-0 z-20 w-16"
-                    style={{ background: "linear-gradient(to left, white 0%, transparent 100%)" }}
+                    style={{ background: "linear-gradient(to left, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0) 100%)" }}
                   />
                   <div
                     className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-16 dark:block"
-                    style={{ background: "linear-gradient(to right, rgb(18,18,24) 0%, transparent 100%)" }}
+                    style={{ background: "linear-gradient(to right, rgba(15,23,42,0.98) 0%, rgba(15,23,42,0) 100%)" }}
                   />
                   <div
                     className="pointer-events-none absolute inset-y-0 right-0 z-20 hidden w-16 dark:block"
-                    style={{ background: "linear-gradient(to left, rgb(24,24,32) 0%, transparent 100%)" }}
+                    style={{ background: "linear-gradient(to left, rgba(15,23,42,0.98) 0%, rgba(15,23,42,0) 100%)" }}
                   />
 
                   <div className="marquee-rtl-track flex w-max items-center hover:[animation-play-state:paused]">
@@ -861,15 +867,15 @@ export default function Home() {
                         {aiProductivityTools.map((tool) => (
                           <div
                             key={`${set}-${tool.name}`}
-                            className="group flex shrink-0 items-center gap-2 rounded-full border border-neutral-200/80 bg-white/88 px-3 py-2 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-neutral-300 hover:bg-white dark:border-white/12 dark:bg-white/6 dark:hover:border-white/20 dark:hover:bg-white/8"
+                            className="ui-tool-pill ui-workflow-pill group px-2.5 py-1.5 sm:px-3 sm:py-2"
                           >
                             <span
-                              className={`h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-r ${tool.accent}`}
+                              className={`h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-r shadow-[0_0_12px_rgba(255,255,255,0.08)] ${tool.accent}`}
                             />
-                            <span className="whitespace-nowrap text-sm font-semibold leading-none tracking-[0.01em] text-neutral-900 dark:text-neutral-100">
+                            <span className="whitespace-nowrap text-[0.82rem] font-semibold leading-none tracking-[0.01em] text-neutral-900 sm:text-sm dark:text-neutral-50">
                               {tool.name}
                             </span>
-                            <span className="rounded-full bg-neutral-100 px-2.5 py-1 whitespace-nowrap text-[0.58rem] font-bold uppercase leading-none tracking-[0.14em] text-neutral-500 dark:bg-white/8 dark:text-neutral-400">
+                            <span className="ui-tool-pill-role ui-workflow-pill-role px-2 py-1 whitespace-nowrap text-[0.54rem] font-bold uppercase leading-none tracking-[0.14em] sm:px-2.5 sm:text-[0.58rem]">
                               {tool.role}
                             </span>
                           </div>
@@ -884,12 +890,11 @@ export default function Home() {
 
           {/* Portfolio Projects */}
           <section
-            className="relative mt-20 sm:mt-28"
+            className="ui-section-divider"
             data-scroll-section
           >
             <div className="relative z-10 px-1">
-              <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-                <div>
+              <div className="ui-section-head">
                   <p className="ui-kicker">
                     Portfolio
                   </p>
@@ -901,16 +906,13 @@ export default function Home() {
                     A curated mix of production web platforms, SaaS products,
                     and full-stack builds across different domains.
                   </p>
-                </div>
               </div>
             </div>
 
-            <div className="relative z-10 mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            <div className="ui-section-body grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {projects.map((project, index) => (
-                  <article
-                    key={project.title}
-                    className="ui-card group relative flex min-h-[460px] flex-col overflow-hidden p-5"
-                  >
+                  <ScrollReveal key={project.title} className="h-full" delay={(index % 3) * 90}>
+                    <article className="ui-card group relative flex h-full min-h-[370px] flex-col overflow-hidden p-4 sm:min-h-[460px] sm:p-5">
                     <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent opacity-60 dark:via-white/30" />
                     <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-100 dark:border-white/10 dark:bg-neutral-900">
                       <Image
@@ -918,7 +920,7 @@ export default function Home() {
                         alt={`${project.title} thumbnail`}
                         width={720}
                         height={420}
-                        className="h-52 w-full object-cover"
+                        className="h-44 w-full object-cover sm:h-52"
                         loading="lazy"
                       />
                       <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
@@ -973,7 +975,8 @@ export default function Home() {
                         </Link>
                       </div>
                     </div>
-                  </article>
+                    </article>
+                  </ScrollReveal>
                 ))}
             </div>
           </section>
