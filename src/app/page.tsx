@@ -520,7 +520,20 @@ export default function Home() {
   const projectCovers = getProjectCovers();
 
   return (
-    <main className="relative isolate min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <main className="relative isolate min-h-screen">
+      <div className="geometric-overlay">
+        {/* Large Decorative Triangles */}
+        <svg className="geometric-shape -left-32 -top-20 h-[600px] w-[600px] rotate-12" viewBox="0 0 100 100">
+          <polygon points="50,15 90,85 10,85" fill="currentColor" />
+        </svg>
+        <svg className="geometric-shape -right-40 bottom-20 h-[800px] w-[800px] -rotate-12" viewBox="0 0 100 100">
+          <rect x="20" y="20" width="60" height="60" fill="currentColor" rx="2" />
+        </svg>
+        
+        {/* Ambient Atmosphere */}
+        <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-sky-500/5 blur-[120px] dark:bg-sky-400/8" />
+        <div className="absolute right-1/4 bottom-1/4 h-96 w-96 rounded-full bg-purple-500/5 blur-[120px] dark:bg-purple-400/8" />
+      </div>
       
       {/* Fixed Theme Toggle */}
       <div className="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6 lg:bottom-10 lg:right-10">
@@ -539,10 +552,6 @@ export default function Home() {
             <div className="animate-orb absolute -left-28 -top-28 h-[520px] w-[520px] rounded-full bg-gradient-to-br from-amber-300/30 via-orange-300/20 to-transparent blur-3xl dark:from-amber-500/18 dark:via-orange-500/10" />
             <div className="animate-orb-delay absolute -bottom-36 -right-28 h-[460px] w-[460px] rounded-full bg-gradient-to-tl from-violet-400/22 via-fuchsia-300/16 to-transparent blur-3xl dark:from-violet-500/14 dark:via-fuchsia-500/10" />
             <div className="absolute left-1/2 top-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-sky-300/12 to-transparent blur-2xl dark:from-sky-500/10" />
-            <span className="grid-trace-horizontal absolute top-0 h-px w-28 bg-gradient-to-r from-transparent via-sky-400/80 to-transparent dark:via-sky-300/80" />
-            <span className="grid-trace-horizontal absolute bottom-0 h-px w-24 bg-gradient-to-r from-transparent via-fuchsia-400/80 to-transparent dark:via-fuchsia-300/80 [animation-delay:1.4s]" />
-            <span className="grid-trace-vertical absolute left-0 h-20 w-px bg-gradient-to-b from-transparent via-amber-400/70 to-transparent dark:via-amber-300/70 [animation-delay:0.8s]" />
-            <span className="grid-trace-vertical absolute right-0 h-24 w-px bg-gradient-to-b from-transparent via-sky-400/70 to-transparent dark:via-sky-300/70 [animation-delay:2s]" />
           </div>
 
           <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col justify-center px-4 py-4 sm:px-6 sm:py-6 lg:flex-1 lg:grid lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-14 lg:px-8 lg:py-4">
@@ -714,55 +723,36 @@ export default function Home() {
                     <h2 className="ui-title">
                       Companies and Client Worked With
                     </h2>
-                    <div className="mt-3 h-px w-40 bg-gradient-to-r from-orange-400/70 via-amber-400/70 to-transparent" />
+                    <div className="mt-3 mx-auto h-px w-40 bg-gradient-to-r from-transparent via-orange-400/70 to-transparent" />
                     <p className="ui-subtitle">
                       A selection of brands and teams I&apos;ve contributed to
                       across product, SaaS, and digital delivery.
                     </p>
                 </div>
 
-                <div className="ui-section-body relative overflow-hidden py-5 sm:py-6">
-                  <div
-                    className="pointer-events-none absolute inset-y-0 left-0 z-20 w-20"
-                    style={{ background: "linear-gradient(to right, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0) 100%)" }}
-                  />
-                  <div
-                    className="pointer-events-none absolute inset-y-0 right-0 z-20 w-20"
-                    style={{ background: "linear-gradient(to left, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0) 100%)" }}
-                  />
-                  <div
-                    className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-20 dark:block"
-                    style={{ background: "linear-gradient(to right, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0) 100%)" }}
-                  />
-                  <div
-                    className="pointer-events-none absolute inset-y-0 right-0 z-20 hidden w-20 dark:block"
-                    style={{ background: "linear-gradient(to left, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0) 100%)" }}
-                  />
-
-                  <div className="marquee-rtl-track flex w-max items-center hover:[animation-play-state:paused]">
-                    {[0, 1].map((set) => (
-                    <div key={set} className="flex items-center gap-8 pr-8 sm:gap-12 sm:pr-12">
-                        {companyLogos.map((logo) => (
-                          <a
-                            key={`${set}-${logo.src}`}
-                            href={logo.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`Visit ${logo.alt}`}
-                            className="ui-logo-card w-36 sm:w-44"
-                          >
-                            <Image
-                              src={logo.src}
-                              alt={logo.alt}
-                              width={180}
-                              height={72}
-                              className="h-11 w-full object-contain opacity-100 sm:h-14"
-                            />
-                          </a>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
+                <div className="ui-section-body flex flex-wrap justify-center items-center gap-10 sm:gap-16">
+                  {companyLogos.map((logo, index) => (
+                    <ScrollReveal
+                      key={logo.src}
+                      delay={index * 40}
+                    >
+                      <a
+                        href={logo.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit ${logo.alt}`}
+                        className="ui-logo-card block"
+                      >
+                        <Image
+                          src={logo.src}
+                          alt={logo.alt}
+                          width={160}
+                          height={70}
+                          className="h-9 w-auto object-contain opacity-90 transition-all hover:opacity-100 sm:h-12"
+                        />
+                      </a>
+                    </ScrollReveal>
+                  ))}
                 </div>
               </div>
             </section>
@@ -781,7 +771,7 @@ export default function Home() {
                 <h2 className="ui-title">
                   Skills & Expertise
                 </h2>
-                <div className="mt-3 h-px w-32 bg-gradient-to-r from-sky-400/70 via-fuchsia-400/70 to-amber-400/70" />
+                <div className="mt-3 mx-auto h-px w-32 bg-gradient-to-r from-transparent via-fuchsia-400/70 to-transparent" />
                 <p className="ui-subtitle">
                   Production-focused engineering strengths across frontend,
                   backend, and DevOps.
@@ -795,33 +785,43 @@ export default function Home() {
                     delay={index * 90}
                   >
                     <article className="ui-card group relative flex min-h-[250px] flex-col overflow-hidden p-5 sm:min-h-[320px] sm:p-6">
-                      <div
-                        className={`absolute left-0 right-0 top-0 h-1 ${
-                          card.icon === "frontend"
-                            ? "bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500"
-                            : card.icon === "backend"
-                              ? "bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-500"
-                              : "bg-gradient-to-r from-fuchsia-400 via-pink-400 to-violet-500"
-                        }`}
-                      />
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="flex items-center gap-2.5">
-                          <span className="rounded-xl border border-neutral-200/80 bg-white p-2 shadow-sm dark:border-white/15 dark:bg-white/5">
-                            <SkillIcon type={card.icon} />
-                          </span>
-                          <h3
-                            className={`text-lg font-semibold leading-tight ${
+                      <div className={`ui-card-glow bg-gradient-to-br ${
+                        card.icon === "frontend" 
+                        ? "from-sky-400 to-blue-600" 
+                        : card.icon === "backend" 
+                        ? "from-emerald-400 to-teal-600" 
+                        : "from-fuchsia-400 to-violet-600"
+                      }`} />
+                      
+                      <div className="relative z-10 mb-6 flex items-start justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br p-[1px] shadow-sm ${
+                            card.icon === "frontend" 
+                            ? "from-sky-400 to-blue-500" 
+                            : card.icon === "backend" 
+                            ? "from-emerald-400 to-teal-500" 
+                            : "from-fuchsia-400 to-violet-500"
+                          }`}>
+                            <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-white dark:bg-neutral-950">
+                              <SkillIcon type={card.icon} />
+                            </div>
+                          </div>
+                          <div>
+                            <h3 className={`text-base font-bold leading-tight ${
                               card.icon === "frontend"
                                 ? "text-sky-700 dark:text-sky-300"
                                 : card.icon === "backend"
                                   ? "text-emerald-700 dark:text-emerald-300"
                                   : "text-fuchsia-700 dark:text-fuchsia-300"
-                            }`}
-                          >
-                            {card.title}
-                          </h3>
+                            }`}>
+                              {card.title}
+                            </h3>
+                            <span className="text-[9px] font-bold uppercase tracking-widest text-neutral-500">
+                              Direct Expertise
+                            </span>
+                          </div>
                         </div>
-                        <span className="text-xs font-semibold tracking-[0.16em] text-neutral-400 dark:text-neutral-500">
+                        <span className="text-[10px] font-bold tabular-nums uppercase tracking-widest text-neutral-400">
                           {String(index + 1).padStart(2, "0")}
                         </span>
                       </div>
@@ -866,70 +866,56 @@ export default function Home() {
                     <h2 className="ui-title">
                       AI-Powered Productivity Stack
                     </h2>
-                    <div className="mt-3 h-px w-44 bg-gradient-to-r from-pink-400/70 via-orange-400/70 to-transparent" />
+                    <div className="mt-3 mx-auto h-px w-44 bg-gradient-to-r from-transparent via-orange-400/70 to-transparent" />
                     <p className="ui-subtitle">
                       A premium toolchain for moving from concept to clean,
                       production-ready delivery with more speed and precision.
                     </p>
                 </div>
 
-                <div className="ui-section-body relative overflow-hidden py-5 sm:py-6">
+                <div className="ui-section-body relative overflow-hidden py-4">
+                  {/* Decorative Gradient Background for Marquee */}
                   <div className="pointer-events-none absolute inset-0 hidden dark:block">
-                    <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-sky-300/35 to-transparent" />
-                    <div className="absolute -left-12 top-0 h-32 w-32 rounded-full bg-sky-400/10 blur-3xl" />
-                    <div className="absolute -right-10 bottom-0 h-32 w-32 rounded-full bg-fuchsia-400/10 blur-3xl" />
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:22px_22px] opacity-35 [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0.55),transparent)]" />
+                    <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-neutral-950 to-transparent z-20" />
+                    <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-neutral-950 to-transparent z-20" />
                   </div>
-                  <div
-                    className="pointer-events-none absolute inset-y-0 left-0 z-20 w-16"
-                    style={{ background: "linear-gradient(to right, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0) 100%)" }}
-                  />
-                  <div
-                    className="pointer-events-none absolute inset-y-0 right-0 z-20 w-16"
-                    style={{ background: "linear-gradient(to left, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0) 100%)" }}
-                  />
-                  <div
-                    className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-16 dark:block"
-                    style={{ background: "linear-gradient(to right, rgba(15,23,42,0.98) 0%, rgba(15,23,42,0) 100%)" }}
-                  />
-                  <div
-                    className="pointer-events-none absolute inset-y-0 right-0 z-20 hidden w-16 dark:block"
-                    style={{ background: "linear-gradient(to left, rgba(15,23,42,0.98) 0%, rgba(15,23,42,0) 100%)" }}
-                  />
 
                   <div className="marquee-rtl-track flex w-max items-center hover:[animation-play-state:paused]">
                     {[0, 1].map((set) => (
                       <div
                         key={set}
-                        aria-hidden={set === 1}
-                        className="flex shrink-0 items-center gap-5 pr-5 sm:gap-8 sm:pr-8"
+                        className="flex shrink-0 items-center gap-6 pr-6"
                       >
-                        {aiProductivityTools.map((tool) => (
-                          <div
-                            key={`${set}-${tool.name}`}
-                            className="ui-tool-pill px-2 py-2 sm:px-3"
-                          >
-                            <span
-                              className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-gradient-to-r p-[1px] sm:h-12 sm:w-12 ${tool.accent}`}
-                              aria-hidden="true"
-                            >
-                              <span className="flex h-full w-full items-center justify-center rounded-[5px] bg-white dark:bg-[#0f172a]">
-                                <Image
-                                  src={tool.logo}
-                                  alt=""
-                                  width={32}
-                                  height={32}
-                                  className="h-7 w-7 object-contain sm:h-8 sm:w-8"
-                                />
+                        {aiProductivityTools.map((tool, index) => (
+                          <article key={`${set}-${tool.name}`} className="ui-ai-card group w-[280px] sm:w-[320px] shrink-0">
+                            <div className={`ui-card-glow bg-gradient-to-r ${tool.accent}`} />
+                            
+                            <div className="flex items-start justify-between">
+                              <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br p-[1px] shadow-sm ${tool.accent}`}>
+                                <div className="flex h-full w-full items-center justify-center rounded-[11px] bg-white dark:bg-neutral-900">
+                                  <Image
+                                    src={tool.logo}
+                                    alt=""
+                                    width={20}
+                                    height={20}
+                                    className="h-5 w-5 object-contain"
+                                  />
+                                </div>
+                              </div>
+                              <span className="text-[9px] font-bold uppercase tracking-widest text-neutral-400">
+                                {tool.role}
                               </span>
-                            </span>
-                            <span className="whitespace-nowrap text-base font-semibold leading-none tracking-[0.01em] text-neutral-900 sm:text-lg dark:text-neutral-50">
-                              {tool.name}
-                            </span>
-                            <span className="ui-tool-pill-role whitespace-nowrap text-[0.68rem] font-bold uppercase leading-none tracking-[0.14em] sm:text-xs">
-                              {tool.role}
-                            </span>
-                          </div>
+                            </div>
+
+                            <div className="space-y-1">
+                              <h3 className="text-sm font-bold text-neutral-900 dark:text-neutral-50">
+                                {tool.name}
+                              </h3>
+                              <p className="text-[11px] leading-relaxed text-neutral-600 dark:text-neutral-400 line-clamp-2">
+                                {tool.focus}
+                              </p>
+                            </div>
+                          </article>
                         ))}
                       </div>
                     ))}
@@ -952,7 +938,7 @@ export default function Home() {
                   <h2 className="ui-title">
                     Selected Projects
                   </h2>
-                  <div className="mt-3 h-px w-36 bg-gradient-to-r from-sky-400/70 via-fuchsia-400/70 to-amber-400/70" />
+                  <div className="mt-3 mx-auto h-px w-36 bg-gradient-to-r from-transparent via-fuchsia-400/70 to-transparent" />
                   <p className="ui-subtitle">
                     A curated mix of production web platforms, SaaS products,
                     and full-stack builds across different domains.
@@ -972,27 +958,45 @@ export default function Home() {
                     className="h-full"
                   >
                     <article className="ui-card group relative flex h-full min-h-[370px] flex-col overflow-hidden p-4 sm:min-h-[460px] sm:p-5">
-                      <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent opacity-60 dark:via-white/30" />
-                      <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-100 dark:border-white/10 dark:bg-neutral-900">
+                      <div className="ui-card-glow bg-gradient-to-tr from-sky-400 via-fuchsia-500 to-amber-400" />
+                      
+                      <div className="relative z-10 mb-5 flex items-start justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-fuchsia-500 p-[1px] shadow-sm">
+                            <div className="flex h-full w-full items-center justify-center rounded-[11px] bg-white dark:bg-neutral-950">
+                              <svg viewBox="0 0 24 24" className="h-5 w-5 text-neutral-800 dark:text-neutral-200" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </div>
+                          </div>
+                          <div>
+                            <h3 className="text-base font-bold text-neutral-900 dark:text-neutral-50">
+                              {project.title}
+                            </h3>
+                            <span className="text-[9px] font-bold uppercase tracking-widest text-neutral-500">
+                              Production Build
+                            </span>
+                          </div>
+                        </div>
+                        <span className="text-[10px] font-bold tabular-nums uppercase tracking-widest text-neutral-400">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                      </div>
+
+                      <div className="relative z-10 overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-100 dark:border-white/10 dark:bg-neutral-900">
                         <Image
                           src={resolveProjectCover(project, projectCovers)}
                           alt={`${project.title} thumbnail`}
                           width={720}
                           height={420}
-                          className="h-44 w-full object-cover sm:h-52"
+                          className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-110 sm:h-52"
                           loading="lazy"
                         />
-                        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
-                        <span className="absolute left-3 top-3 inline-flex items-center rounded-full border border-white/40 bg-black/40 px-2.5 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-white backdrop-blur-sm">
-                          Project {String(index + 1).padStart(2, "0")}
-                        </span>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                       </div>
 
-                      <div className="mt-5 flex flex-1 flex-col">
-                        <h3 className="text-lg font-bold leading-snug tracking-tight text-neutral-900 dark:text-neutral-50">
-                          {project.title}
-                        </h3>
-                        <p className="mt-2 text-sm leading-6 text-neutral-600 dark:text-neutral-300">
+                      <div className="relative z-10 mt-5 flex flex-1 flex-col">
+                        <p className="text-sm leading-6 text-neutral-600 dark:text-neutral-400 line-clamp-3">
                           {project.description}
                         </p>
 
@@ -1039,6 +1043,24 @@ export default function Home() {
                 ))}
             </div>
           </section>
+
+
+          {/* Footer */}
+          <footer className="mt-24 border-t border-neutral-100 py-12 dark:border-white/5">
+            <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+              <p className="text-sm font-bold tracking-tight text-neutral-500">
+                © {new Date().getFullYear()} Pranay Langhe<span className="text-primary-500">.</span> All rights reserved.
+              </p>
+              <div className="max-w-sm text-center sm:text-right">
+                <p className="text-xs italic leading-relaxed text-neutral-400 dark:text-neutral-500">
+                  &quot;The only way to do great work is to love what you do.&quot;
+                  <span className="mt-1 block font-bold not-italic tracking-widest text-neutral-500 dark:text-neutral-600">
+                    — STEVE JOBS
+                  </span>
+                </p>
+              </div>
+            </div>
+          </footer>
       </div>
     </main>
   );
