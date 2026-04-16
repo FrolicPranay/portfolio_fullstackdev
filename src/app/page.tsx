@@ -544,7 +544,7 @@ export default function Home() {
 
       {/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ HERO Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <section
-        className="relative flex min-h-[100svh] flex-col overflow-hidden pt-14 pb-12 sm:pt-16 sm:pb-14 lg:h-[100svh] lg:justify-between lg:pt-8 lg:pb-10"
+        className="relative flex min-h-[100svh] flex-col overflow-hidden pt-6 pb-12 sm:pt-10 sm:pb-14 lg:h-[100svh] lg:justify-between lg:pt-8 lg:pb-10"
         data-scroll-section
       >
           {/* Ã¢â€â‚¬Ã¢â€â‚¬ Background: ambient orbs Ã¢â€â‚¬Ã¢â€â‚¬ */}
@@ -555,8 +555,8 @@ export default function Home() {
           </div>
 
           <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col justify-center px-4 py-4 sm:px-6 sm:py-6 lg:flex-1 lg:grid lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-14 lg:px-8 lg:py-4">
-            <div className="flex max-w-xl flex-col gap-6 sm:gap-7">
-              <div className="hero-fade-1 flex flex-wrap items-center gap-2.5 sm:gap-3">
+            <div className="flex max-w-xl flex-col gap-6 sm:gap-7 items-center text-center lg:items-start lg:text-left">
+              <div className="hero-fade-1 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
                 <div className="inline-flex items-center gap-2.5 rounded-full border border-emerald-200/80 bg-gradient-to-r from-emerald-50 to-teal-50 px-3.5 py-1.5 text-[11px] font-semibold text-emerald-700 shadow-sm shadow-emerald-100 sm:px-4 sm:text-xs dark:border-emerald-500/30 dark:from-emerald-500/10 dark:to-teal-500/10 dark:text-emerald-300 dark:shadow-none">
                   <span className="live-pulse h-2 w-2 rounded-full bg-emerald-500" />
                   Available for work
@@ -584,7 +584,7 @@ export default function Home() {
                 Full-stack engineer focused on high-performance MERN and Next.js systems. I ship polished interfaces, scalable APIs, and AI-powered workflows for teams that move fast.
               </p>
 
-              <div className="hero-fade-4 flex flex-wrap gap-2">
+              <div className="hero-fade-4 flex flex-wrap justify-center lg:justify-start gap-2">
                 {["JavaScript", "Node.js", "React", "Next.js", "TypeScript", "AI Workflows"].map((tag) => (
                   <span
                     key={tag}
@@ -595,7 +595,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <div className="hero-fade-5 flex w-full flex-wrap gap-3">
+              <div className="hero-fade-5 flex items-center justify-center lg:justify-start w-full flex-wrap gap-3">
                 <a
                   href="/Resume-Pranay%20Langhe.pdf"
                   download="Resume-Pranay-Langhe.pdf"
