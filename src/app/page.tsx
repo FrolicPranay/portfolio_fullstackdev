@@ -554,7 +554,7 @@ export default function Home() {
             <div className="absolute left-1/2 top-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-sky-300/12 to-transparent blur-2xl dark:from-sky-500/10" />
           </div>
 
-          <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col justify-center px-4 py-4 sm:px-6 sm:py-6 lg:flex-1 lg:grid lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-14 lg:px-8 lg:py-4">
+          <div className="relative z-10 mx-auto flex w-full max-w-[1220px] flex-col justify-center px-4 py-4 sm:px-6 sm:py-6 lg:flex-1 lg:grid lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-14 lg:px-8 lg:py-4">
             <div className="flex max-w-xl flex-col gap-6 sm:gap-7 items-center text-center lg:items-start lg:text-left">
               <div className="hero-fade-1 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
                 <div className="inline-flex items-center gap-2.5 rounded-full border border-emerald-200/80 bg-gradient-to-r from-emerald-50 to-teal-50 px-3.5 py-1.5 text-[11px] font-semibold text-emerald-700 shadow-sm shadow-emerald-100 sm:px-4 sm:text-xs dark:border-emerald-500/30 dark:from-emerald-500/10 dark:to-teal-500/10 dark:text-emerald-300 dark:shadow-none">
@@ -665,9 +665,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Ã¢â€â‚¬Ã¢â€â‚¬ Stats bar Ã¢â€â‚¬Ã¢â€â‚¬ */}
-          <div className="relative z-10 mt-8 px-4 pt-4 pb-6 text-sm sm:mt-10 sm:px-6 sm:pt-5 sm:pb-8 lg:mt-0 lg:px-8 lg:pb-0">
-            <div className="ui-panel mx-auto max-w-6xl">
+          <div className="relative z-10 mt-12 lg:mt-0">
+            <div className="mx-auto w-full max-w-xl lg:max-w-[1220px] px-4 sm:px-6 lg:px-8">
+              <div className="ui-panel lg:rounded-[1.75rem]">
               <div className="relative grid overflow-hidden rounded-[1.75rem] grid-cols-2 lg:grid-cols-4">
                 <div className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block">
                   <span className="grid-trace-vertical absolute left-1/4 h-20 w-px bg-gradient-to-b from-transparent via-sky-400/70 to-transparent dark:via-sky-300/70" />
@@ -701,12 +701,12 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-        </section>
-
-      {/* Ã¢â€â‚¬Ã¢â€â‚¬ Below-hero content container Ã¢â€â‚¬Ã¢â€â‚¬ */}
+      {/* ── Below-hero content container ── */}
       <div
-        className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-24 sm:px-6 lg:px-8 lg:pb-32"
+        className="relative z-10 mx-auto w-full max-w-[1220px] px-4 pb-24 sm:px-6 lg:px-8 lg:pb-32"
         data-scroll-root
       >
           {/* Companies Section */}
@@ -730,29 +730,51 @@ export default function Home() {
                     </p>
                 </div>
 
-                <div className="ui-section-body flex flex-wrap justify-center items-center gap-10 sm:gap-16">
-                  {companyLogos.map((logo, index) => (
-                    <ScrollReveal
-                      key={logo.src}
-                      delay={index * 40}
-                    >
-                      <a
-                        href={logo.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Visit ${logo.alt}`}
-                        className="ui-logo-card block"
-                      >
-                        <Image
-                          src={logo.src}
-                          alt={logo.alt}
-                          width={160}
-                          height={70}
-                          className="h-9 w-auto object-contain opacity-90 transition-all hover:opacity-100 sm:h-12"
-                        />
-                      </a>
-                    </ScrollReveal>
-                  ))}
+                <div className="ui-section-body space-y-10 sm:space-y-14">
+                  {/* Row 1: 5 Logos */}
+                  <div className="flex flex-wrap justify-center items-center gap-10 sm:gap-16">
+                    {companyLogos.slice(0, 5).map((logo, index) => (
+                      <ScrollReveal key={logo.src} delay={index * 40}>
+                        <a
+                          href={logo.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Visit ${logo.alt}`}
+                          className="ui-logo-card block"
+                        >
+                          <Image
+                            src={logo.src}
+                            alt={logo.alt}
+                            width={160}
+                            height={70}
+                            className="h-9 w-auto object-contain opacity-90 transition-all hover:opacity-100 sm:h-12"
+                          />
+                        </a>
+                      </ScrollReveal>
+                    ))}
+                  </div>
+                  {/* Row 2: 2 Logos */}
+                  <div className="flex flex-wrap justify-center items-center gap-10 sm:gap-16">
+                    {companyLogos.slice(5).map((logo, index) => (
+                      <ScrollReveal key={logo.src} delay={(index + 5) * 40}>
+                        <a
+                          href={logo.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Visit ${logo.alt}`}
+                          className="ui-logo-card block"
+                        >
+                          <Image
+                            src={logo.src}
+                            alt={logo.alt}
+                            width={160}
+                            height={70}
+                            className="h-9 w-auto object-contain opacity-90 transition-all hover:opacity-100 sm:h-12"
+                          />
+                        </a>
+                      </ScrollReveal>
+                    ))}
+                  </div>
                 </div>
               </div>
             </section>
@@ -778,13 +800,14 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="ui-section-body grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              <div className="ui-section-body grid auto-rows-fr gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {skillCards.map((card, index) => (
                   <ScrollReveal
                     key={card.title}
                     delay={index * 90}
+                    className="h-full"
                   >
-                    <article className="ui-card group relative flex min-h-[250px] flex-col overflow-hidden p-5 sm:min-h-[320px] sm:p-6">
+                    <article className="ui-card group relative flex h-full flex-col overflow-hidden p-5 sm:p-6">
                       <div className={`ui-card-glow bg-gradient-to-br ${
                         card.icon === "frontend" 
                         ? "from-sky-400 to-blue-600" 
@@ -887,34 +910,42 @@ export default function Home() {
                         className="flex shrink-0 items-center gap-6 pr-6"
                       >
                         {aiProductivityTools.map((tool, index) => (
-                          <article key={`${set}-${tool.name}`} className="ui-ai-card group w-[280px] sm:w-[320px] shrink-0">
-                            <div className={`ui-card-glow bg-gradient-to-r ${tool.accent}`} />
+                          <article key={`${set}-${tool.name}`} className="ui-ai-node group w-[300px] sm:w-[340px] shrink-0">
+                            {/* Orbital Accent Background */}
+                            <div className={`ui-ai-node-accent bg-gradient-to-br ${tool.accent}`} />
                             
-                            <div className="flex items-start justify-between">
-                              <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br p-[1px] shadow-sm ${tool.accent}`}>
-                                <div className="flex h-full w-full items-center justify-center rounded-[11px] bg-white dark:bg-neutral-900">
-                                  <Image
-                                    src={tool.logo}
-                                    alt=""
-                                    width={20}
-                                    height={20}
-                                    className="h-5 w-5 object-contain"
-                                  />
+                            <div className="relative z-10 flex items-center justify-between">
+                              <div className="ui-ai-node-icon">
+                                <div className={`absolute inset-0 rounded-2xl opacity-10 bg-gradient-to-br ${tool.accent}`} />
+                                <Image
+                                  src={tool.logo}
+                                  alt=""
+                                  width={28}
+                                  height={28}
+                                  className="relative z-10 h-7 w-7 object-contain"
+                                />
+                              </div>
+                              <div className="flex flex-col items-end text-right">
+                                <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">
+                                  {tool.role}
+                                </span>
+                                <div className="mt-1 flex gap-1">
+                                  {[1, 2, 3].map((i) => (
+                                    <div key={i} className={`h-1 w-3 rounded-full ${i <= 2 ? 'bg-neutral-900 dark:bg-neutral-100' : 'bg-neutral-200 dark:bg-neutral-800'}`} />
+                                  ))}
                                 </div>
                               </div>
-                              <span className="text-[9px] font-bold uppercase tracking-widest text-neutral-400">
-                                {tool.role}
-                              </span>
                             </div>
 
-                            <div className="space-y-1">
-                              <h3 className="text-sm font-bold text-neutral-900 dark:text-neutral-50">
+                            <div className="relative z-10 mt-8 space-y-2">
+                              <h3 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
                                 {tool.name}
                               </h3>
-                              <p className="text-[11px] leading-relaxed text-neutral-600 dark:text-neutral-400 line-clamp-2">
+                              <p className="text-[13px] leading-relaxed text-neutral-600 dark:text-neutral-400">
                                 {tool.focus}
                               </p>
                             </div>
+
                           </article>
                         ))}
                       </div>
@@ -973,9 +1004,6 @@ export default function Home() {
                             <h3 className="text-base font-bold text-neutral-900 dark:text-neutral-50">
                               {project.title}
                             </h3>
-                            <span className="text-[9px] font-bold uppercase tracking-widest text-neutral-500">
-                              Production Build
-                            </span>
                           </div>
                         </div>
                         <span className="text-[10px] font-bold tabular-nums uppercase tracking-widest text-neutral-400">
