@@ -97,20 +97,19 @@ body {
 }
 
 .ui-ai-node {
-  @apply relative flex flex-col overflow-hidden rounded-[2rem] border border-neutral-200/60 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-neutral-300 hover:shadow-xl dark:border-white/10 dark:bg-neutral-900/60 dark:backdrop-blur-xl;
+  @apply relative flex flex-col overflow-hidden rounded-[2rem] border border-neutral-200/60 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-neutral-300 hover:shadow-xl dark:border-white/10 dark:bg-neutral-900/45 dark:backdrop-blur-3xl dark:hover:border-white/20 dark:hover:bg-neutral-900/60;
 }
 
 .ui-ai-node::before {
-  content: "";
-  @apply absolute inset-0 bg-gradient-to-br from-white/40 to-transparent dark:from-white/5;
+  @apply absolute inset-0 bg-gradient-to-br from-white/40 to-transparent dark:from-white/[0.08] dark:to-transparent pointer-events-none content-[""];
 }
 
 .ui-ai-node-icon {
-  @apply relative flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-md dark:bg-neutral-800 dark:shadow-black/20;
+  @apply relative flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-md dark:bg-neutral-950/60 dark:border dark:border-white/15 dark:backdrop-blur-xl dark:shadow-black/40 transition-all duration-300 group-hover:scale-110 group-hover:border-white/30 group-hover:shadow-white/5;
 }
 
 .ui-ai-node-accent {
-  @apply absolute -right-4 -top-4 h-24 w-24 rounded-full opacity-10 blur-2xl transition-opacity group-hover:opacity-20;
+  @apply absolute -right-10 -top-10 h-40 w-40 rounded-full opacity-10 blur-[80px] transition-all duration-700 group-hover:opacity-25 group-hover:scale-150;
 }
 
 .ui-workflow-shell {

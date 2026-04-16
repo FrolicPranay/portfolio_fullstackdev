@@ -542,12 +542,12 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ HERO Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
+      {/* ── ── ── ── ── ── ── ── ── HERO ── ── ── ── ── ── ── ── ── */}
       <section
         className="relative flex min-h-[100svh] flex-col overflow-hidden pt-6 pb-12 sm:pt-10 sm:pb-14 lg:h-[100svh] lg:justify-between lg:pt-8 lg:pb-10"
         data-scroll-section
       >
-          {/* Ã¢â€â‚¬Ã¢â€â‚¬ Background: ambient orbs Ã¢â€â‚¬Ã¢â€â‚¬ */}
+          {/* ── ── Background: ambient orbs ── ── */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <div className="animate-orb absolute -left-28 -top-28 h-[520px] w-[520px] rounded-full bg-gradient-to-br from-amber-300/30 via-orange-300/20 to-transparent blur-3xl dark:from-amber-500/18 dark:via-orange-500/10" />
             <div className="animate-orb-delay absolute -bottom-36 -right-28 h-[460px] w-[460px] rounded-full bg-gradient-to-tl from-violet-400/22 via-fuchsia-300/16 to-transparent blur-3xl dark:from-violet-500/14 dark:via-fuchsia-500/10" />
@@ -569,9 +569,12 @@ export default function Home() {
               </div>
 
               <div className="hero-fade-2 space-y-4">
-                <p className="text-sm font-bold uppercase tracking-[0.23em] text-neutral-400 dark:text-neutral-500">
-                  Hi, I&apos;m Pranay Langhe
-                </p>
+                <div className="flex items-center justify-center lg:justify-start gap-4">
+                  <div className="h-5 w-[2px] rounded-full bg-amber-500 shadow-[0_0_12px_rgba(245,158,11,0.5)]" />
+                  <p className="text-[17px] font-black uppercase tracking-[0.3em] text-amber-600 dark:text-amber-400">
+                    Hi, I&apos;m Pranay Langhe
+                  </p>
+                </div>
                 <h1 className="max-w-2xl text-[2.2rem] font-extrabold leading-[1.04] tracking-tight sm:text-5xl lg:text-[3.35rem]">
                   Building reliable web products
                   <span className="animate-gradient-text block bg-gradient-to-r from-amber-400 via-rose-500 to-violet-500 bg-clip-text text-transparent">
@@ -897,12 +900,6 @@ export default function Home() {
                 </div>
 
                 <div className="ui-section-body relative overflow-hidden py-4">
-                  {/* Decorative Gradient Background for Marquee */}
-                  <div className="pointer-events-none absolute inset-0 hidden dark:block">
-                    <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-neutral-950 to-transparent z-20" />
-                    <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-neutral-950 to-transparent z-20" />
-                  </div>
-
                   <div className="marquee-rtl-track flex w-max items-center hover:[animation-play-state:paused]">
                     {[0, 1].map((set) => (
                       <div
@@ -926,12 +923,19 @@ export default function Home() {
                                 />
                               </div>
                               <div className="flex flex-col items-end text-right">
-                                <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">
+                                <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-200 transition-colors">
                                   {tool.role}
                                 </span>
                                 <div className="mt-1 flex gap-1">
                                   {[1, 2, 3].map((i) => (
-                                    <div key={i} className={`h-1 w-3 rounded-full ${i <= 2 ? 'bg-neutral-900 dark:bg-neutral-100' : 'bg-neutral-200 dark:bg-neutral-800'}`} />
+                                    <div 
+                                      key={i} 
+                                      className={`h-1 w-3 rounded-full transition-all duration-300 ${
+                                        i <= 2 
+                                          ? `bg-neutral-800 dark:bg-neutral-200 group-hover:bg-gradient-to-r ${tool.accent}` 
+                                          : 'bg-neutral-200 dark:bg-neutral-800'
+                                      }`} 
+                                    />
                                   ))}
                                 </div>
                               </div>
