@@ -956,6 +956,10 @@ export default function Home() {
                   <p className="ui-subtitle">
                     A curated mix of production web platforms, SaaS products,
                     and full-stack builds across different domains.
+                    <span className="mt-3 block rounded-md border border-amber-300/60 bg-amber-100/70 px-4 py-2 font-semibold text-amber-950 shadow-sm dark:border-amber-300/30 dark:bg-amber-300/10 dark:text-amber-100">
+                      Some client projects are confidential, so only selected
+                      public work is shown here.
+                    </span>
                   </p>
               </div>
             </div>
