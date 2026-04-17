@@ -640,7 +640,7 @@ export default function Home() {
                 {/* Bring head outside the circle for 3D breakout effect */}
                 <div
                   className="pointer-events-none absolute inset-0 z-10"
-                  style={{ clipPath: "polygon(-50% -50%, 150% -50%, 150% 52%, -50% 52%)" }}
+                  style={{ clipPath: "polygon(-50% -50%, 150% -50%, 150% 38%, -50% 38%)" }}
                 >
                   <Image
                     src="/pranay.png"
