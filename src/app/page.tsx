@@ -10,65 +10,280 @@ type SkillType = "frontend" | "backend" | "devops";
 type SkillCard = {
   title: string;
   icon: SkillType;
-  maxItems: number;
   summary: string;
-  items: string[];
+  highlights: string[];
+  sections: Array<{
+    label: string;
+    details: string;
+  }>;
+};
+
+const techBadgeMap: Record<string, { src: string; bg: string }> = {
+  "JavaScript": {
+    src: "https://cdn.simpleicons.org/javascript/F7DF1E",
+    bg: "bg-[#F7DF1E]/10 dark:bg-[#F7DF1E]/15",
+  },
+  "TypeScript": {
+    src: "https://cdn.simpleicons.org/typescript/3178C6",
+    bg: "bg-[#3178C6]/10 dark:bg-[#3178C6]/20",
+  },
+  "React": {
+    src: "https://cdn.simpleicons.org/react/61DAFB",
+    bg: "bg-[#61DAFB]/10 dark:bg-[#61DAFB]/15",
+  },
+  "Next.js": {
+    src: "https://cdn.simpleicons.org/nextdotjs/000000/ffffff",
+    bg: "bg-black/8 dark:bg-white/10",
+  },
+  "HTML5": {
+    src: "https://cdn.simpleicons.org/html5/E34F26",
+    bg: "bg-[#E34F26]/10 dark:bg-[#E34F26]/20",
+  },
+  "CSS3": {
+    src: "https://cdn.simpleicons.org/css/1572B6",
+    bg: "bg-[#1572B6]/10 dark:bg-[#1572B6]/20",
+  },
+  "Tailwind CSS": {
+    src: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
+    bg: "bg-[#06B6D4]/10 dark:bg-[#06B6D4]/20",
+  },
+  "Node.js": {
+    src: "https://cdn.simpleicons.org/nodedotjs/339933",
+    bg: "bg-[#339933]/10 dark:bg-[#339933]/20",
+  },
+  "Express.js": {
+    src: "https://cdn.simpleicons.org/express/000000/ffffff",
+    bg: "bg-black/8 dark:bg-white/10",
+  },
+  "Laravel": {
+    src: "https://cdn.simpleicons.org/laravel/FF2D20",
+    bg: "bg-[#FF2D20]/10 dark:bg-[#FF2D20]/20",
+  },
+  "MongoDB": {
+    src: "https://cdn.simpleicons.org/mongodb/47A248",
+    bg: "bg-[#47A248]/10 dark:bg-[#47A248]/20",
+  },
+  "PostgreSQL": {
+    src: "https://cdn.simpleicons.org/postgresql/4169E1",
+    bg: "bg-[#4169E1]/10 dark:bg-[#4169E1]/20",
+  },
+  "Oracle": {
+    src: "https://cdn.simpleicons.org/oracle/F80000",
+    bg: "bg-[#F80000]/10 dark:bg-[#F80000]/20",
+  },
+  "Firebase": {
+    src: "https://cdn.simpleicons.org/firebase/FFCA28",
+    bg: "bg-[#FFCA28]/10 dark:bg-[#FFCA28]/20",
+  },
+  "Styled Components": {
+    src: "https://cdn.simpleicons.org/styledcomponents/DB7093",
+    bg: "bg-[#DB7093]/10 dark:bg-[#DB7093]/20",
+  },
+  "Docker": {
+    src: "https://cdn.simpleicons.org/docker/2496ED",
+    bg: "bg-[#2496ED]/10 dark:bg-[#2496ED]/20",
+  },
+  "Kubernetes": {
+    src: "https://cdn.simpleicons.org/kubernetes/326CE5",
+    bg: "bg-[#326CE5]/10 dark:bg-[#326CE5]/20",
+  },
+  "GitHub Actions": {
+    src: "https://cdn.simpleicons.org/githubactions/2088FF",
+    bg: "bg-[#2088FF]/10 dark:bg-[#2088FF]/20",
+  },
+  "Vercel": {
+    src: "https://cdn.simpleicons.org/vercel/000000/ffffff",
+    bg: "bg-black/8 dark:bg-white/10",
+  },
+  "AWS S3": {
+    src: "https://cdn.simpleicons.org/amazons3/569A31",
+    bg: "bg-[#569A31]/10 dark:bg-[#569A31]/20",
+  },
+  "GitHub": {
+    src: "https://cdn.simpleicons.org/github/181717/ffffff",
+    bg: "bg-black/8 dark:bg-white/10",
+  },
+  "Jest": {
+    src: "https://cdn.simpleicons.org/jest/C21325",
+    bg: "bg-[#C21325]/10 dark:bg-[#C21325]/20",
+  },
+  "Postman": {
+    src: "https://cdn.simpleicons.org/postman/FF6C37",
+    bg: "bg-[#FF6C37]/10 dark:bg-[#FF6C37]/20",
+  },
+  "Jira": {
+    src: "https://cdn.simpleicons.org/jira/0052CC",
+    bg: "bg-[#0052CC]/10 dark:bg-[#0052CC]/20",
+  },
+  "Cursor AI": {
+    src: "https://www.google.com/s2/favicons?domain=cursor.com&sz=64",
+    bg: "bg-rose-100 dark:bg-rose-500/15",
+  },
+  "GitHub Copilot": {
+    src: "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+    bg: "bg-slate-100 dark:bg-slate-500/15",
+  },
+  "Claude": {
+    src: "https://www.google.com/s2/favicons?domain=claude.ai&sz=64",
+    bg: "bg-orange-100 dark:bg-orange-500/15",
+  },
+  "OpenAI Codex": {
+    src: "https://www.google.com/s2/favicons?domain=openai.com&sz=64",
+    bg: "bg-emerald-100 dark:bg-emerald-500/15",
+  },
+  "Cloudinary": {
+    src: "https://cdn.simpleicons.org/cloudinary/3448C5",
+    bg: "bg-[#3448C5]/10 dark:bg-[#3448C5]/20",
+  },
+  "ServiceNow": {
+    src: "https://cdn.simpleicons.org/servicenow/81B5A1",
+    bg: "bg-[#81B5A1]/10 dark:bg-[#81B5A1]/20",
+  },
 };
 
 const skillCards: SkillCard[] = [
   {
-    title: "Languages & Frontend",
+    title: "Frontend",
     icon: "frontend",
-    maxItems: 8,
     summary:
-      "Core frontend languages and frameworks for modern, responsive web apps.",
-    items: [
-      "JavaScript (ES6+)",
-      "TypeScript",
-      "React",
-      "Next.js",
-      "HTML5",
-      "CSS3/Sass",
+      "Modern UI work for fast, polished, responsive products.",
+    highlights: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
+    sections: [
+      {
+        label: "Frontend Stack",
+        details:
+          "JavaScript (ES6+), TypeScript, React, Next.js, HTML5, CSS3, Sass, Tailwind CSS, and responsive UI development.",
+      },
+      {
+        label: "UI Engineering",
+        details:
+          "Reusable components, landing pages, dashboards, e-commerce flows, admin panels, and polished mobile-first experiences.",
+      },
+      {
+        label: "Application Features",
+        details:
+          "Authentication flows, protected routes, form-heavy interfaces, dynamic filtering, media-rich layouts, and API-connected pages.",
+      },
     ],
   },
   {
-    title: "Backend & Databases",
+    title: "Backend",
     icon: "backend",
-    maxItems: 8,
     summary:
-      "Building APIs and data layers with scalable backend architecture.",
-    items: [
-      "Node.js",
-      "Express.js",
-      "Laravel",
-      "RESTful APIs",
-      "MongoDB",
-      "PostgreSQL",
-      "Oracle",
+      "API-first backend work with solid integrations and business logic.",
+    highlights: ["Node.js", "Express.js", "Laravel", "GitHub"],
+    sections: [
+      {
+        label: "Backend Stack",
+        details:
+          "Node.js, Express.js, Laravel, REST API development, server-side routing, and business logic implementation.",
+      },
+      {
+        label: "API Capabilities",
+        details:
+          "REST API development, authentication APIs, protected routes, request validation, server-side routing, and business logic implementation.",
+      },
+      {
+        label: "Integrations",
+        details:
+          "Cloudinary, payment and third-party service integrations, asset handling, authentication APIs, and deployment-ready backend services.",
+      },
     ],
   },
   {
-    title: "DevOps & Tools",
-    icon: "devops",
-    maxItems: 10,
+    title: "Databases",
+    icon: "backend",
     summary:
-      "Deployment, automation, testing, and collaboration tools for production delivery.",
-    items: [
-      "GitHub",
-      "Docker",
-      "Kubernetes",
-      "CI/CD (GitHub Actions)",
-      "Vercel",
-      "DigitalOcean",
-      "Linux",
-      "Postman",
-      "AWS S3",
-      "Cloudinary",
-      "ServiceNow",
-      "PuTTY",
-      "Jira",
-      "Firebase",
-      "Jest / Testing Library",
+      "Practical database work across product and CRUD-heavy apps.",
+    highlights: ["MongoDB", "PostgreSQL", "Oracle", "Firebase"],
+    sections: [
+      {
+        label: "Primary Databases",
+        details:
+          "MongoDB, PostgreSQL, Oracle, and Firebase across full-stack apps, dashboards, and CRUD-heavy product flows.",
+      },
+      {
+        label: "Data Work",
+        details:
+          "Schema-aware feature development, collection and relational modeling, query-driven screens, and structured content handling.",
+      },
+      {
+        label: "Product Usage",
+        details:
+          "Lead management, authentication data, booking and commerce flows, analytics-oriented dashboards, and media-linked records.",
+      },
+    ],
+  },
+  {
+    title: "DevOps",
+    icon: "devops",
+    summary:
+      "Deployment and infra tools for shipping and maintaining products.",
+    highlights: ["Docker", "Kubernetes", "GitHub Actions", "Vercel", "AWS S3"],
+    sections: [
+      {
+        label: "Deployment & Infra",
+        details:
+          "Vercel, DigitalOcean, Linux environments, AWS S3, Docker, Kubernetes, and production deployment workflows.",
+      },
+      {
+        label: "Workflow Automation",
+        details:
+          "Git, GitHub, CI/CD with GitHub Actions, environment-aware builds, release iteration, and delivery coordination.",
+      },
+      {
+        label: "Testing & Ops",
+        details:
+          "Postman, Jest, Testing Library, debugging support tools, ServiceNow, and practical issue-tracking through Jira.",
+      },
+    ],
+  },
+  {
+    title: "Tools",
+    icon: "devops",
+    summary:
+      "Testing, debugging, and delivery tools for day-to-day execution.",
+    highlights: ["Jest", "Postman", "Jira", "Cloudinary", "ServiceNow"],
+    sections: [
+      {
+        label: "Testing & Validation",
+        details:
+          "Jest, Testing Library, Postman, manual QA passes, API validation, and practical debugging during implementation.",
+      },
+      {
+        label: "Team Workflow",
+        details:
+          "Jira for issue tracking, GitHub for collaboration, ServiceNow support workflows, and structured delivery across moving priorities.",
+      },
+      {
+        label: "Operational Tools",
+        details:
+          "Cloudinary for asset workflows, Linux environments, deployment checks, and support tooling tied to real project execution.",
+      },
+    ],
+  },
+  {
+    title: "AI Tools",
+    icon: "frontend",
+    summary:
+      "AI tools that speed up coding, debugging, and codebase work.",
+    highlights: ["Cursor AI", "GitHub Copilot", "Claude", "OpenAI Codex"],
+    sections: [
+      {
+        label: "AI Workflow",
+        details:
+          "GitHub Copilot, Cursor AI, Claude, and OpenAI Codex for faster coding, refactoring, debugging, and solution exploration.",
+      },
+      {
+        label: "Practical Usage",
+        details:
+          "Prompt-driven development support, documentation synthesis, code generation review, and AI-assisted iteration during feature delivery.",
+      },
+      {
+        label: "Engineering Mindset",
+        details:
+          "Using AI as a multiplier for shipping quality software while validating outputs, preserving maintainability, and keeping product context central.",
+      },
     ],
   },
 ];
@@ -204,21 +419,43 @@ const aiProductivityTools: AIProductivityTool[] = [
   },
 ];
 
-const projects = [
+type ProjectCard = {
+  title: string;
+  coverKey: string;
+  thumbnail: string;
+  href: string;
+  category: string;
+  summary: string;
+  architecture: string;
+  focus: string;
+  stack: string[];
+  capabilities: string[];
+  cta: string;
+};
+
+const projects: ProjectCard[] = [
   {
     title: "Beyondwalls - Real Estate Property Listing",
     coverKey: "beyondwalls",
     thumbnail: "/project-thumb-1.png",
-    description:
-      "A premium Indian real estate platform featuring advanced property search, developer showcases, and conversion-optimized listing pages.",
     href: "https://www.beyondwalls.com/",
-    points: [
+    category: "Real Estate Platform",
+    summary:
+      "Property discovery platform built for search-heavy journeys and lead-focused listing experiences.",
+    architecture:
+      "Next.js architecture with component-driven listing pages and SSR-friendly catalog browsing.",
+    focus:
+      "Focused on scalable UI, responsive performance, and lead capture.",
+    stack: [
       "Next.js",
       "React",
       "Tailwind CSS",
-      "Real Estate Tech",
-      "Lead Gen",
+    ],
+    capabilities: [
+      "Search-first UX",
+      "Listing architecture",
       "Responsive UI",
+      "Lead generation flows",
     ],
     cta: "gradient",
   },
@@ -226,33 +463,24 @@ const projects = [
     title: "Kylas - Sales CRM Platform",
     coverKey: "kylas",
     thumbnail: "/project-thumb-2.png",
-    description:
-      "A comprehensive sales CRM designed to streamline lead management, pipeline tracking, and team collaboration for high-growth businesses.",
     href: "https://kylas.io/",
-    points: [
-      "React.js",
+    category: "B2B SaaS CRM",
+    summary:
+      "Sales CRM built around lead management, pipeline visibility, and operational workflows.",
+    architecture:
+      "Modular React frontend with Node.js and Express services for dashboard-heavy workflows.",
+    focus:
+      "Built maintainable SaaS modules and CRM-oriented data views.",
+    stack: [
+      "React",
       "Node.js",
       "Express.js",
-      "CRM Architecture",
-      "Data Analytics",
-      "B2B SaaS",
     ],
-    cta: "gradient",
-  },
-  {
-    title: "Modern Admin Dashboard - React & Chart-Based UI",
-    coverKey: "admin-dashboard",
-    thumbnail: "/project-thumb-1.png",
-    description:
-      "A sleek and responsive admin dashboard with analytics, user stats, dark/light mode, sidebar navigation, and interactive charts for operational insights.",
-    href: "#",
-    points: [
-      "React.js",
-      "JavaScript",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Chart UI",
+    capabilities: [
+      "CRM workflows",
+      "Data-heavy dashboards",
+      "B2B SaaS modules",
+      "Operational UI",
     ],
     cta: "gradient",
   },
@@ -260,67 +488,25 @@ const projects = [
     title: "UrbanCart (React + Laravel)",
     coverKey: "urbancart",
     thumbnail: "/project-thumb-2.png",
-    description:
-      "Indian premium furniture and decor e-commerce platform with payments, tracking integrations, and a conversion-focused storefront experience.",
     href: "https://urbancart.in/",
-    points: [
-      "React.js",
-      "HTML/CSS",
+    category: "E-commerce Storefront",
+    summary:
+      "Premium commerce storefront balancing polished merchandising with checkout and fulfillment flows.",
+    architecture:
+      "React storefront integrated with Laravel logic and third-party payment workflows.",
+    focus:
+      "Focused on storefront UX, integrations, and conversion-oriented user journeys.",
+    stack: [
+      "React",
+      "Laravel",
       "JavaScript",
-      "Razorpay/PayPal",
-      "Shopify",
-      "Analytics",
+      "Cloudinary",
     ],
-    cta: "gradient",
-  },
-  {
-    title: "Tomato - Food Delivery App",
-    coverKey: "tomato",
-    thumbnail: "/project-thumb-3.png",
-    description:
-      "React-based food delivery app featuring authentication, menu browsing, cart flows, and smooth client-side routing for a fast SPA experience.",
-    href: "https://app-food-tomato.netlify.app/",
-    points: [
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Routing",
-      "Authentication",
-    ],
-    cta: "gradient",
-  },
-  {
-    title: "VidTube - Modern YouTube UI Clone",
-    coverKey: "vidtube",
-    thumbnail: "/project-thumb-1.png",
-    description:
-      "YouTube-inspired streaming app with responsive layouts, search, and channel/video browsing for a dynamic media-style frontend.",
-    href: "https://vidtube-sable.vercel.app/",
-    points: [
-      "React.js",
-      "Context API",
-      "Axios",
-      "HTML/CSS",
-      "JavaScript",
-      "Responsive UI",
-    ],
-    cta: "gradient",
-  },
-  {
-    title: "Netflix Clone - React Movie Streaming UI",
-    coverKey: "netflix",
-    thumbnail: "/project-thumb-2.png",
-    description:
-      "Netflix-style movie browsing interface with dynamic content rows, banners, and polished transitions using modern React patterns.",
-    href: "https://netflix-clone-sooty-psi-69.vercel.app/",
-    points: [
-      "React.js",
-      "Styled Components",
-      "Material UI",
-      "Framer",
-      "Firebase",
-      "TMDb API",
+    capabilities: [
+      "Commerce UX",
+      "Payment integrations",
+      "Catalog presentation",
+      "Conversion-first pages",
     ],
     cta: "gradient",
   },
@@ -328,16 +514,25 @@ const projects = [
     title: "Prescripto - Doctor Appointment App",
     coverKey: "prescripto",
     thumbnail: "/project-thumb-3.png",
-    description:
-      "Full-stack MERN app for managing appointments and prescriptions with secure data handling and streamlined doctor workflows.",
     href: "https://prescripto.vercel.app/",
-    points: [
-      "React.js",
+    category: "Healthcare Workflow App",
+    summary:
+      "Appointment and prescription workflow app built around secure, role-based user flows.",
+    architecture:
+      "MERN architecture with React modules, Express APIs, and MongoDB-backed workflows.",
+    focus:
+      "Focused on patient-doctor journeys, booking logic, and secure CRUD flows.",
+    stack: [
+      "React",
       "Node.js",
       "Express.js",
       "MongoDB",
-      "MERN Stack",
-      "Secure Data",
+    ],
+    capabilities: [
+      "Role-based flows",
+      "Secure CRUD",
+      "Booking workflows",
+      "Healthcare UI",
     ],
     cta: "gradient",
   },
@@ -345,50 +540,24 @@ const projects = [
     title: "The Wild Oasis (Next.js)",
     coverKey: "wild-oasis",
     thumbnail: "/project-thumb-1.png",
-    description:
-      "Hotel management web app with modern dashboard patterns, filtering, stats, and strong component-based architecture in Next.js.",
     href: "https://the-wild-oasis-website.vercel.app/",
-    points: [
+    category: "Hospitality Management",
+    summary:
+      "Hotel operations app for cabin management, bookings, and dashboard workflows.",
+    architecture:
+      "Next.js dashboard architecture with reusable admin components and filtering flows.",
+    focus:
+      "Focused on admin UX, filtering systems, and operational product design.",
+    stack: [
       "Next.js",
       "React",
       "Styled Components",
-      "SSR Benefits",
-      "Dashboard UI",
-      "Filtering",
     ],
-    cta: "gradient",
-  },
-  {
-    title: "Omnifood - Nutrition App",
-    coverKey: "omnifood",
-    thumbnail: "/project-thumb-2.png",
-    description:
-      "Responsive landing page for an AI-powered nutrition service with strong visual hierarchy and clean section structure.",
-    href: "https://omnifood.dev/",
-    points: [
-      "HTML/CSS",
-      "SCSS",
-      "UI/UX",
-      "Landing Page",
-      "Performance",
-      "Responsive",
-    ],
-    cta: "gradient",
-  },
-  {
-    title: "JWT Authentication",
-    coverKey: "jwt-auth",
-    thumbnail: "/project-thumb-3.png",
-    description:
-      "Authentication system using JWT with secure login/signup flows and protected API routes across client and server.",
-    href: "https://mern-auth-client-seven.vercel.app/",
-    points: [
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "JWT/Bcrypt",
-      "Mongoose",
-      "Protected Routes",
+    capabilities: [
+      "Dashboard architecture",
+      "Filtering systems",
+      "Admin workflows",
+      "Design systems",
     ],
     cta: "gradient",
   },
@@ -396,16 +565,178 @@ const projects = [
     title: "Imagify - Image Generator",
     coverKey: "imagify",
     thumbnail: "/project-thumb-1.png",
-    description:
-      "AI-powered image generation app that turns text prompts into visuals for creators, marketers, and product ideation workflows.",
     href: "https://imagify-shozab.vercel.app/",
-    points: [
-      "React.js",
+    category: "AI Product Build",
+    summary:
+      "AI image generation product built around prompt input, auth, and creator workflows.",
+    architecture:
+      "React frontend with Node.js, Express, auth flows, and Firebase-backed support.",
+    focus:
+      "Focused on usable AI workflows, prompt handling, and reliable product behavior.",
+    stack: [
+      "React",
       "Node.js",
       "Express.js",
-      "JWT/Bcrypt",
       "Firebase",
-      "AI Generation",
+    ],
+    capabilities: [
+      "AI workflow UI",
+      "Auth flows",
+      "Prompt handling",
+      "Product integration",
+    ],
+    cta: "gradient",
+  },
+  {
+    title: "JWT Authentication",
+    coverKey: "jwt-auth",
+    thumbnail: "/project-thumb-3.png",
+    href: "https://mern-auth-client-seven.vercel.app/",
+    category: "Security Foundation",
+    summary:
+      "Reusable auth system for sign-up, login, token validation, and protected routes.",
+    architecture:
+      "MERN auth flow with Express APIs, JWT sessions, and guarded React routes.",
+    focus:
+      "Focused on secure access control and reusable API protection.",
+    stack: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+    capabilities: [
+      "JWT auth",
+      "Protected routes",
+      "API security",
+      "Reusable auth base",
+    ],
+    cta: "gradient",
+  },
+  {
+    title: "Modern Admin Dashboard - React & Chart-Based UI",
+    coverKey: "admin-dashboard",
+    thumbnail: "/project-thumb-1.png",
+    href: "#",
+    category: "Analytics Dashboard",
+    summary:
+      "Admin dashboard built for analytics, user insights, and operations-focused monitoring.",
+    architecture:
+      "React-based dashboard architecture with chart modules, reusable panels, and API-connected data views.",
+    focus:
+      "Focused on data presentation, dashboard UX, and modular admin components.",
+    stack: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+    capabilities: [
+      "Dashboard UI",
+      "Chart-driven views",
+      "Operational analytics",
+      "Modular panels",
+    ],
+    cta: "gradient",
+  },
+  {
+    title: "Tomato - Food Delivery App",
+    coverKey: "tomato",
+    thumbnail: "/project-thumb-3.png",
+    href: "https://app-food-tomato.netlify.app/",
+    category: "Consumer Delivery App",
+    summary:
+      "Food delivery app built around menu discovery, cart flows, and fast client-side interactions.",
+    architecture:
+      "React frontend with Node.js, Express, and MongoDB supporting routing, auth, and order-oriented workflows.",
+    focus:
+      "Focused on smooth SPA behavior, cart UX, and user-facing ordering flows.",
+    stack: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+    capabilities: [
+      "Cart flows",
+      "Menu browsing",
+      "SPA routing",
+      "Auth flows",
+    ],
+    cta: "gradient",
+  },
+  {
+    title: "VidTube - Modern YouTube UI Clone",
+    coverKey: "vidtube",
+    thumbnail: "/project-thumb-1.png",
+    href: "https://vidtube-sable.vercel.app/",
+    category: "Media Interface",
+    summary:
+      "Video browsing interface inspired by streaming platforms with search and responsive media layouts.",
+    architecture:
+      "React frontend using component-based media screens, Context API state sharing, and API-driven content rendering.",
+    focus:
+      "Focused on responsive layout systems, content browsing, and scalable frontend composition.",
+    stack: [
+      "React",
+      "JavaScript",
+      "TypeScript",
+    ],
+    capabilities: [
+      "Media-style UI",
+      "Responsive layouts",
+      "Content browsing",
+      "Shared state",
+    ],
+    cta: "gradient",
+  },
+  {
+    title: "Netflix Clone - React Movie Streaming UI",
+    coverKey: "netflix",
+    thumbnail: "/project-thumb-2.png",
+    href: "https://netflix-clone-sooty-psi-69.vercel.app/",
+    category: "Streaming UI",
+    summary:
+      "Movie streaming interface focused on immersive browsing, banners, and dynamic content rows.",
+    architecture:
+      "React-based UI with styled component patterns, API-fed content sections, and reusable display modules.",
+    focus:
+      "Focused on polished visual systems, motion-aware UI, and entertainment-style browsing.",
+    stack: [
+      "React",
+      "Firebase",
+      "JavaScript",
+    ],
+    capabilities: [
+      "Visual polish",
+      "Dynamic rows",
+      "Reusable UI",
+      "API content feeds",
+    ],
+    cta: "gradient",
+  },
+  {
+    title: "Omnifood - Nutrition App",
+    coverKey: "omnifood",
+    thumbnail: "/project-thumb-2.png",
+    href: "https://omnifood.dev/",
+    category: "Marketing Experience",
+    summary:
+      "Responsive product marketing site for a nutrition brand with strong hierarchy and landing-page clarity.",
+    architecture:
+      "Frontend-first build centered on semantic layout, section composition, and performance-conscious responsive styling.",
+    focus:
+      "Focused on visual hierarchy, conversion-friendly storytelling, and clean responsive execution.",
+    stack: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+    ],
+    capabilities: [
+      "Landing page UX",
+      "Responsive design",
+      "Performance-minded UI",
+      "Visual hierarchy",
     ],
     cta: "gradient",
   },
@@ -495,7 +826,7 @@ function resolveProjectCover(
   const targetKeys = [
     normalizeKey(project.coverKey),
     normalizeKey(project.title),
-    ...project.points.slice(0, 2).map((p) => normalizeKey(p)),
+    ...project.stack.slice(0, 2).map((p) => normalizeKey(p)),
   ];
 
   const exactMatch = covers.find((cover) =>
@@ -514,39 +845,6 @@ function resolveProjectCover(
 function CellDots() {
   return null;
 }
-
-const skillIconMap: Record<string, { src: string; bg: string }> = {
-  // Frontend
-  "JavaScript (ES6+)": { src: "https://cdn.simpleicons.org/javascript/F7DF1E", bg: "bg-[#F7DF1E]/15" },
-  "TypeScript":        { src: "https://cdn.simpleicons.org/typescript/3178C6", bg: "bg-[#3178C6]/15" },
-  "React":             { src: "https://cdn.simpleicons.org/react/61DAFB", bg: "bg-[#61DAFB]/15" },
-  "Next.js":           { src: "https://cdn.simpleicons.org/nextdotjs/000000/ffffff", bg: "bg-black/8 dark:bg-white/10" },
-  "HTML5":             { src: "https://cdn.simpleicons.org/html5/E34F26", bg: "bg-[#E34F26]/15" },
-  "CSS3/Sass":         { src: "https://cdn.simpleicons.org/sass/CC6699", bg: "bg-[#CC6699]/15" },
-  // Backend
-  "Node.js":           { src: "https://cdn.simpleicons.org/nodedotjs/339933", bg: "bg-[#339933]/15" },
-  "Express.js":        { src: "https://cdn.simpleicons.org/express/000000/ffffff", bg: "bg-black/8 dark:bg-white/10" },
-  "Laravel":           { src: "https://cdn.simpleicons.org/laravel/FF2D20", bg: "bg-[#FF2D20]/15" },
-  "RESTful APIs":      { src: "https://cdn.simpleicons.org/openapiinitiative/6BA539", bg: "bg-[#6BA539]/15" },
-  "MongoDB":           { src: "https://cdn.simpleicons.org/mongodb/47A248", bg: "bg-[#47A248]/15" },
-  "PostgreSQL":        { src: "https://cdn.simpleicons.org/postgresql/4169E1", bg: "bg-[#4169E1]/15" },
-  "Oracle":            { src: "https://cdn.simpleicons.org/oracle/F80000", bg: "bg-[#F80000]/15" },
-  // DevOps & Tools
-  "GitHub":            { src: "https://cdn.simpleicons.org/github/181717/ffffff", bg: "bg-black/8 dark:bg-white/10" },
-  "Docker":            { src: "https://cdn.simpleicons.org/docker/2496ED", bg: "bg-[#2496ED]/15" },
-  "Kubernetes":        { src: "https://cdn.simpleicons.org/kubernetes/326CE5", bg: "bg-[#326CE5]/15" },
-  "CI/CD (GitHub Actions)": { src: "https://cdn.simpleicons.org/githubactions/2088FF", bg: "bg-[#2088FF]/15" },
-  "Vercel":            { src: "https://cdn.simpleicons.org/vercel/000000/ffffff", bg: "bg-black/8 dark:bg-white/10" },
-  "DigitalOcean":      { src: "https://cdn.simpleicons.org/digitalocean/0080FF", bg: "bg-[#0080FF]/15" },
-  "Linux":             { src: "https://cdn.simpleicons.org/linux/FCC624", bg: "bg-[#FCC624]/15" },
-  "Postman":           { src: "https://cdn.simpleicons.org/postman/FF6C37", bg: "bg-[#FF6C37]/15" },
-  "AWS S3":            { src: "https://cdn.simpleicons.org/amazons3/569A31", bg: "bg-[#569A31]/15" },
-  "Cloudinary":        { src: "https://cdn.simpleicons.org/cloudinary/3448C5", bg: "bg-[#3448C5]/15" },
-  "ServiceNow":        { src: "https://cdn.simpleicons.org/servicenow/81B5A1", bg: "bg-[#81B5A1]/15" },
-  "Jira":              { src: "https://cdn.simpleicons.org/jira/0052CC", bg: "bg-[#0052CC]/15" },
-  "Firebase":          { src: "https://cdn.simpleicons.org/firebase/FFCA28", bg: "bg-[#FFCA28]/15" },
-  "Jest / Testing Library": { src: "https://cdn.simpleicons.org/jest/C21325", bg: "bg-[#C21325]/15" },
-};
 
 export default function Home() {
   const companyLogos = getCompanyLogos();
@@ -876,19 +1174,19 @@ export default function Home() {
                 </h2>
                 <div className="mt-3 mx-auto h-px w-32 bg-gradient-to-r from-transparent via-fuchsia-400/70 to-transparent" />
                 <p className="ui-subtitle">
-                  Production-focused engineering strengths across frontend,
-                  backend, and DevOps.
+                  A more detailed view of the stack, delivery tooling, and
+                  engineering strengths behind the products I build.
                 </p>
               </div>
 
-              <div className="ui-section-body grid auto-rows-fr gap-5 md:grid-cols-2 xl:grid-cols-3">
+              <div className="ui-section-body grid auto-rows-fr gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {skillCards.map((card, index) => (
                   <ScrollReveal
                     key={card.title}
                     delay={index * 90}
                     className="h-full"
                   >
-                    <article className="ui-card group relative flex h-full flex-col overflow-hidden p-5 sm:p-6">
+                    <article className="ui-card group relative flex h-full flex-col overflow-hidden p-4 sm:p-5">
                       <div className={`ui-card-glow bg-gradient-to-br ${
                         card.icon === "frontend" 
                         ? "from-sky-400 to-blue-600" 
@@ -897,9 +1195,9 @@ export default function Home() {
                         : "from-fuchsia-400 to-violet-600"
                       }`} />
                       
-                      <div className="relative z-10 mb-6 flex items-start justify-between">
+                      <div className="relative z-10 mb-4 flex items-start justify-between">
                         <div className="flex items-center gap-3">
-                          <div className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br p-[1px] shadow-sm ${
+                          <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br p-[1px] shadow-sm ${
                             card.icon === "frontend" 
                             ? "from-sky-400 to-blue-500" 
                             : card.icon === "backend" 
@@ -911,7 +1209,7 @@ export default function Home() {
                             </div>
                           </div>
                           <div>
-                            <h3 className={`text-base font-bold leading-tight ${
+                            <h3 className={`text-[0.95rem] font-bold leading-tight ${
                               card.icon === "frontend"
                                 ? "text-sky-700 dark:text-sky-300"
                                 : card.icon === "backend"
@@ -930,33 +1228,52 @@ export default function Home() {
                         </span>
                       </div>
 
-                      <p className="mt-4 text-sm leading-6 text-neutral-600 dark:text-neutral-300">
+                      <p className="mt-2 text-[0.92rem] leading-6 text-neutral-600 dark:text-neutral-300">
                         {card.summary}
                       </p>
 
-                      <ul className="mt-6 flex flex-wrap gap-2">
-                        {card.items.slice(0, card.maxItems).map((item) => {
-                          const iconMeta = skillIconMap[item];
+                      <div className="mt-4 flex flex-wrap gap-1.5">
+                        {card.highlights.map((item) => {
+                          const logo = techBadgeMap[item];
+
                           return (
-                            <li
+                            <span
                               key={item}
-                              className="ui-chip inline-flex items-center gap-1.5 px-2.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.08em] transition-colors group-hover:border-neutral-300 dark:group-hover:border-white/28"
+                              className="ui-chip inline-flex items-center gap-1.5 px-2 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.08em]"
                             >
-                              {iconMeta && (
-                                <span className={`inline-flex h-3.5 w-3.5 flex-shrink-0 items-center justify-center rounded-[3px] ${iconMeta.bg}`}>
+                              {logo ? (
+                                <span className={`inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-sm ${logo.bg}`}>
                                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                                  <img src={iconMeta.src} alt="" width={10} height={10} className="h-2.5 w-2.5 object-contain" aria-hidden="true" />
+                                  <img
+                                    src={logo.src}
+                                    alt=""
+                                    width={12}
+                                    height={12}
+                                    className="h-3 w-3 object-contain"
+                                    aria-hidden="true"
+                                  />
                                 </span>
-                              )}
+                              ) : null}
                               {item}
-                            </li>
+                            </span>
                           );
                         })}
-                        {card.items.length > card.maxItems ? (
-                          <li className="ui-chip bg-neutral-100 px-2.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-neutral-500 dark:border-white/18 dark:bg-white/5 dark:text-neutral-300">
-                            +{card.items.length - card.maxItems} more
+                      </div>
+
+                      <ul className="mt-5 space-y-3">
+                        {card.sections.map((section) => (
+                          <li
+                            key={section.label}
+                            className="border-l border-neutral-200/80 pl-3 text-[0.92rem] leading-6 text-neutral-600 dark:border-white/12 dark:text-neutral-300"
+                          >
+                            <span className="block font-semibold text-neutral-900 dark:text-neutral-100">
+                              {section.label}
+                            </span>
+                            <span className="mt-1 block">
+                              {section.details}
+                            </span>
                           </li>
-                        ) : null}
+                        ))}
                       </ul>
 
                     </article>
@@ -994,7 +1311,7 @@ export default function Home() {
                         key={set}
                         className="flex shrink-0 items-center gap-6 pr-6"
                       >
-                        {aiProductivityTools.map((tool, index) => (
+                        {aiProductivityTools.map((tool) => (
                           <article key={`${set}-${tool.name}`} className="ui-ai-node group w-[300px] sm:w-[340px] shrink-0">
                             {/* Orbital Accent Background */}
                             <div className={`ui-ai-node-accent bg-gradient-to-br ${tool.accent}`} />
@@ -1063,8 +1380,8 @@ export default function Home() {
                   </h2>
                   <div className="mt-3 mx-auto h-px w-36 bg-gradient-to-r from-transparent via-fuchsia-400/70 to-transparent" />
                   <p className="ui-subtitle">
-                    A curated mix of production web platforms, SaaS products,
-                    and full-stack builds across different domains.
+                    Architecture-led product work across SaaS, commerce,
+                    healthcare, AI, and operational web platforms.
                     <span className="mt-3 block rounded-md border border-amber-300/60 bg-amber-100/70 px-4 py-2 font-semibold text-amber-950 shadow-sm dark:border-amber-300/30 dark:bg-amber-300/10 dark:text-amber-100">
                       Some client projects are confidential, so only selected
                       public work is shown here.
@@ -1080,7 +1397,7 @@ export default function Home() {
                     delay={(index % 3) * 90}
                     className="h-full"
                   >
-                    <article className="ui-card group relative flex h-full min-h-[370px] flex-col overflow-hidden p-4 sm:min-h-[460px] sm:p-5">
+                    <article className="ui-card group relative flex h-full min-h-[520px] flex-col overflow-hidden p-4 sm:min-h-[580px] sm:p-5">
                       <div className="ui-card-glow bg-gradient-to-tr from-sky-400 via-fuchsia-500 to-amber-400" />
                       
                       <div className="relative z-10 mb-5 flex items-start justify-between">
@@ -1093,6 +1410,9 @@ export default function Home() {
                             </div>
                           </div>
                           <div>
+                            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
+                              {project.category}
+                            </p>
                             <h3 className="text-base font-bold text-neutral-900 dark:text-neutral-50">
                               {project.title}
                             </h3>
@@ -1116,24 +1436,67 @@ export default function Home() {
                       </div>
 
                       <div className="relative z-10 mt-5 flex flex-1 flex-col">
-                        <p className="text-sm leading-6 text-neutral-600 dark:text-neutral-400 line-clamp-3">
-                          {project.description}
+                        <p className="text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+                          {project.summary}
                         </p>
 
-                        <ul className="mt-4 flex flex-wrap gap-2">
-                          {project.points.slice(0, 4).map((point) => (
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {project.stack.map((item) => {
+                            const logo = techBadgeMap[item];
+
+                            return (
+                              <span
+                                key={item}
+                                className="ui-chip inline-flex items-center gap-1.5 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.08em] dark:border-white/20"
+                              >
+                                {logo ? (
+                                  <span className={`inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-sm ${logo.bg}`}>
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                      src={logo.src}
+                                      alt=""
+                                      width={12}
+                                      height={12}
+                                      className="h-3 w-3 object-contain"
+                                      aria-hidden="true"
+                                    />
+                                  </span>
+                                ) : null}
+                                {item}
+                              </span>
+                            );
+                          })}
+                        </div>
+
+                        <div className="mt-5 space-y-4">
+                          <div className="border-l border-sky-200/80 pl-4 dark:border-sky-400/20">
+                            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-sky-700 dark:text-sky-300">
+                              Architecture
+                            </p>
+                            <p className="mt-1 text-sm leading-6 text-neutral-600 dark:text-neutral-300">
+                              {project.architecture}
+                            </p>
+                          </div>
+
+                          <div className="border-l border-fuchsia-200/80 pl-4 dark:border-fuchsia-400/20">
+                            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-fuchsia-700 dark:text-fuchsia-300">
+                              Engineering Focus
+                            </p>
+                            <p className="mt-1 text-sm leading-6 text-neutral-600 dark:text-neutral-300">
+                              {project.focus}
+                            </p>
+                          </div>
+                        </div>
+
+                        <ul className="mt-5 flex flex-wrap gap-2">
+                          {project.capabilities.map((point) => (
                             <li
                               key={point}
-                              className="ui-chip px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.08em] dark:border-white/20"
+                              className="ui-chip px-2.5 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.08em] text-neutral-600 dark:border-white/20 dark:text-neutral-300"
                             >
                               {point}
                             </li>
                           ))}
-                          {project.points.length > 4 ? (
-                            <li className="ui-chip bg-neutral-100 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-neutral-500 dark:border-white/20 dark:bg-white/5 dark:text-neutral-300">
-                              +{project.points.length - 4} more
-                            </li>
-                          ) : null}
                         </ul>
 
                         <div className="mt-auto pt-6">
