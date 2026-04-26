@@ -515,6 +515,39 @@ function CellDots() {
   return null;
 }
 
+const skillIconMap: Record<string, { src: string; bg: string }> = {
+  // Frontend
+  "JavaScript (ES6+)": { src: "https://cdn.simpleicons.org/javascript/F7DF1E", bg: "bg-[#F7DF1E]/15" },
+  "TypeScript":        { src: "https://cdn.simpleicons.org/typescript/3178C6", bg: "bg-[#3178C6]/15" },
+  "React":             { src: "https://cdn.simpleicons.org/react/61DAFB", bg: "bg-[#61DAFB]/15" },
+  "Next.js":           { src: "https://cdn.simpleicons.org/nextdotjs/000000/ffffff", bg: "bg-black/8 dark:bg-white/10" },
+  "HTML5":             { src: "https://cdn.simpleicons.org/html5/E34F26", bg: "bg-[#E34F26]/15" },
+  "CSS3/Sass":         { src: "https://cdn.simpleicons.org/sass/CC6699", bg: "bg-[#CC6699]/15" },
+  // Backend
+  "Node.js":           { src: "https://cdn.simpleicons.org/nodedotjs/339933", bg: "bg-[#339933]/15" },
+  "Express.js":        { src: "https://cdn.simpleicons.org/express/000000/ffffff", bg: "bg-black/8 dark:bg-white/10" },
+  "Laravel":           { src: "https://cdn.simpleicons.org/laravel/FF2D20", bg: "bg-[#FF2D20]/15" },
+  "RESTful APIs":      { src: "https://cdn.simpleicons.org/openapiinitiative/6BA539", bg: "bg-[#6BA539]/15" },
+  "MongoDB":           { src: "https://cdn.simpleicons.org/mongodb/47A248", bg: "bg-[#47A248]/15" },
+  "PostgreSQL":        { src: "https://cdn.simpleicons.org/postgresql/4169E1", bg: "bg-[#4169E1]/15" },
+  "Oracle":            { src: "https://cdn.simpleicons.org/oracle/F80000", bg: "bg-[#F80000]/15" },
+  // DevOps & Tools
+  "GitHub":            { src: "https://cdn.simpleicons.org/github/181717/ffffff", bg: "bg-black/8 dark:bg-white/10" },
+  "Docker":            { src: "https://cdn.simpleicons.org/docker/2496ED", bg: "bg-[#2496ED]/15" },
+  "Kubernetes":        { src: "https://cdn.simpleicons.org/kubernetes/326CE5", bg: "bg-[#326CE5]/15" },
+  "CI/CD (GitHub Actions)": { src: "https://cdn.simpleicons.org/githubactions/2088FF", bg: "bg-[#2088FF]/15" },
+  "Vercel":            { src: "https://cdn.simpleicons.org/vercel/000000/ffffff", bg: "bg-black/8 dark:bg-white/10" },
+  "DigitalOcean":      { src: "https://cdn.simpleicons.org/digitalocean/0080FF", bg: "bg-[#0080FF]/15" },
+  "Linux":             { src: "https://cdn.simpleicons.org/linux/FCC624", bg: "bg-[#FCC624]/15" },
+  "Postman":           { src: "https://cdn.simpleicons.org/postman/FF6C37", bg: "bg-[#FF6C37]/15" },
+  "AWS S3":            { src: "https://cdn.simpleicons.org/amazons3/569A31", bg: "bg-[#569A31]/15" },
+  "Cloudinary":        { src: "https://cdn.simpleicons.org/cloudinary/3448C5", bg: "bg-[#3448C5]/15" },
+  "ServiceNow":        { src: "https://cdn.simpleicons.org/servicenow/81B5A1", bg: "bg-[#81B5A1]/15" },
+  "Jira":              { src: "https://cdn.simpleicons.org/jira/0052CC", bg: "bg-[#0052CC]/15" },
+  "Firebase":          { src: "https://cdn.simpleicons.org/firebase/FFCA28", bg: "bg-[#FFCA28]/15" },
+  "Jest / Testing Library": { src: "https://cdn.simpleicons.org/jest/C21325", bg: "bg-[#C21325]/15" },
+};
+
 export default function Home() {
   const companyLogos = getCompanyLogos();
   const projectCovers = getProjectCovers();
@@ -542,12 +575,12 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ── ── ── ── ── ── ── ── ── HERO ── ── ── ── ── ── ── ── ── */}
+      {/* â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ HERO â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ */}
       <section
         className="relative flex min-h-[100svh] flex-col overflow-hidden pt-6 pb-12 sm:pt-10 sm:pb-14 lg:h-[100svh] lg:justify-between lg:pt-8 lg:pb-10"
         data-scroll-section
       >
-          {/* ── ── Background: ambient orbs ── ── */}
+          {/* â”€â”€ â”€â”€ Background: ambient orbs â”€â”€ â”€â”€ */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <div className="animate-orb absolute -left-28 -top-28 h-[520px] w-[520px] rounded-full bg-gradient-to-br from-amber-300/30 via-orange-300/20 to-transparent blur-3xl dark:from-amber-500/18 dark:via-orange-500/10" />
             <div className="animate-orb-delay absolute -bottom-36 -right-28 h-[460px] w-[460px] rounded-full bg-gradient-to-tl from-violet-400/22 via-fuchsia-300/16 to-transparent blur-3xl dark:from-violet-500/14 dark:via-fuchsia-500/10" />
@@ -561,10 +594,24 @@ export default function Home() {
                   <span className="live-pulse h-2 w-2 rounded-full bg-emerald-500" />
                   Available for work
                 </div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200/80 bg-white/70 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-neutral-500 sm:px-3.5 sm:text-[10px] sm:tracking-[0.18em] dark:border-white/10 dark:bg-white/5 dark:text-neutral-400">
+                <div className="inline-flex items-center gap-2 rounded-full border border-violet-200/60 bg-gradient-to-r from-white/80 via-violet-50/60 to-fuchsia-50/60 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-neutral-500 shadow-sm shadow-violet-100/50 sm:px-3.5 sm:text-[10px] sm:tracking-[0.18em] dark:border-violet-500/20 dark:from-violet-500/8 dark:via-fuchsia-500/5 dark:to-white/0 dark:text-neutral-400 dark:shadow-none">
                   <span>Full-Stack Engineer</span>
                   <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-600" />
-                  <span>AI-Ready Products</span>
+                  <span className="inline-flex items-center gap-1">
+                    {/* sparkle icon */}
+                    <svg viewBox="0 0 16 16" className="h-3 w-3 flex-shrink-0" aria-hidden="true" fill="none">
+                      <path d="M8 1.5 L8.9 5.8 L13 6.5 L8.9 7.2 L8 11.5 L7.1 7.2 L3 6.5 L7.1 5.8 Z" fill="url(#ai-star-grad)" />
+                      <path d="M12 1 L12.5 2.8 L14.5 3 L12.5 3.2 L12 5 L11.5 3.2 L9.5 3 L11.5 2.8 Z" fill="url(#ai-star-grad)" opacity="0.7"/>
+                      <defs>
+                        <linearGradient id="ai-star-grad" x1="0" y1="0" x2="1" y2="1">
+                          <stop offset="0%" stopColor="#a855f7"/>
+                          <stop offset="100%" stopColor="#ec4899"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    <span className="bg-gradient-to-r from-violet-600 to-fuchsia-500 bg-clip-text font-black text-transparent dark:from-violet-400 dark:to-fuchsia-400">AI</span>
+                    <span className="text-neutral-400 dark:text-neutral-500">-Ready Products</span>
+                  </span>
                 </div>
               </div>
 
@@ -588,15 +635,46 @@ export default function Home() {
               </p>
 
               <div className="hero-fade-4 flex flex-wrap justify-center lg:justify-start gap-2">
-                {["JavaScript", "Node.js", "React", "Next.js", "TypeScript", "AI Workflows"].map((tag) => (
+                {[
+                  {
+                    label: "JavaScript",
+                    src: "https://cdn.simpleicons.org/javascript/F7DF1E",
+                    bg: "bg-[#F7DF1E]/10 dark:bg-[#F7DF1E]/15",
+                  },
+                  {
+                    label: "Node.js",
+                    src: "https://cdn.simpleicons.org/nodedotjs/339933",
+                    bg: "bg-[#339933]/10 dark:bg-[#339933]/20",
+                  },
+                  {
+                    label: "React",
+                    src: "https://cdn.simpleicons.org/react/61DAFB",
+                    bg: "bg-[#61DAFB]/10 dark:bg-[#61DAFB]/15",
+                  },
+                  {
+                    label: "Next.js",
+                    src: "https://cdn.simpleicons.org/nextdotjs/000000/ffffff",
+                    bg: "bg-black/8 dark:bg-white/10",
+                  },
+                  {
+                    label: "TypeScript",
+                    src: "https://cdn.simpleicons.org/typescript/3178C6",
+                    bg: "bg-[#3178C6]/10 dark:bg-[#3178C6]/20",
+                  },
+                ].map(({ label, src, bg }) => (
                   <span
-                    key={tag}
-                    className="ui-chip px-2.5 py-1 text-[0.72rem] sm:px-3 sm:text-xs"
+                    key={label}
+                    className="ui-chip inline-flex items-center gap-1.5 px-2.5 py-1 text-[0.72rem] sm:px-3 sm:text-xs"
                   >
-                    {tag}
+                    <span className={`inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-sm ${bg}`}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={src} alt="" width={12} height={12} className="h-3 w-3 object-contain" aria-hidden="true" />
+                    </span>
+                    {label}
                   </span>
                 ))}
               </div>
+
 
               <div className="hero-fade-5 flex items-center justify-center lg:justify-start w-full flex-wrap gap-3">
                 <a
@@ -707,7 +785,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Below-hero content container ── */}
+      {/* â”€â”€ Below-hero content container â”€â”€ */}
       <div
         className="relative z-10 mx-auto w-full max-w-[1220px] px-4 pb-24 sm:px-6 lg:px-8 lg:pb-32"
         data-scroll-root
@@ -857,20 +935,30 @@ export default function Home() {
                       </p>
 
                       <ul className="mt-6 flex flex-wrap gap-2">
-                        {card.items.slice(0, card.maxItems).map((item) => (
-                          <li
-                            key={item}
-                            className="ui-chip px-2.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.08em] transition-colors group-hover:border-neutral-300 dark:group-hover:border-white/28"
-                          >
-                            {item}
-                          </li>
-                        ))}
+                        {card.items.slice(0, card.maxItems).map((item) => {
+                          const iconMeta = skillIconMap[item];
+                          return (
+                            <li
+                              key={item}
+                              className="ui-chip inline-flex items-center gap-1.5 px-2.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.08em] transition-colors group-hover:border-neutral-300 dark:group-hover:border-white/28"
+                            >
+                              {iconMeta && (
+                                <span className={`inline-flex h-3.5 w-3.5 flex-shrink-0 items-center justify-center rounded-[3px] ${iconMeta.bg}`}>
+                                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                                  <img src={iconMeta.src} alt="" width={10} height={10} className="h-2.5 w-2.5 object-contain" aria-hidden="true" />
+                                </span>
+                              )}
+                              {item}
+                            </li>
+                          );
+                        })}
                         {card.items.length > card.maxItems ? (
                           <li className="ui-chip bg-neutral-100 px-2.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-neutral-500 dark:border-white/18 dark:bg-white/5 dark:text-neutral-300">
                             +{card.items.length - card.maxItems} more
                           </li>
                         ) : null}
                       </ul>
+
                     </article>
                   </ScrollReveal>
                 ))}
@@ -1076,18 +1164,275 @@ export default function Home() {
             </div>
           </section>
 
+          {/* â”€â”€ Education â”€â”€ */}
+          <section className="ui-section-divider" data-scroll-section>
+            <div className="relative z-10 px-1">
+              <div className="ui-section-head">
+                <p className="ui-kicker">Academic Background</p>
+                <h2 className="ui-title">Education</h2>
+                <div className="mt-3 mx-auto h-px w-32 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent" />
+                <p className="ui-subtitle">
+                  Grounded in computer science fundamentals, built on real-world engineering practice.
+                </p>
+              </div>
+
+              <div className="ui-section-body">
+                <ScrollReveal>
+                  <div className="ui-card group relative overflow-hidden p-0">
+                    <div className="ui-card-glow bg-gradient-to-br from-sky-400 to-blue-600" />
+
+                    <div className="relative z-10 grid gap-0 lg:grid-cols-[1fr_0.9fr]">
+
+                      {/* â”€â”€ Left: Degree Details â”€â”€ */}
+                      <div className="flex flex-col justify-between gap-8 p-7 sm:p-9">
+
+                        {/* Header */}
+                        <div>
+                          <div className="flex items-start gap-4">
+                            {/* College Logo Badge */}
+                            <div className="flex-shrink-0 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-400 to-blue-600 p-[2px] shadow-lg">
+                              <div className="flex h-full w-full items-center justify-center rounded-[14px] bg-white dark:bg-neutral-950">
+                                <svg viewBox="0 0 24 24" className="h-7 w-7 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                </svg>
+                              </div>
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-extrabold leading-tight tracking-tight text-neutral-900 dark:text-neutral-50 sm:text-2xl">
+                                MIT World Peace University
+                              </h3>
+                              <p className="mt-0.5 text-sm font-semibold text-sky-600 dark:text-sky-400">
+                                MITWPU Â· Pune, Maharashtra
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="mt-6 space-y-3">
+                            <div className="flex items-center gap-3">
+                              <span className="inline-flex items-center gap-1.5 rounded-full bg-sky-50 px-3 py-1 text-xs font-bold uppercase tracking-widest text-sky-700 ring-1 ring-sky-200/80 dark:bg-sky-500/10 dark:text-sky-300 dark:ring-sky-500/30">
+                                <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 8.25l7.5 7.5 7.5-7.5" /></svg>
+                                Bachelor of Technology
+                              </span>
+                            </div>
+                            <p className="text-base font-semibold text-neutral-800 dark:text-neutral-200">
+                              Computer Engineering
+                            </p>
+                            <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                              School of Computer Engineering &amp; Technology
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Meta Grid */}
+                        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                          {[
+                            { label: "Batch", value: "2017 â€“ 2021" },
+                            { label: "Duration", value: "4 Years" },
+                            { label: "Mode", value: "Full-Time" },
+                          ].map((m) => (
+                            <div key={m.label} className="rounded-2xl border border-neutral-200/80 bg-neutral-50/80 p-3 dark:border-white/10 dark:bg-white/[0.04]">
+                              <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-neutral-400 dark:text-neutral-500">{m.label}</p>
+                              <p className="mt-1 text-sm font-bold text-neutral-800 dark:text-neutral-100">{m.value}</p>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Coursework */}
+                        <div>
+                          <p className="mb-3 text-[9px] font-bold uppercase tracking-[0.18em] text-neutral-400 dark:text-neutral-500">
+                            Relevant Coursework
+                          </p>
+                          <ul className="flex flex-wrap gap-2">
+                            {[
+                              "Data Structures & Algorithms",
+                              "Operating Systems",
+                              "Database Management",
+                              "Computer Networks",
+                              "Web Technologies",
+                              "Software Engineering",
+                              "Object-Oriented Programming",
+                              "Cloud Computing",
+                            ].map((course) => (
+                              <li
+                                key={course}
+                                className="ui-chip px-2.5 py-1 text-[0.68rem] font-semibold"
+                              >
+                                {course}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      {/* â”€â”€ Right: Image Gallery â”€â”€ */}
+                      <div className="relative overflow-hidden rounded-b-3xl lg:rounded-r-3xl lg:rounded-bl-none">
+                        {/* Top image */}
+                        <div className="relative h-56 w-full overflow-hidden sm:h-64 lg:h-[55%]">
+                          <Image
+                            src="/education/MIT World Peace University (MITWPU), Pune_banner210501054449.jpg"
+                            alt="MIT World Peace University campus banner"
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/50 via-transparent to-transparent" />
+                          <span className="absolute bottom-3 left-4 rounded-full border border-white/30 bg-white/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur-sm">
+                            MITWPU Campus
+                          </span>
+                        </div>
+                        {/* Bottom two images */}
+                        <div className="grid h-44 grid-cols-2 lg:h-[45%]">
+                          <div className="relative overflow-hidden border-t border-r border-white/10">
+                            <Image
+                              src="/education/MIT WPU Pic_20260129180105_original_image_31.webp"
+                              alt="MIT WPU campus view"
+                              fill
+                              className="object-cover transition-transform duration-700 group-hover:scale-105"
+                              sizes="25vw"
+                            />
+                          </div>
+                          <div className="relative overflow-hidden border-t border-white/10">
+                            <Image
+                              src="/education/MIT-WPU-1.tif.png"
+                              alt="MIT WPU building"
+                              fill
+                              className="object-cover transition-transform duration-700 group-hover:scale-105"
+                              sizes="25vw"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </ScrollReveal>
+              </div>
+            </div>
+          </section>
+
+          {/* â”€â”€ Courses & Certifications â”€â”€ */}
+          <section className="ui-section-divider" data-scroll-section>
+            <div className="relative z-10 px-1">
+              <div className="ui-section-head">
+                <p className="ui-kicker">Learning &amp; Development</p>
+                <h2 className="ui-title">Courses &amp; Certifications</h2>
+                <div className="mt-3 mx-auto h-px w-44 bg-gradient-to-r from-transparent via-amber-400/70 to-transparent" />
+                <p className="ui-subtitle">
+                  Continuously upskilling across full-stack development, cloud, and modern web engineering.
+                </p>
+              </div>
+
+              <div className="ui-section-body grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                {[
+                  {
+                    title: "The Complete JavaScript Course 2024: From Zero to Expert!",
+                    platform: "Udemy",
+                    instructor: "Jonas Schmedtmann",
+                    category: "JavaScript",
+                    logo: "https://cdn.simpleicons.org/udemy/A435F0",
+                    accent: "from-violet-400 to-purple-600",
+                    categoryColor: "text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-500/10 ring-violet-200/80 dark:ring-violet-500/30",
+                  },
+                  {
+                    title: "Node.js, Express, MongoDB & More: The Complete Bootcamp",
+                    platform: "Udemy",
+                    instructor: "Jonas Schmedtmann",
+                    category: "Node.js",
+                    logo: "https://cdn.simpleicons.org/udemy/A435F0",
+                    accent: "from-emerald-400 to-teal-600",
+                    categoryColor: "text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 ring-emerald-200/80 dark:ring-emerald-500/30",
+                  },
+                  {
+                    title: "React - The Complete Guide (incl. Next.js, Redux)",
+                    platform: "Udemy",
+                    instructor: "Maximilian SchwarzmÃ¼ller",
+                    category: "React",
+                    logo: "https://cdn.simpleicons.org/udemy/A435F0",
+                    accent: "from-cyan-400 to-sky-600",
+                    categoryColor: "text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-500/10 ring-cyan-200/80 dark:ring-cyan-500/30",
+                  },
+                  {
+                    title: "Next.js & React â€” The Complete Guide",
+                    platform: "Udemy",
+                    instructor: "Maximilian SchwarzmÃ¼ller",
+                    category: "Next.js",
+                    logo: "https://cdn.simpleicons.org/udemy/A435F0",
+                    accent: "from-neutral-400 to-neutral-700",
+                    categoryColor: "text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-white/8 ring-neutral-200/80 dark:ring-white/15",
+                  },
+                  {
+                    title: "The Ultimate MySQL Bootcamp: Go from SQL Beginner to Expert",
+                    platform: "Udemy",
+                    instructor: "Colt Steele",
+                    category: "Database",
+                    logo: "https://cdn.simpleicons.org/udemy/A435F0",
+                    accent: "from-orange-400 to-amber-600",
+                    categoryColor: "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-500/10 ring-amber-200/80 dark:ring-amber-500/30",
+                  },
+                  {
+                    title: "Docker & Kubernetes: The Practical Guide",
+                    platform: "Udemy",
+                    instructor: "Maximilian SchwarzmÃ¼ller",
+                    category: "DevOps",
+                    logo: "https://cdn.simpleicons.org/udemy/A435F0",
+                    accent: "from-blue-400 to-indigo-600",
+                    categoryColor: "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 ring-blue-200/80 dark:ring-blue-500/30",
+                  },
+                ].map((course, index) => (
+                  <ScrollReveal key={course.title} delay={index * 80} className="h-full">
+                    <article className="ui-card group relative flex h-full flex-col overflow-hidden p-5 sm:p-6">
+                      <div className={`ui-card-glow bg-gradient-to-br ${course.accent}`} />
+
+                      <div className="relative z-10 flex flex-col gap-4 h-full">
+                        {/* Top row: platform logo + completed badge */}
+                        <div className="flex items-center justify-between">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-500/10 ring-1 ring-violet-200/60 dark:ring-violet-500/20">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={course.logo} alt={course.platform} width={20} height={20} className="h-5 w-5 object-contain" aria-hidden="true" />
+                          </div>
+                          <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest text-emerald-700 ring-1 ring-emerald-200/80 dark:bg-emerald-500/10 dark:text-emerald-400 dark:ring-emerald-500/30">
+                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                            Completed
+                          </span>
+                        </div>
+
+                        {/* Course title */}
+                        <h3 className="text-[0.9rem] font-bold leading-snug tracking-tight text-neutral-900 dark:text-neutral-50 flex-1">
+                          {course.title}
+                        </h3>
+
+                        {/* Instructor */}
+                        <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                          by <span className="font-semibold text-neutral-700 dark:text-neutral-300">{course.instructor}</span>
+                        </p>
+
+                        {/* Footer: platform + category */}
+                        <div className="flex items-center justify-between pt-2 border-t border-neutral-100 dark:border-white/8">
+                          <span className="text-xs font-semibold text-neutral-500 dark:text-neutral-400">{course.platform}</span>
+                          <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-widest ring-1 ${course.categoryColor}`}>
+                            {course.category}
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </div>
+          </section>
+
 
           {/* Footer */}
           <footer className="mt-24 border-t border-neutral-100 py-12 dark:border-white/5">
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <p className="text-sm font-bold tracking-tight text-neutral-500">
-                © {new Date().getFullYear()} Pranay Langhe<span className="text-primary-500">.</span> All rights reserved.
+                Â© {new Date().getFullYear()} Pranay Langhe<span className="text-primary-500">.</span> All rights reserved.
               </p>
               <div className="max-w-sm text-center sm:text-right">
                 <p className="text-xs italic leading-relaxed text-neutral-400 dark:text-neutral-500">
                   &quot;The only way to do great work is to love what you do.&quot;
                   <span className="mt-1 block font-bold not-italic tracking-widest text-neutral-500 dark:text-neutral-600">
-                    — STEVE JOBS
+                    â€” STEVE JOBS
                   </span>
                 </p>
               </div>
