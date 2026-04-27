@@ -976,8 +976,8 @@ export default function Home() {
 
               <div className="hero-fade-5 flex items-center justify-center lg:justify-start w-full flex-wrap gap-3">
                 <a
-                  href="/Resume-Pranay%20Langhe.pdf"
-                  download="Resume-Pranay-Langhe.pdf"
+                  href="/Pranay_Langhe_Resume.pdf"
+                  download="Pranay_Langhe_Resume.pdf"
                   className="ui-button-primary w-full sm:w-auto"
                 >
                   View Resume
