@@ -31,6 +31,10 @@ const techBadgeMap: Record<string, { src: string; bg: string }> = {
     src: "https://cdn.simpleicons.org/react/61DAFB",
     bg: "bg-[#61DAFB]/10 dark:bg-[#61DAFB]/15",
   },
+  "React Native": {
+    src: "https://cdn.simpleicons.org/react/61DAFB",
+    bg: "bg-[#61DAFB]/10 dark:bg-[#61DAFB]/15",
+  },
   "Next.js": {
     src: "https://cdn.simpleicons.org/nextdotjs/000000/ffffff",
     bg: "bg-black/8 dark:bg-white/10",
@@ -58,6 +62,14 @@ const techBadgeMap: Record<string, { src: string; bg: string }> = {
   "Laravel": {
     src: "https://cdn.simpleicons.org/laravel/FF2D20",
     bg: "bg-[#FF2D20]/10 dark:bg-[#FF2D20]/20",
+  },
+  "GraphQL": {
+    src: "https://cdn.simpleicons.org/graphql/E10098",
+    bg: "bg-[#E10098]/10 dark:bg-[#E10098]/20",
+  },
+  "REST": {
+    src: "https://cdn.simpleicons.org/openapiinitiative/6BA539",
+    bg: "bg-[#6BA539]/10 dark:bg-[#6BA539]/20",
   },
   "MongoDB": {
     src: "https://cdn.simpleicons.org/mongodb/47A248",
@@ -147,12 +159,12 @@ const skillCards: SkillCard[] = [
     icon: "frontend",
     summary:
       "Modern UI work for fast, polished, responsive products.",
-    highlights: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
+    highlights: ["JavaScript", "TypeScript", "React", "React Native", "Next.js", "Tailwind CSS"],
     sections: [
       {
         label: "Frontend Stack",
         details:
-          "JavaScript (ES6+), TypeScript, React, Next.js, HTML5, CSS3, Sass, Tailwind CSS, and responsive UI development.",
+          "JavaScript (ES6+), TypeScript, React, React Native, Next.js, HTML5, CSS3, Sass, Tailwind CSS, and responsive UI development.",
       },
       {
         label: "UI Engineering",
@@ -171,12 +183,12 @@ const skillCards: SkillCard[] = [
     icon: "backend",
     summary:
       "API-first backend work with solid integrations and business logic.",
-    highlights: ["Node.js", "Express.js", "Laravel", "GitHub"],
+    highlights: ["Node.js", "Express.js", "Laravel", "REST", "GraphQL", "GitHub"],
     sections: [
       {
         label: "Backend Stack",
         details:
-          "Node.js, Express.js, Laravel, REST API development, server-side routing, and business logic implementation.",
+          "Node.js, Express.js, Laravel, GraphQL, REST API development, server-side routing, and business logic implementation.",
       },
       {
         label: "API Capabilities",
@@ -1565,7 +1577,7 @@ export default function Home() {
                                 MIT World Peace University
                               </h3>
                               <p className="mt-0.5 text-sm font-semibold text-sky-600 dark:text-sky-400">
-                                MITWPU Â· Pune, Maharashtra
+                                MITWPU · Pune, Maharashtra
                               </p>
                             </div>
                           </div>
@@ -1589,7 +1601,7 @@ export default function Home() {
                         {/* Meta Grid */}
                         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                           {[
-                            { label: "Batch", value: "2017 â€“ 2021" },
+                            { label: "Batch", value: "2017 – 2021" },
                             { label: "Duration", value: "4 Years" },
                             { label: "Mode", value: "Full-Time" },
                           ].map((m) => (
@@ -1708,16 +1720,16 @@ export default function Home() {
                   {
                     title: "React - The Complete Guide (incl. Next.js, Redux)",
                     platform: "Udemy",
-                    instructor: "Maximilian SchwarzmÃ¼ller",
+                    instructor: "Maximilian Schwarzmüller",
                     category: "React",
                     logo: "https://cdn.simpleicons.org/udemy/A435F0",
                     accent: "from-cyan-400 to-sky-600",
                     categoryColor: "text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-500/10 ring-cyan-200/80 dark:ring-cyan-500/30",
                   },
                   {
-                    title: "Next.js & React â€” The Complete Guide",
+                    title: "Next.js & React — The Complete Guide",
                     platform: "Udemy",
-                    instructor: "Maximilian SchwarzmÃ¼ller",
+                    instructor: "Maximilian Schwarzmüller",
                     category: "Next.js",
                     logo: "https://cdn.simpleicons.org/udemy/A435F0",
                     accent: "from-neutral-400 to-neutral-700",
@@ -1735,7 +1747,7 @@ export default function Home() {
                   {
                     title: "Docker & Kubernetes: The Practical Guide",
                     platform: "Udemy",
-                    instructor: "Maximilian SchwarzmÃ¼ller",
+                    instructor: "Maximilian Schwarzmüller",
                     category: "DevOps",
                     logo: "https://cdn.simpleicons.org/udemy/A435F0",
                     accent: "from-blue-400 to-indigo-600",
@@ -1789,13 +1801,13 @@ export default function Home() {
           <footer className="mt-24 border-t border-neutral-100 py-12 dark:border-white/5">
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <p className="text-sm font-bold tracking-tight text-neutral-500">
-                Â© {new Date().getFullYear()} Pranay Langhe<span className="text-primary-500">.</span> All rights reserved.
+                © {new Date().getFullYear()} Pranay Langhe<span className="text-primary-500">.</span> All rights reserved.
               </p>
               <div className="max-w-sm text-center sm:text-right">
                 <p className="text-xs italic leading-relaxed text-neutral-400 dark:text-neutral-500">
                   &quot;The only way to do great work is to love what you do.&quot;
                   <span className="mt-1 block font-bold not-italic tracking-widest text-neutral-500 dark:text-neutral-600">
-                    â€” STEVE JOBS
+                    — STEVE JOBS
                   </span>
                 </p>
               </div>
