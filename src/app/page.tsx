@@ -1325,9 +1325,9 @@ export default function Home() {
                         className="flex shrink-0 items-center gap-6 pr-6"
                       >
                         {aiProductivityTools.map((tool) => (
-                          <article key={`${set}-${tool.name}`} className="ui-ai-node group w-[300px] sm:w-[340px] shrink-0">
+                          <article key={`${set}-${tool.name}`} className="ui-card group w-[300px] sm:w-[340px] shrink-0 p-6 sm:p-7">
                             {/* Orbital Accent Background */}
-                            <div className={`ui-ai-node-accent bg-gradient-to-br ${tool.accent}`} />
+                            <div className={`ui-card-glow bg-gradient-to-br ${tool.accent}`} />
                             
                             <div className="relative z-10 flex items-center justify-between">
                               <div className="ui-ai-node-icon">
