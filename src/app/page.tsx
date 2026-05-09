@@ -1058,8 +1058,9 @@ export default function Home() {
 
           <div className="relative z-10 mt-12 lg:mt-0">
             <div className="mx-auto w-full max-w-xl lg:max-w-[1220px] px-4 sm:px-6 lg:px-8">
-              <div className="ui-panel lg:rounded-[1.75rem]">
-              <div className="relative grid overflow-hidden rounded-[1.75rem] grid-cols-2 lg:grid-cols-4">
+              <div className="ui-ai-node group !p-0 lg:rounded-[1.75rem] overflow-hidden">
+                <div className="ui-ai-node-accent bg-gradient-to-br from-fuchsia-500/20 via-sky-500/20 to-amber-500/20 dark:from-fuchsia-500/10 dark:via-sky-500/10 dark:to-amber-500/10" />
+                <div className="relative grid overflow-hidden rounded-[1.75rem] grid-cols-2 lg:grid-cols-4 z-10 bg-white/40 dark:bg-neutral-900/40 backdrop-blur-[2px]">
                 <div className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block">
                   <span className="grid-trace-vertical absolute left-1/4 h-20 w-px bg-gradient-to-b from-transparent via-sky-400/70 to-transparent dark:via-sky-300/70" />
                   <span className="grid-trace-vertical absolute left-2/4 h-24 w-px bg-gradient-to-b from-transparent via-amber-400/70 to-transparent dark:via-amber-300/70 [animation-delay:1.1s]" />
@@ -1073,7 +1074,7 @@ export default function Home() {
                 ].map((stat, i) => (
                   <div
                     key={stat.label}
-                    className={`relative px-4 py-4 transition-colors hover:bg-neutral-50/70 sm:px-5 dark:hover:bg-white/[0.03] ${
+                    className={`group relative px-4 py-4 transition-colors hover:bg-white/50 sm:px-5 dark:hover:bg-white/[0.08] ${
                       i < 2 ? "border-b border-neutral-200/80 dark:border-white/10 lg:border-b-0" : ""
                     } ${i % 2 === 0 ? "border-r border-neutral-200/80 dark:border-white/10 lg:border-r" : ""} ${
                       i < 3 ? "lg:border-r lg:border-neutral-200/80 lg:dark:border-white/10" : "lg:border-r-0"
@@ -1082,7 +1083,7 @@ export default function Home() {
                     <CellDots />
                     <div className="flex items-end gap-2.5">
                       <p className="text-[1.65rem] font-extrabold leading-none tracking-tighter sm:text-[2rem]">{stat.value}</p>
-                      <svg className={`mb-1 h-4 w-4 sm:h-5 sm:w-5 ${stat.color}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className={`mb-1 h-4 w-4 sm:h-5 sm:w-5 ${stat.color} transition-transform duration-300 group-hover:scale-110`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={stat.icon} />
                       </svg>
                     </div>
