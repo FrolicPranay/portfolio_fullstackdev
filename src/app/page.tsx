@@ -880,6 +880,216 @@ export default function Home() {
       
       {/* Fixed Theme Toggle */}
       <div className="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6 lg:bottom-10 lg:right-10">
+        <div className="ui-panel rounded-full p-0.5 sm:p-1">
+          <ThemeToggle />
+        </div>
+      </div>
+
+      {/* â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ HERO â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ */}
+      <section
+        className="relative flex min-h-[100svh] flex-col overflow-hidden pt-6 pb-12 sm:pt-10 sm:pb-14 lg:h-[100svh] lg:justify-between lg:pt-8 lg:pb-10"
+        data-scroll-section
+      >
+          {/* â”€â”€ â”€â”€ Background: ambient orbs â”€â”€ â”€â”€ */}
+          <div className="pointer-events-none absolute inset-0 overflow-hidden">
+            <div className="animate-orb absolute -left-28 -top-28 h-[520px] w-[520px] rounded-full bg-gradient-to-br from-amber-300/30 via-orange-300/20 to-transparent blur-3xl dark:from-amber-500/18 dark:via-orange-500/10" />
+            <div className="animate-orb-delay absolute -bottom-36 -right-28 h-[460px] w-[460px] rounded-full bg-gradient-to-tl from-violet-400/22 via-fuchsia-300/16 to-transparent blur-3xl dark:from-violet-500/14 dark:via-fuchsia-500/10" />
+            <div className="absolute left-1/2 top-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-sky-300/12 to-transparent blur-2xl dark:from-sky-500/10" />
+          </div>
+
+          <div className="relative z-10 mx-auto flex w-full max-w-[1220px] flex-col justify-center px-4 py-4 sm:px-6 sm:py-6 lg:flex-1 lg:grid lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-14 lg:px-8 lg:py-4">
+            <div className="flex max-w-xl flex-col gap-6 sm:gap-7 items-center text-center lg:items-start lg:text-left">
+              <div className="hero-fade-1 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
+                <div className="inline-flex items-center gap-2.5 rounded-full border border-emerald-200/80 bg-gradient-to-r from-emerald-50 to-teal-50 px-3.5 py-1.5 text-[11px] font-semibold text-emerald-700 shadow-sm shadow-emerald-100 sm:px-4 sm:text-xs dark:border-emerald-500/30 dark:from-emerald-500/10 dark:to-teal-500/10 dark:text-emerald-300 dark:shadow-none">
+                  <span className="live-pulse h-2 w-2 rounded-full bg-emerald-500" />
+                  Available for work
+                </div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-violet-200/60 bg-gradient-to-r from-white/80 via-violet-50/60 to-fuchsia-50/60 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-neutral-500 shadow-sm shadow-violet-100/50 sm:px-3.5 sm:text-[10px] sm:tracking-[0.18em] dark:border-violet-500/20 dark:from-violet-500/8 dark:via-fuchsia-500/5 dark:to-white/0 dark:text-neutral-400 dark:shadow-none">
+                  <span>Full-Stack Engineer</span>
+                  <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-600" />
+                  <span className="inline-flex items-center gap-1">
+                    {/* sparkle icon */}
+                    <svg viewBox="0 0 16 16" className="h-3 w-3 flex-shrink-0" aria-hidden="true" fill="none">
+                      <path d="M8 1.5 L8.9 5.8 L13 6.5 L8.9 7.2 L8 11.5 L7.1 7.2 L3 6.5 L7.1 5.8 Z" fill="url(#ai-star-grad)" />
+                      <path d="M12 1 L12.5 2.8 L14.5 3 L12.5 3.2 L12 5 L11.5 3.2 L9.5 3 L11.5 2.8 Z" fill="url(#ai-star-grad)" opacity="0.7"/>
+                      <defs>
+                        <linearGradient id="ai-star-grad" x1="0" y1="0" x2="1" y2="1">
+                          <stop offset="0%" stopColor="#a855f7"/>
+                          <stop offset="100%" stopColor="#ec4899"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    <span className="bg-gradient-to-r from-violet-600 to-fuchsia-500 bg-clip-text font-black text-transparent dark:from-violet-400 dark:to-fuchsia-400">AI</span>
+                    <span className="text-neutral-400 dark:text-neutral-500">-Ready Products</span>
+                  </span>
+                </div>
+              </div>
+
+              <div className="hero-fade-2 space-y-4">
+                <div className="flex items-center justify-center lg:justify-start gap-4">
+                  <div className="h-5 w-[2px] rounded-full bg-amber-500 shadow-[0_0_12px_rgba(245,158,11,0.5)]" />
+                  <p className="text-[17px] font-black uppercase tracking-[0.3em] text-amber-600 dark:text-amber-400">
+                    Hi, I&apos;m Pranay Langhe
+                  </p>
+                </div>
+                <h1 className="max-w-2xl text-[2.2rem] font-extrabold leading-[1.04] tracking-tight sm:text-5xl lg:text-[3.35rem]">
+                  Building reliable web products
+                  <span className="animate-gradient-text block bg-gradient-to-r from-amber-400 via-rose-500 to-violet-500 bg-clip-text text-transparent">
+                    with speed and taste.
+                  </span>
+                </h1>
+              </div>
+
+              <p className="hero-fade-3 max-w-xl text-[0.98rem] leading-relaxed text-neutral-600 sm:text-base dark:text-neutral-300">
+                Full-stack engineer focused on high-performance MERN and Next.js systems. I ship polished interfaces, scalable APIs, and AI-powered workflows for teams that move fast.
+              </p>
+
+              <div className="hero-fade-4 flex flex-wrap justify-center lg:justify-start gap-2">
+                {[
+                  {
+                    label: "JavaScript",
+                    src: "https://cdn.simpleicons.org/javascript/F7DF1E",
+                    bg: "bg-[#F7DF1E]/10 dark:bg-[#F7DF1E]/15",
+                  },
+                  {
+                    label: "Node.js",
+                    src: "https://cdn.simpleicons.org/nodedotjs/339933",
+                    bg: "bg-[#339933]/10 dark:bg-[#339933]/20",
+                  },
+                  {
+                    label: "React",
+                    src: "https://cdn.simpleicons.org/react/61DAFB",
+                    bg: "bg-[#61DAFB]/10 dark:bg-[#61DAFB]/15",
+                  },
+                  {
+                    label: "Next.js",
+                    src: "https://cdn.simpleicons.org/nextdotjs/000000/ffffff",
+                    bg: "bg-black/8 dark:bg-white/10",
+                  },
+                  {
+                    label: "TypeScript",
+                    src: "https://cdn.simpleicons.org/typescript/3178C6",
+                    bg: "bg-[#3178C6]/10 dark:bg-[#3178C6]/20",
+                  },
+                ].map(({ label, src, bg }) => (
+                  <span
+                    key={label}
+                    className="ui-chip inline-flex items-center gap-1.5 px-2.5 py-1 text-[0.72rem] sm:px-3 sm:text-xs"
+                  >
+                    <span className={`inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-sm ${bg}`}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={src} alt="" width={12} height={12} className="h-3 w-3 object-contain" aria-hidden="true" />
+                    </span>
+                    {label}
+                  </span>
+                ))}
+              </div>
+
+
+              <div className="hero-fade-5 flex items-center justify-center lg:justify-start w-full flex-wrap gap-3">
+                <a
+                  href="/Pranay_Langhe_Resume.pdf"
+                  download="Pranay_Langhe_Resume.pdf"
+                  className="ui-button-primary w-full sm:w-auto"
+                >
+                  View Resume
+                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0-5 5m5-5H6" />
+                  </svg>
+                </a>
+
+                <Link
+                  href="https://www.linkedin.com/in/pranay-langhe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ui-button-secondary w-full sm:w-auto"
+                >
+                  Connect on LinkedIn
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative mx-auto mt-10 flex w-full max-w-[260px] items-center justify-center sm:max-w-[330px] md:max-w-[360px] lg:mt-0 lg:max-w-none">
+              <div className="pointer-events-none absolute inset-0 -z-10 scale-110 bg-gradient-to-br from-amber-300/35 via-pink-300/20 to-violet-400/25 blur-3xl dark:from-amber-500/18 dark:via-pink-500/14 dark:to-violet-500/16" />
+              <div className="relative h-[240px] w-[240px] sm:h-[320px] sm:w-[320px] md:h-[340px] md:w-[340px] lg:h-[360px] lg:w-[360px]">
+                <div className="animate-ring-spin absolute -inset-3 rounded-full bg-gradient-to-r from-amber-400 via-fuchsia-500 to-sky-400 p-[2px] opacity-55 blur-[1px]" />
+                <div className="absolute -inset-6 rounded-full border border-neutral-300/30 dark:border-neutral-700/30" />
+                <div className="absolute inset-0 overflow-hidden rounded-full border-4 border-white bg-gradient-to-b from-neutral-100 to-neutral-200 shadow-2xl dark:border-neutral-800 dark:from-neutral-800 dark:to-neutral-900">
+                  <Image
+                    src="/pranay.png"
+                    alt="Portrait of Pranay Langhe"
+                    width={640}
+                    height={760}
+                    className="absolute bottom-0 left-1/2 h-[122%] w-auto max-w-none -translate-x-1/2 object-contain"
+                    priority
+                  />
+                </div>
+
+                {/* Bring head outside the circle for 3D breakout effect */}
+                <div
+                  className="pointer-events-none absolute inset-0 z-10"
+                  style={{ clipPath: "polygon(-50% -50%, 150% -50%, 150% 38%, -50% 38%)" }}
+                >
+                  <Image
+                    src="/pranay.png"
+                    alt=""
+                    width={640}
+                    height={760}
+                    className="absolute bottom-0 left-1/2 h-[122%] w-auto max-w-none -translate-x-1/2 object-contain drop-shadow-2xl"
+                    priority
+                  />
+                </div>
+
+                <div className="badge-float-a absolute -left-5 top-[12%] z-20 rounded-full border border-white/80 bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-sky-700 shadow-lg sm:-left-1 sm:top-[18%] sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em] dark:border-white/15 dark:bg-neutral-900/90 dark:text-sky-300">
+                  Create
+                </div>
+                <div className="badge-float-b absolute -right-4 top-[10%] z-20 rounded-full border border-white/80 bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-fuchsia-700 shadow-lg sm:right-0 sm:top-[15%] sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em] dark:border-white/15 dark:bg-neutral-900/90 dark:text-fuchsia-300">
+                  Build
+                </div>
+                <div className="badge-float-d absolute -left-5 bottom-[14%] z-20 rounded-full border border-white/80 bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-amber-700 shadow-lg sm:-left-1 sm:bottom-[18%] sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em] dark:border-white/15 dark:bg-neutral-900/90 dark:text-amber-300">
+                  Evolve
+                </div>
+                <div className="badge-float-c absolute -right-4 bottom-[12%] z-20 rounded-full border border-white/80 bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-emerald-700 shadow-lg sm:right-0 sm:bottom-[16%] sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em] dark:border-white/15 dark:bg-neutral-900/90 dark:text-emerald-300">
+                  Inspire
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative z-10 mt-12 lg:mt-0">
+            <div className="mx-auto w-full max-w-xl lg:max-w-[1220px] px-4 sm:px-6 lg:px-8">
+              <div className="ui-panel lg:rounded-[1.75rem]">
+              <div className="relative grid overflow-hidden rounded-[1.75rem] grid-cols-2 lg:grid-cols-4">
+                <div className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block">
+                  <span className="grid-trace-vertical absolute left-1/4 h-20 w-px bg-gradient-to-b from-transparent via-sky-400/70 to-transparent dark:via-sky-300/70" />
+                  <span className="grid-trace-vertical absolute left-2/4 h-24 w-px bg-gradient-to-b from-transparent via-amber-400/70 to-transparent dark:via-amber-300/70 [animation-delay:1.1s]" />
+                  <span className="grid-trace-vertical absolute left-3/4 h-20 w-px bg-gradient-to-b from-transparent via-fuchsia-400/70 to-transparent dark:via-fuchsia-300/70 [animation-delay:2.1s]" />
+                </div>
+                {[
+                  { value: "4.5+", label: "Years experience", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z", color: "text-sky-500/70" },
+                  { value: "10+", label: "Systems delivered", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", color: "text-emerald-500/70" },
+                  { value: "5+", label: "Domains covered", icon: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9", color: "text-amber-500/70" },
+                  { value: "AI+", label: "Modern engineering", icon: "M13 10V3L4 14h7v7l9-11h-7z", color: "text-fuchsia-500/70" },
+                ].map((stat, i) => (
+                  <div
+                    key={stat.label}
+                    className={`relative px-4 py-4 transition-colors hover:bg-neutral-50/70 sm:px-5 dark:hover:bg-white/[0.03] ${
+                      i < 2 ? "border-b border-neutral-200/80 dark:border-white/10 lg:border-b-0" : ""
+                    } ${i % 2 === 0 ? "border-r border-neutral-200/80 dark:border-white/10 lg:border-r" : ""} ${
+                      i < 3 ? "lg:border-r lg:border-neutral-200/80 lg:dark:border-white/10" : "lg:border-r-0"
+                    }`}
+                  >
+                    <CellDots />
+                    <div className="flex items-end gap-2.5">
+                      <p className="text-[1.65rem] font-extrabold leading-none tracking-tighter sm:text-[2rem]">{stat.value}</p>
+                      <svg className={`mb-1 h-4 w-4 sm:h-5 sm:w-5 ${stat.color}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={stat.icon} />
+                      </svg>
+                    </div>
+                    <p className="mt-1.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-neutral-400 sm:text-[10px]">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
