@@ -887,7 +887,7 @@ export default function Home() {
 
       {/* â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ HERO â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ â”€â”€ */}
       <section
-        className="relative flex min-h-[100svh] flex-col overflow-hidden pt-6 pb-12 sm:pt-10 sm:pb-14 lg:h-[100svh] lg:justify-between lg:pt-8 lg:pb-10"
+        className="relative flex min-h-[100svh] flex-col overflow-hidden pt-4 pb-6 sm:pt-8 sm:pb-8 lg:justify-center lg:gap-6 lg:pt-8 lg:pb-8"
         data-scroll-section
       >
           {/* â”€â”€ â”€â”€ Background: ambient orbs â”€â”€ â”€â”€ */}
@@ -897,8 +897,8 @@ export default function Home() {
             <div className="absolute left-1/2 top-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-sky-300/12 to-transparent blur-2xl dark:from-sky-500/10" />
           </div>
 
-          <div className="relative z-10 mx-auto flex w-full max-w-[1220px] flex-col justify-center px-4 py-4 sm:px-6 sm:py-6 lg:flex-1 lg:grid lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-14 lg:px-8 lg:py-4">
-            <div className="flex max-w-xl flex-col gap-6 sm:gap-7 items-center text-center lg:items-start lg:text-left">
+          <div className="relative z-10 mx-auto flex w-full max-w-[1220px] flex-col justify-center px-4 py-2 sm:px-6 sm:py-4 lg:flex-1 lg:grid lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-10 lg:px-8 lg:py-0">
+            <div className="flex max-w-xl flex-col gap-4 sm:gap-6 items-center text-center lg:items-start lg:text-left">
               <div className="hero-fade-1 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
                 <div className="inline-flex items-center gap-2.5 rounded-full border border-emerald-200/80 bg-gradient-to-r from-emerald-50 to-teal-50 px-3.5 py-1.5 text-[11px] font-semibold text-emerald-700 shadow-sm shadow-emerald-100 sm:px-4 sm:text-xs dark:border-emerald-500/30 dark:from-emerald-500/10 dark:to-teal-500/10 dark:text-emerald-300 dark:shadow-none">
                   <span className="live-pulse h-2 w-2 rounded-full bg-emerald-500" />
@@ -986,7 +986,7 @@ export default function Home() {
               </div>
 
 
-              <div className="hero-fade-5 flex items-center justify-center lg:justify-start w-full flex-wrap gap-3">
+              <div className="hero-fade-5 relative z-20 flex items-center justify-center lg:justify-start w-full flex-wrap gap-3">
                 <a
                   href="/Pranay_Langhe_Resume.pdf"
                   download="Pranay_Langhe_Resume.pdf"
@@ -1009,9 +1009,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative mx-auto mt-10 flex w-full max-w-[260px] items-center justify-center sm:max-w-[330px] md:max-w-[360px] lg:mt-0 lg:max-w-none">
+            <div className="relative z-10 mx-auto mt-12 flex w-full max-w-[220px] items-center justify-center sm:mt-8 sm:max-w-[280px] md:max-w-[300px] lg:mt-0 lg:max-w-none">
               <div className="pointer-events-none absolute inset-0 -z-10 scale-110 bg-gradient-to-br from-amber-300/35 via-pink-300/20 to-violet-400/25 blur-3xl dark:from-amber-500/18 dark:via-pink-500/14 dark:to-violet-500/16" />
-              <div className="relative h-[240px] w-[240px] sm:h-[320px] sm:w-[320px] md:h-[340px] md:w-[340px] lg:h-[360px] lg:w-[360px]">
+              <div className="relative h-[220px] w-[220px] sm:h-[280px] sm:w-[280px] md:h-[300px] md:w-[300px] lg:h-[320px] lg:w-[320px]">
                 <div className="animate-ring-spin absolute -inset-3 rounded-full bg-gradient-to-r from-amber-400 via-fuchsia-500 to-sky-400 p-[2px] opacity-55 blur-[1px]" />
                 <div className="absolute -inset-6 rounded-full border border-neutral-300/30 dark:border-neutral-700/30" />
                 <div className="absolute inset-0 overflow-hidden rounded-full border-4 border-white bg-gradient-to-b from-neutral-100 to-neutral-200 shadow-2xl dark:border-neutral-800 dark:from-neutral-800 dark:to-neutral-900">
@@ -1056,45 +1056,39 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative z-10 mt-12 lg:mt-0">
+          <div className="relative z-10 mt-6 sm:mt-8 lg:mt-0">
             <div className="mx-auto w-full max-w-xl lg:max-w-[1220px] px-4 sm:px-6 lg:px-8">
-              <div className="ui-ai-node group !p-0 lg:rounded-[1.75rem] overflow-hidden">
-                <div className="ui-ai-node-accent bg-gradient-to-br from-fuchsia-500/20 via-sky-500/20 to-amber-500/20 dark:from-fuchsia-500/10 dark:via-sky-500/10 dark:to-amber-500/10" />
-                <div className="relative grid overflow-hidden rounded-[1.75rem] grid-cols-2 lg:grid-cols-4 z-10 bg-white/40 dark:bg-neutral-900/40 backdrop-blur-[2px]">
-                <div className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block">
-                  <span className="grid-trace-vertical absolute left-1/4 h-20 w-px bg-gradient-to-b from-transparent via-sky-400/70 to-transparent dark:via-sky-300/70" />
-                  <span className="grid-trace-vertical absolute left-2/4 h-24 w-px bg-gradient-to-b from-transparent via-amber-400/70 to-transparent dark:via-amber-300/70 [animation-delay:1.1s]" />
-                  <span className="grid-trace-vertical absolute left-3/4 h-20 w-px bg-gradient-to-b from-transparent via-fuchsia-400/70 to-transparent dark:via-fuchsia-300/70 [animation-delay:2.1s]" />
-                </div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
                 {[
-                  { value: "4.5+", label: "Years experience", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z", color: "text-sky-500/70" },
-                  { value: "10+", label: "Systems delivered", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", color: "text-emerald-500/70" },
-                  { value: "5+", label: "Domains covered", icon: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9", color: "text-amber-500/70" },
-                  { value: "AI+", label: "Modern engineering", icon: "M13 10V3L4 14h7v7l9-11h-7z", color: "text-fuchsia-500/70" },
-                ].map((stat, i) => (
+                  { value: "4.5+", label: "Years experience", gradient: "from-indigo-500 to-purple-400", border: "from-indigo-500/80 to-purple-500/80" },
+                  { value: "10+", label: "Systems delivered", gradient: "from-pink-500 to-rose-400", border: "from-pink-500/80 to-rose-500/80" },
+                  { value: "5+", label: "Domains covered", gradient: "from-teal-400 to-emerald-400", border: "from-teal-400/80 to-emerald-400/80" },
+                  { value: "AI+", label: "Modern engineering", gradient: "from-orange-500 to-amber-400", border: "from-orange-500/80 to-amber-400/80" },
+                ].map((stat) => (
                   <div
                     key={stat.label}
-                    className={`group relative px-4 py-4 transition-colors hover:bg-white/50 sm:px-5 dark:hover:bg-white/[0.08] ${
-                      i < 2 ? "border-b border-neutral-200/80 dark:border-white/10 lg:border-b-0" : ""
-                    } ${i % 2 === 0 ? "border-r border-neutral-200/80 dark:border-white/10 lg:border-r" : ""} ${
-                      i < 3 ? "lg:border-r lg:border-neutral-200/80 lg:dark:border-white/10" : "lg:border-r-0"
-                    }`}
+                    className="relative flex flex-col items-center justify-center rounded-2xl border border-neutral-200 bg-white/60 py-5 px-3 sm:py-6 sm:px-4 shadow-sm backdrop-blur-sm dark:border-white/5 dark:bg-neutral-900/60"
                   >
-                    <CellDots />
-                    <div className="flex items-end gap-2.5">
-                      <p className="text-[1.65rem] font-extrabold leading-none tracking-tighter sm:text-[2rem]">{stat.value}</p>
-                      <svg className={`mb-1 h-4 w-4 sm:h-5 sm:w-5 ${stat.color} transition-transform duration-300 group-hover:scale-110`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={stat.icon} />
-                      </svg>
-                    </div>
-                    <p className="mt-1.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-neutral-400 sm:text-[10px]">{stat.label}</p>
+                    {/* Top glowing border line */}
+                    <div className="absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r opacity-0 dark:opacity-100" style={{ backgroundImage: `linear-gradient(to right, transparent, var(--tw-gradient-from), var(--tw-gradient-to), transparent)` }} />
+                    <div className={`absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r ${stat.border} opacity-0 dark:opacity-100`} />
+                    <div className={`absolute top-0 left-1/4 right-1/4 h-[3px] bg-gradient-to-r ${stat.border} blur-[4px] opacity-0 dark:opacity-60`} />
+                    
+                    {/* Top glow for light mode */}
+                    <div className={`absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r ${stat.border} opacity-100 dark:opacity-0`} />
+                    
+                    <h3 className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
+                      {stat.value}
+                    </h3>
+                    <p className="mt-1.5 text-xs sm:text-[0.95rem] text-neutral-600 dark:text-neutral-300 text-center">
+                      {stat.label}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* â”€â”€ Below-hero content container â”€â”€ */}
       <div
@@ -1231,9 +1225,6 @@ export default function Home() {
                             }`}>
                               {card.title}
                             </h3>
-                            <span className="text-[9px] font-bold uppercase tracking-widest text-neutral-500">
-                              Direct Expertise
-                            </span>
                           </div>
                         </div>
                         <span className="text-[10px] font-bold tabular-nums uppercase tracking-widest text-neutral-400">

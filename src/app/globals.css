@@ -145,11 +145,11 @@ body {
 }
 
 .ui-section-head {
-  @apply relative z-10 mb-12 max-w-3xl mx-auto flex flex-col items-center text-center;
+  @apply relative z-10 mb-8 max-w-3xl mx-auto flex flex-col items-center text-center sm:mb-10 lg:mb-12;
 }
 
 .ui-section-body {
-  @apply relative z-10 mt-8;
+  @apply relative z-10;
 }
 
 .ui-button-primary {
@@ -161,15 +161,15 @@ body {
 }
 
 .ui-kicker {
-  @apply text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400;
+  @apply inline-flex items-center justify-center rounded-full border border-sky-200/60 bg-gradient-to-r from-sky-50 via-indigo-50 to-purple-50 px-4 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-sky-700 shadow-sm dark:border-sky-400/20 dark:from-sky-500/10 dark:via-indigo-500/10 dark:to-purple-500/10 dark:text-sky-300;
 }
 
 .ui-title {
-  @apply mt-2 text-2xl font-extrabold tracking-tight text-neutral-900 sm:text-3xl dark:text-neutral-100;
+  @apply mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl bg-gradient-to-r from-neutral-900 via-purple-900 to-neutral-900 bg-clip-text text-transparent dark:from-white dark:via-fuchsia-200 dark:to-white;
 }
 
 .ui-subtitle {
-  @apply mt-3 max-w-2xl text-sm text-neutral-600 dark:text-neutral-300;
+  @apply mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base [text-wrap:balance];
 }
 
 @keyframes trace-horizontal {
