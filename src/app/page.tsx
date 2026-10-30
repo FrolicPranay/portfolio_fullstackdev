@@ -5,7 +5,7 @@ import ScrollReveal from "@/components/scroll-reveal";
 import fs from "node:fs";
 import path from "node:path";
 
-type SkillType = "frontend" | "backend" | "devops";
+type SkillType = "frontend" | "backend" | "devops" | "ai";
 
 type SkillCard = {
   title: string;
@@ -151,6 +151,30 @@ const techBadgeMap: Record<string, { src: string; bg: string }> = {
     src: "https://cdn.simpleicons.org/servicenow/81B5A1",
     bg: "bg-[#81B5A1]/10 dark:bg-[#81B5A1]/20",
   },
+  "Agentic AI": {
+    src: "https://www.google.com/s2/favicons?domain=deepmind.google&sz=64",
+    bg: "bg-amber-100 dark:bg-amber-500/15",
+  },
+  "Model Context Protocol (MCP)": {
+    src: "https://www.google.com/s2/favicons?domain=modelcontextprotocol.io&sz=64",
+    bg: "bg-violet-100 dark:bg-violet-500/15",
+  },
+  "MCP": {
+    src: "https://www.google.com/s2/favicons?domain=modelcontextprotocol.io&sz=64",
+    bg: "bg-violet-100 dark:bg-violet-500/15",
+  },
+  "RAG Systems": {
+    src: "https://www.google.com/s2/favicons?domain=pinecone.io&sz=64",
+    bg: "bg-teal-100 dark:bg-teal-500/15",
+  },
+  "RAG": {
+    src: "https://www.google.com/s2/favicons?domain=pinecone.io&sz=64",
+    bg: "bg-teal-100 dark:bg-teal-500/15",
+  },
+  "AI Automation": {
+    src: "https://www.google.com/s2/favicons?domain=n8n.io&sz=64",
+    bg: "bg-rose-100 dark:bg-rose-500/15",
+  },
 };
 
 const skillCards: SkillCard[] = [
@@ -276,31 +300,43 @@ const skillCards: SkillCard[] = [
   },
   {
     title: "AI Tools",
-    icon: "frontend",
+    icon: "ai",
     summary:
-      "AI tools that speed up coding, debugging, and codebase work.",
-    highlights: ["Cursor AI", "GitHub Copilot", "Claude", "OpenAI Codex"],
+      "Agentic AI workflows, MCP integrations, RAG architecture, and automation tooling that supercharge production engineering.",
+    highlights: [
+      "Agentic AI",
+      "Model Context Protocol (MCP)",
+      "RAG Systems",
+      "AI Automation",
+      "Cursor AI",
+      "Claude",
+    ],
     sections: [
       {
-        label: "AI Workflow",
+        label: "Agentic AI & Autonomous Workflows",
         details:
-          "GitHub Copilot, Cursor AI, Claude, and OpenAI Codex for faster coding, refactoring, debugging, and solution exploration.",
+          "Autonomous coding agents, multi-step tool-calling workflows, task planning, and self-correcting agent execution loops.",
       },
       {
-        label: "Practical Usage",
+        label: "MCP & Tool Integration",
         details:
-          "Prompt-driven development support, documentation synthesis, code generation review, and AI-assisted iteration during feature delivery.",
+          "Model Context Protocol (MCP) server & client architectures to seamlessly connect LLMs to local developer tools, APIs, and databases.",
       },
       {
-        label: "Engineering Mindset",
+        label: "RAG & Knowledge Retrieval",
         details:
-          "Using AI as a multiplier for shipping quality software while validating outputs, preserving maintainability, and keeping product context central.",
+          "Retrieval-Augmented Generation (RAG) pipelines, vector search embeddings, semantic chunking, and grounded context orchestration.",
+      },
+      {
+        label: "Workflow Automation",
+        details:
+          "AI-driven developer automation, prompt chaining, automated code synthesis, and test generation with Cursor AI, Claude, and Copilot.",
       },
     ],
   },
 ];
 
-function SkillIcon({ type }: { type: "frontend" | "backend" | "devops" }) {
+function SkillIcon({ type }: { type: SkillType }) {
   if (type === "frontend") {
     return (
       <svg
@@ -339,6 +375,25 @@ function SkillIcon({ type }: { type: "frontend" | "backend" | "devops" }) {
     );
   }
 
+  if (type === "ai") {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        className="h-4 w-4 text-violet-600 dark:text-violet-300"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z" />
+        <path d="M19 4v4" />
+        <path d="M21 6h-4" />
+      </svg>
+    );
+  }
+
   return (
     <svg
       viewBox="0 0 24 24"
@@ -367,18 +422,39 @@ type AIProductivityTool = {
 
 const aiProductivityTools: AIProductivityTool[] = [
   {
+    name: "Agentic AI",
+    role: "Autonomous Execution",
+    focus: "Multi-agent coding loops, tool execution, and self-directed implementation.",
+    accent: "from-amber-400 via-orange-400 to-rose-500",
+    logo: "https://www.google.com/s2/favicons?domain=deepmind.google&sz=64",
+  },
+  {
+    name: "Model Context Protocol",
+    role: "MCP Architecture",
+    focus: "Connecting LLMs to local developer tools, databases, and workspace context.",
+    accent: "from-violet-400 via-purple-400 to-fuchsia-500",
+    logo: "https://www.google.com/s2/favicons?domain=modelcontextprotocol.io&sz=64",
+  },
+  {
+    name: "RAG & Vector Search",
+    role: "Knowledge Grounding",
+    focus: "Context retrieval, semantic embeddings, and low-hallucination pipelines.",
+    accent: "from-teal-400 via-emerald-400 to-cyan-500",
+    logo: "https://www.google.com/s2/favicons?domain=pinecone.io&sz=64",
+  },
+  {
+    name: "AI Automation",
+    role: "Process Automation",
+    focus: "Automating developer pipelines, repetitive tasks, and end-to-end flows.",
+    accent: "from-rose-400 via-pink-400 to-purple-500",
+    logo: "https://www.google.com/s2/favicons?domain=n8n.io&sz=64",
+  },
+  {
     name: "Cursor AI",
     role: "IDE Copilot",
     focus: "Fast edits, navigation, and multi-file implementation.",
     accent: "from-pink-400 via-fuchsia-400 to-violet-500",
     logo: "https://www.google.com/s2/favicons?domain=cursor.com&sz=64",
-  },
-  {
-    name: "GitHub Copilot",
-    role: "Pair Programmer",
-    focus: "Accelerates scaffolding, suggestions, and repetitive logic.",
-    accent: "from-orange-400 via-amber-400 to-yellow-500",
-    logo: "https://www.google.com/s2/favicons?domain=github.com&sz=64",
   },
   {
     name: "Claude",
@@ -388,6 +464,13 @@ const aiProductivityTools: AIProductivityTool[] = [
     logo: "https://www.google.com/s2/favicons?domain=claude.ai&sz=64",
   },
   {
+    name: "GitHub Copilot",
+    role: "Pair Programmer",
+    focus: "Accelerates scaffolding, suggestions, and repetitive logic.",
+    accent: "from-orange-400 via-amber-400 to-yellow-500",
+    logo: "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+  },
+  {
     name: "OpenAI Codex",
     role: "Execution Agent",
     focus: "Speeds up code changes, refactors, and task completion.",
@@ -395,39 +478,11 @@ const aiProductivityTools: AIProductivityTool[] = [
     logo: "https://www.google.com/s2/favicons?domain=openai.com&sz=64",
   },
   {
-    name: "Augment Code",
-    role: "Codebase Context",
-    focus: "Useful for large-context analysis and implementation support.",
-    accent: "from-rose-400 via-pink-400 to-orange-400",
-    logo: "https://www.google.com/s2/favicons?domain=augmentcode.com&sz=64",
-  },
-  {
     name: "LangChain",
     role: "Workflow Layer",
     focus: "Connects AI features into structured product workflows.",
     accent: "from-violet-400 via-purple-400 to-fuchsia-500",
     logo: "https://www.google.com/s2/favicons?domain=langchain.com&sz=64",
-  },
-  {
-    name: "Prompt Engineering",
-    role: "Quality Control",
-    focus: "Sharpens outputs for ideation, coding, and content generation.",
-    accent: "from-cyan-400 via-sky-400 to-indigo-500",
-    logo: "https://www.google.com/s2/favicons?domain=promptingguide.ai&sz=64",
-  },
-  {
-    name: "AI-Assisted Debugging",
-    role: "Reliability Boost",
-    focus: "Shortens the loop from issue discovery to validated fixes.",
-    accent: "from-amber-400 via-orange-400 to-rose-500",
-    logo: "https://www.google.com/s2/favicons?domain=sentry.io&sz=64",
-  },
-  {
-    name: "Code Refactoring",
-    role: "Code Health",
-    focus: "Keeps delivery fast while improving structure and maintainability.",
-    accent: "from-lime-400 via-emerald-400 to-teal-500",
-    logo: "https://www.google.com/s2/favicons?domain=refactoring.guru&sz=64",
   },
 ];
 
@@ -933,9 +988,9 @@ export default function Home() {
                   </p>
                 </div>
                 <h1 className="max-w-2xl text-[2.2rem] font-extrabold leading-[1.04] tracking-tight sm:text-5xl lg:text-[3.35rem]">
-                  Building reliable web products
+                  Crafting modern web experiences
                   <span className="animate-gradient-text block bg-gradient-to-r from-amber-400 via-rose-500 to-violet-500 bg-clip-text text-transparent">
-                    with speed and taste.
+                    with the power of AI.
                   </span>
                 </h1>
               </div>
@@ -1199,6 +1254,8 @@ export default function Home() {
                         ? "from-sky-400 to-blue-600" 
                         : card.icon === "backend" 
                         ? "from-emerald-400 to-teal-600" 
+                        : card.icon === "ai"
+                        ? "from-violet-400 via-fuchsia-500 to-amber-400"
                         : "from-fuchsia-400 to-violet-600"
                       }`} />
                       
@@ -1209,6 +1266,8 @@ export default function Home() {
                             ? "from-sky-400 to-blue-500" 
                             : card.icon === "backend" 
                             ? "from-emerald-400 to-teal-500" 
+                            : card.icon === "ai"
+                            ? "from-violet-400 via-fuchsia-500 to-amber-500"
                             : "from-fuchsia-400 to-violet-500"
                           }`}>
                             <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-white dark:bg-neutral-950">
@@ -1221,7 +1280,9 @@ export default function Home() {
                                 ? "text-sky-700 dark:text-sky-300"
                                 : card.icon === "backend"
                                   ? "text-emerald-700 dark:text-emerald-300"
-                                  : "text-fuchsia-700 dark:text-fuchsia-300"
+                                  : card.icon === "ai"
+                                    ? "text-violet-700 dark:text-violet-300"
+                                    : "text-fuchsia-700 dark:text-fuchsia-300"
                             }`}>
                               {card.title}
                             </h3>
