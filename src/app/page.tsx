@@ -927,12 +927,12 @@ export default function Home() {
         <svg className="geometric-shape -right-40 bottom-20 h-[800px] w-[800px] -rotate-12" viewBox="0 0 100 100">
           <rect x="20" y="20" width="60" height="60" fill="currentColor" rx="2" />
         </svg>
-        
+
         {/* Ambient Atmosphere */}
         <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-sky-500/5 blur-[120px] dark:bg-sky-400/8" />
         <div className="absolute right-1/4 bottom-1/4 h-96 w-96 rounded-full bg-purple-500/5 blur-[120px] dark:bg-purple-400/8" />
       </div>
-      
+
       {/* Fixed Theme Toggle */}
       <div className="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6 lg:bottom-10 lg:right-10">
         <div className="ui-panel rounded-full p-0.5 sm:p-1">
@@ -945,927 +945,951 @@ export default function Home() {
         className="relative flex min-h-[100svh] flex-col overflow-hidden pt-4 pb-6 sm:pt-8 sm:pb-8 lg:justify-center lg:gap-6 lg:pt-8 lg:pb-8"
         data-scroll-section
       >
-          {/* â”€â”€ â”€â”€ Background: ambient orbs â”€â”€ â”€â”€ */}
-          <div className="pointer-events-none absolute inset-0 overflow-hidden">
-            <div className="animate-orb absolute -left-28 -top-28 h-[520px] w-[520px] rounded-full bg-gradient-to-br from-amber-300/30 via-orange-300/20 to-transparent blur-3xl dark:from-amber-500/18 dark:via-orange-500/10" />
-            <div className="animate-orb-delay absolute -bottom-36 -right-28 h-[460px] w-[460px] rounded-full bg-gradient-to-tl from-violet-400/22 via-fuchsia-300/16 to-transparent blur-3xl dark:from-violet-500/14 dark:via-fuchsia-500/10" />
-            <div className="absolute left-1/2 top-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-sky-300/12 to-transparent blur-2xl dark:from-sky-500/10" />
+        {/* â”€â”€ â”€â”€ Background: ambient orbs â”€â”€ â”€â”€ */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="animate-orb absolute -left-28 -top-28 h-[520px] w-[520px] rounded-full bg-gradient-to-br from-amber-300/30 via-orange-300/20 to-transparent blur-3xl dark:from-amber-500/18 dark:via-orange-500/10" />
+          <div className="animate-orb-delay absolute -bottom-36 -right-28 h-[460px] w-[460px] rounded-full bg-gradient-to-tl from-violet-400/22 via-fuchsia-300/16 to-transparent blur-3xl dark:from-violet-500/14 dark:via-fuchsia-500/10" />
+          <div className="absolute left-1/2 top-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-sky-300/12 to-transparent blur-2xl dark:from-sky-500/10" />
+        </div>
+
+        <div className="relative z-10 mx-auto flex w-full max-w-[1220px] flex-col justify-center px-4 py-2 sm:px-6 sm:py-4 lg:flex-1 lg:grid lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-10 lg:px-8 lg:py-0">
+          <div className="flex max-w-xl flex-col gap-4 sm:gap-6 items-center text-center lg:items-start lg:text-left">
+            <div className="hero-fade-1 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-emerald-200/80 bg-gradient-to-r from-emerald-50 to-teal-50 px-3.5 py-1.5 text-[11px] font-semibold text-emerald-700 shadow-sm shadow-emerald-100 sm:px-4 sm:text-xs dark:border-emerald-500/30 dark:from-emerald-500/10 dark:to-teal-500/10 dark:text-emerald-300 dark:shadow-none">
+                <span className="live-pulse h-2 w-2 rounded-full bg-emerald-500" />
+                Available for work
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-violet-200/60 bg-gradient-to-r from-white/80 via-violet-50/60 to-fuchsia-50/60 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-neutral-500 shadow-sm shadow-violet-100/50 sm:px-3.5 sm:text-[10px] sm:tracking-[0.18em] dark:border-violet-500/20 dark:from-violet-500/8 dark:via-fuchsia-500/5 dark:to-white/0 dark:text-neutral-400 dark:shadow-none">
+                <span>Full-Stack Engineer</span>
+                <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-600" />
+                <span className="inline-flex items-center gap-1">
+                  {/* sparkle icon */}
+                  <svg viewBox="0 0 16 16" className="h-3 w-3 flex-shrink-0" aria-hidden="true" fill="none">
+                    <path d="M8 1.5 L8.9 5.8 L13 6.5 L8.9 7.2 L8 11.5 L7.1 7.2 L3 6.5 L7.1 5.8 Z" fill="url(#ai-star-grad)" />
+                    <path d="M12 1 L12.5 2.8 L14.5 3 L12.5 3.2 L12 5 L11.5 3.2 L9.5 3 L11.5 2.8 Z" fill="url(#ai-star-grad)" opacity="0.7" />
+                    <defs>
+                      <linearGradient id="ai-star-grad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stopColor="#a855f7" />
+                        <stop offset="100%" stopColor="#ec4899" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <span className="bg-gradient-to-r from-violet-600 to-fuchsia-500 bg-clip-text font-black text-transparent dark:from-violet-400 dark:to-fuchsia-400">AI</span>
+                  <span className="text-neutral-400 dark:text-neutral-500">-Ready Products</span>
+                </span>
+              </div>
+            </div>
+
+            <div className="hero-fade-2 space-y-4">
+              <div className="flex items-center justify-center lg:justify-start gap-4">
+                <div className="h-5 w-[2px] rounded-full bg-amber-500 shadow-[0_0_12px_rgba(245,158,11,0.5)]" />
+                <p className="text-[17px] font-black uppercase tracking-[0.3em] text-amber-600 dark:text-amber-400">
+                  Hi, I&apos;m Pranay Langhe
+                </p>
+              </div>
+              <h1 className="max-w-2xl text-[2.2rem] font-extrabold leading-[1.04] tracking-tight sm:text-5xl lg:text-[3.35rem]">
+                Crafting modern web experiences
+                <span className="animate-gradient-text block bg-gradient-to-r from-amber-400 via-rose-500 to-violet-500 bg-clip-text text-transparent">
+                  with the power of AI.
+                </span>
+              </h1>
+            </div>
+
+            <p className="hero-fade-3 max-w-xl text-[0.98rem] leading-relaxed text-neutral-600 sm:text-base dark:text-neutral-300">
+              Full-stack engineer focused on high-performance MERN and Next.js systems. I ship polished interfaces, scalable APIs, and AI-powered workflows for teams that move fast.
+            </p>
+
+            <div className="hero-fade-4 flex flex-wrap justify-center lg:justify-start gap-2">
+              {[
+                {
+                  label: "JavaScript",
+                  src: "https://cdn.simpleicons.org/javascript/F7DF1E",
+                  bg: "bg-[#F7DF1E]/10 dark:bg-[#F7DF1E]/15",
+                },
+                {
+                  label: "Node.js",
+                  src: "https://cdn.simpleicons.org/nodedotjs/339933",
+                  bg: "bg-[#339933]/10 dark:bg-[#339933]/20",
+                },
+                {
+                  label: "React",
+                  src: "https://cdn.simpleicons.org/react/61DAFB",
+                  bg: "bg-[#61DAFB]/10 dark:bg-[#61DAFB]/15",
+                },
+                {
+                  label: "Next.js",
+                  src: "https://cdn.simpleicons.org/nextdotjs/000000/ffffff",
+                  bg: "bg-black/8 dark:bg-white/10",
+                },
+                {
+                  label: "TypeScript",
+                  src: "https://cdn.simpleicons.org/typescript/3178C6",
+                  bg: "bg-[#3178C6]/10 dark:bg-[#3178C6]/20",
+                },
+              ].map(({ label, src, bg }) => (
+                <span
+                  key={label}
+                  className="ui-chip inline-flex items-center gap-1.5 px-2.5 py-1 text-[0.72rem] sm:px-3 sm:text-xs"
+                >
+                  <span className={`inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-sm ${bg}`}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={src} alt="" width={12} height={12} className="h-3 w-3 object-contain" aria-hidden="true" />
+                  </span>
+                  {label}
+                </span>
+              ))}
+            </div>
+
+
+            <div className="hero-fade-5 relative z-20 flex items-center justify-center lg:justify-start w-full flex-wrap gap-3">
+              <a
+                href="/Pranay_Langhe_Resume.pdf"
+                download="Pranay_Langhe_Resume.pdf"
+                className="ui-button-primary w-full sm:w-auto"
+              >
+                View Resume
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0-5 5m5-5H6" />
+                </svg>
+              </a>
+
+              <Link
+                href="https://www.linkedin.com/in/pranay-langhe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ui-button-secondary w-full sm:w-auto"
+              >
+                Connect on LinkedIn
+              </Link>
+            </div>
           </div>
 
-          <div className="relative z-10 mx-auto flex w-full max-w-[1220px] flex-col justify-center px-4 py-2 sm:px-6 sm:py-4 lg:flex-1 lg:grid lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-10 lg:px-8 lg:py-0">
-            <div className="flex max-w-xl flex-col gap-4 sm:gap-6 items-center text-center lg:items-start lg:text-left">
-              <div className="hero-fade-1 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
-                <div className="inline-flex items-center gap-2.5 rounded-full border border-emerald-200/80 bg-gradient-to-r from-emerald-50 to-teal-50 px-3.5 py-1.5 text-[11px] font-semibold text-emerald-700 shadow-sm shadow-emerald-100 sm:px-4 sm:text-xs dark:border-emerald-500/30 dark:from-emerald-500/10 dark:to-teal-500/10 dark:text-emerald-300 dark:shadow-none">
-                  <span className="live-pulse h-2 w-2 rounded-full bg-emerald-500" />
-                  Available for work
-                </div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-violet-200/60 bg-gradient-to-r from-white/80 via-violet-50/60 to-fuchsia-50/60 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-neutral-500 shadow-sm shadow-violet-100/50 sm:px-3.5 sm:text-[10px] sm:tracking-[0.18em] dark:border-violet-500/20 dark:from-violet-500/8 dark:via-fuchsia-500/5 dark:to-white/0 dark:text-neutral-400 dark:shadow-none">
-                  <span>Full-Stack Engineer</span>
-                  <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-600" />
-                  <span className="inline-flex items-center gap-1">
-                    {/* sparkle icon */}
-                    <svg viewBox="0 0 16 16" className="h-3 w-3 flex-shrink-0" aria-hidden="true" fill="none">
-                      <path d="M8 1.5 L8.9 5.8 L13 6.5 L8.9 7.2 L8 11.5 L7.1 7.2 L3 6.5 L7.1 5.8 Z" fill="url(#ai-star-grad)" />
-                      <path d="M12 1 L12.5 2.8 L14.5 3 L12.5 3.2 L12 5 L11.5 3.2 L9.5 3 L11.5 2.8 Z" fill="url(#ai-star-grad)" opacity="0.7"/>
-                      <defs>
-                        <linearGradient id="ai-star-grad" x1="0" y1="0" x2="1" y2="1">
-                          <stop offset="0%" stopColor="#a855f7"/>
-                          <stop offset="100%" stopColor="#ec4899"/>
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                    <span className="bg-gradient-to-r from-violet-600 to-fuchsia-500 bg-clip-text font-black text-transparent dark:from-violet-400 dark:to-fuchsia-400">AI</span>
-                    <span className="text-neutral-400 dark:text-neutral-500">-Ready Products</span>
-                  </span>
-                </div>
+          <div className="relative z-10 mx-auto mt-12 flex w-full max-w-[220px] items-center justify-center sm:mt-8 sm:max-w-[280px] md:max-w-[300px] lg:mt-0 lg:max-w-none">
+            <div className="pointer-events-none absolute inset-0 -z-10 scale-110 bg-gradient-to-br from-amber-300/35 via-pink-300/20 to-violet-400/25 blur-3xl dark:from-amber-500/18 dark:via-pink-500/14 dark:to-violet-500/16" />
+            <div className="relative h-[220px] w-[220px] sm:h-[280px] sm:w-[280px] md:h-[300px] md:w-[300px] lg:h-[320px] lg:w-[320px]">
+              <div className="animate-ring-spin absolute -inset-3 rounded-full bg-gradient-to-r from-amber-400 via-fuchsia-500 to-sky-400 p-[2px] opacity-55 blur-[1px]" />
+              <div className="absolute -inset-6 rounded-full border border-neutral-300/30 dark:border-neutral-700/30" />
+              <div className="absolute inset-0 overflow-hidden rounded-full border-4 border-white bg-gradient-to-b from-neutral-100 to-neutral-200 shadow-2xl dark:border-neutral-800 dark:from-neutral-800 dark:to-neutral-900">
+                <Image
+                  src="/pranay.png"
+                  alt="Portrait of Pranay Langhe"
+                  width={640}
+                  height={760}
+                  className="absolute bottom-0 left-1/2 h-[122%] w-auto max-w-none -translate-x-1/2 object-contain"
+                  priority
+                />
               </div>
 
-              <div className="hero-fade-2 space-y-4">
-                <div className="flex items-center justify-center lg:justify-start gap-4">
-                  <div className="h-5 w-[2px] rounded-full bg-amber-500 shadow-[0_0_12px_rgba(245,158,11,0.5)]" />
-                  <p className="text-[17px] font-black uppercase tracking-[0.3em] text-amber-600 dark:text-amber-400">
-                    Hi, I&apos;m Pranay Langhe
+              {/* Bring head outside the circle for 3D breakout effect */}
+              <div
+                className="pointer-events-none absolute inset-0 z-10"
+                style={{ clipPath: "polygon(-50% -50%, 150% -50%, 150% 38%, -50% 38%)" }}
+              >
+                <Image
+                  src="/pranay.png"
+                  alt=""
+                  width={640}
+                  height={760}
+                  className="absolute bottom-0 left-1/2 h-[122%] w-auto max-w-none -translate-x-1/2 object-contain drop-shadow-2xl"
+                  priority
+                />
+              </div>
+
+              <div className="badge-float-a absolute -left-5 top-[12%] z-20 rounded-full border border-white/80 bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-sky-700 shadow-lg sm:-left-1 sm:top-[18%] sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em] dark:border-white/15 dark:bg-neutral-900/90 dark:text-sky-300">
+                Create
+              </div>
+              <div className="badge-float-b absolute -right-4 top-[10%] z-20 rounded-full border border-white/80 bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-fuchsia-700 shadow-lg sm:right-0 sm:top-[15%] sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em] dark:border-white/15 dark:bg-neutral-900/90 dark:text-fuchsia-300">
+                Build
+              </div>
+              <div className="badge-float-d absolute -left-5 bottom-[14%] z-20 rounded-full border border-white/80 bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-amber-700 shadow-lg sm:-left-1 sm:bottom-[18%] sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em] dark:border-white/15 dark:bg-neutral-900/90 dark:text-amber-300">
+                Evolve
+              </div>
+              <div className="badge-float-c absolute -right-4 bottom-[12%] z-20 rounded-full border border-white/80 bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-emerald-700 shadow-lg sm:right-0 sm:bottom-[16%] sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em] dark:border-white/15 dark:bg-neutral-900/90 dark:text-emerald-300">
+                Inspire
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative z-10 mt-6 sm:mt-8 lg:mt-0">
+          <div className="mx-auto w-full max-w-xl lg:max-w-[1220px] px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+              {[
+                { value: "4.5+", label: "Years experience", gradient: "from-indigo-500 to-purple-400", border: "from-indigo-500/80 to-purple-500/80" },
+                { value: "10+", label: "Systems delivered", gradient: "from-pink-500 to-rose-400", border: "from-pink-500/80 to-rose-500/80" },
+                { value: "5+", label: "Domains covered", gradient: "from-teal-400 to-emerald-400", border: "from-teal-400/80 to-emerald-400/80" },
+                { value: "AI+", label: "Modern engineering", gradient: "from-orange-500 to-amber-400", border: "from-orange-500/80 to-amber-400/80" },
+              ].map((stat) => (
+                <div
+                  key={stat.label}
+                  className="relative flex flex-col items-center justify-center rounded-2xl border border-neutral-200 bg-white/60 py-5 px-3 sm:py-6 sm:px-4 shadow-sm backdrop-blur-sm dark:border-white/5 dark:bg-neutral-900/60"
+                >
+                  {/* Top glowing border line */}
+                  <div className="absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r opacity-0 dark:opacity-100" style={{ backgroundImage: `linear-gradient(to right, transparent, var(--tw-gradient-from), var(--tw-gradient-to), transparent)` }} />
+                  <div className={`absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r ${stat.border} opacity-0 dark:opacity-100`} />
+                  <div className={`absolute top-0 left-1/4 right-1/4 h-[3px] bg-gradient-to-r ${stat.border} blur-[4px] opacity-0 dark:opacity-60`} />
+
+                  {/* Top glow for light mode */}
+                  <div className={`absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r ${stat.border} opacity-100 dark:opacity-0`} />
+
+                  <h3 className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
+                    {stat.value}
+                  </h3>
+                  <p className="mt-1.5 text-xs sm:text-[0.95rem] text-neutral-600 dark:text-neutral-300 text-center">
+                    {stat.label}
                   </p>
                 </div>
-                <h1 className="max-w-2xl text-[2.2rem] font-extrabold leading-[1.04] tracking-tight sm:text-5xl lg:text-[3.35rem]">
-                  Crafting modern web experiences
-                  <span className="animate-gradient-text block bg-gradient-to-r from-amber-400 via-rose-500 to-violet-500 bg-clip-text text-transparent">
-                    with the power of AI.
-                  </span>
-                </h1>
-              </div>
-
-              <p className="hero-fade-3 max-w-xl text-[0.98rem] leading-relaxed text-neutral-600 sm:text-base dark:text-neutral-300">
-                Full-stack engineer focused on high-performance MERN and Next.js systems. I ship polished interfaces, scalable APIs, and AI-powered workflows for teams that move fast.
-              </p>
-
-              <div className="hero-fade-4 flex flex-wrap justify-center lg:justify-start gap-2">
-                {[
-                  {
-                    label: "JavaScript",
-                    src: "https://cdn.simpleicons.org/javascript/F7DF1E",
-                    bg: "bg-[#F7DF1E]/10 dark:bg-[#F7DF1E]/15",
-                  },
-                  {
-                    label: "Node.js",
-                    src: "https://cdn.simpleicons.org/nodedotjs/339933",
-                    bg: "bg-[#339933]/10 dark:bg-[#339933]/20",
-                  },
-                  {
-                    label: "React",
-                    src: "https://cdn.simpleicons.org/react/61DAFB",
-                    bg: "bg-[#61DAFB]/10 dark:bg-[#61DAFB]/15",
-                  },
-                  {
-                    label: "Next.js",
-                    src: "https://cdn.simpleicons.org/nextdotjs/000000/ffffff",
-                    bg: "bg-black/8 dark:bg-white/10",
-                  },
-                  {
-                    label: "TypeScript",
-                    src: "https://cdn.simpleicons.org/typescript/3178C6",
-                    bg: "bg-[#3178C6]/10 dark:bg-[#3178C6]/20",
-                  },
-                ].map(({ label, src, bg }) => (
-                  <span
-                    key={label}
-                    className="ui-chip inline-flex items-center gap-1.5 px-2.5 py-1 text-[0.72rem] sm:px-3 sm:text-xs"
-                  >
-                    <span className={`inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-sm ${bg}`}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={src} alt="" width={12} height={12} className="h-3 w-3 object-contain" aria-hidden="true" />
-                    </span>
-                    {label}
-                  </span>
-                ))}
-              </div>
-
-
-              <div className="hero-fade-5 relative z-20 flex items-center justify-center lg:justify-start w-full flex-wrap gap-3">
-                <a
-                  href="/Pranay_Langhe_Resume.pdf"
-                  download="Pranay_Langhe_Resume.pdf"
-                  className="ui-button-primary w-full sm:w-auto"
-                >
-                  View Resume
-                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0-5 5m5-5H6" />
-                  </svg>
-                </a>
-
-                <Link
-                  href="https://www.linkedin.com/in/pranay-langhe"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ui-button-secondary w-full sm:w-auto"
-                >
-                  Connect on LinkedIn
-                </Link>
-              </div>
-            </div>
-
-            <div className="relative z-10 mx-auto mt-12 flex w-full max-w-[220px] items-center justify-center sm:mt-8 sm:max-w-[280px] md:max-w-[300px] lg:mt-0 lg:max-w-none">
-              <div className="pointer-events-none absolute inset-0 -z-10 scale-110 bg-gradient-to-br from-amber-300/35 via-pink-300/20 to-violet-400/25 blur-3xl dark:from-amber-500/18 dark:via-pink-500/14 dark:to-violet-500/16" />
-              <div className="relative h-[220px] w-[220px] sm:h-[280px] sm:w-[280px] md:h-[300px] md:w-[300px] lg:h-[320px] lg:w-[320px]">
-                <div className="animate-ring-spin absolute -inset-3 rounded-full bg-gradient-to-r from-amber-400 via-fuchsia-500 to-sky-400 p-[2px] opacity-55 blur-[1px]" />
-                <div className="absolute -inset-6 rounded-full border border-neutral-300/30 dark:border-neutral-700/30" />
-                <div className="absolute inset-0 overflow-hidden rounded-full border-4 border-white bg-gradient-to-b from-neutral-100 to-neutral-200 shadow-2xl dark:border-neutral-800 dark:from-neutral-800 dark:to-neutral-900">
-                  <Image
-                    src="/pranay.png"
-                    alt="Portrait of Pranay Langhe"
-                    width={640}
-                    height={760}
-                    className="absolute bottom-0 left-1/2 h-[122%] w-auto max-w-none -translate-x-1/2 object-contain"
-                    priority
-                  />
-                </div>
-
-                {/* Bring head outside the circle for 3D breakout effect */}
-                <div
-                  className="pointer-events-none absolute inset-0 z-10"
-                  style={{ clipPath: "polygon(-50% -50%, 150% -50%, 150% 38%, -50% 38%)" }}
-                >
-                  <Image
-                    src="/pranay.png"
-                    alt=""
-                    width={640}
-                    height={760}
-                    className="absolute bottom-0 left-1/2 h-[122%] w-auto max-w-none -translate-x-1/2 object-contain drop-shadow-2xl"
-                    priority
-                  />
-                </div>
-
-                <div className="badge-float-a absolute -left-5 top-[12%] z-20 rounded-full border border-white/80 bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-sky-700 shadow-lg sm:-left-1 sm:top-[18%] sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em] dark:border-white/15 dark:bg-neutral-900/90 dark:text-sky-300">
-                  Create
-                </div>
-                <div className="badge-float-b absolute -right-4 top-[10%] z-20 rounded-full border border-white/80 bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-fuchsia-700 shadow-lg sm:right-0 sm:top-[15%] sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em] dark:border-white/15 dark:bg-neutral-900/90 dark:text-fuchsia-300">
-                  Build
-                </div>
-                <div className="badge-float-d absolute -left-5 bottom-[14%] z-20 rounded-full border border-white/80 bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-amber-700 shadow-lg sm:-left-1 sm:bottom-[18%] sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em] dark:border-white/15 dark:bg-neutral-900/90 dark:text-amber-300">
-                  Evolve
-                </div>
-                <div className="badge-float-c absolute -right-4 bottom-[12%] z-20 rounded-full border border-white/80 bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-emerald-700 shadow-lg sm:right-0 sm:bottom-[16%] sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em] dark:border-white/15 dark:bg-neutral-900/90 dark:text-emerald-300">
-                  Inspire
-                </div>
-              </div>
+              ))}
             </div>
           </div>
-
-          <div className="relative z-10 mt-6 sm:mt-8 lg:mt-0">
-            <div className="mx-auto w-full max-w-xl lg:max-w-[1220px] px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-                {[
-                  { value: "4.5+", label: "Years experience", gradient: "from-indigo-500 to-purple-400", border: "from-indigo-500/80 to-purple-500/80" },
-                  { value: "10+", label: "Systems delivered", gradient: "from-pink-500 to-rose-400", border: "from-pink-500/80 to-rose-500/80" },
-                  { value: "5+", label: "Domains covered", gradient: "from-teal-400 to-emerald-400", border: "from-teal-400/80 to-emerald-400/80" },
-                  { value: "AI+", label: "Modern engineering", gradient: "from-orange-500 to-amber-400", border: "from-orange-500/80 to-amber-400/80" },
-                ].map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="relative flex flex-col items-center justify-center rounded-2xl border border-neutral-200 bg-white/60 py-5 px-3 sm:py-6 sm:px-4 shadow-sm backdrop-blur-sm dark:border-white/5 dark:bg-neutral-900/60"
-                  >
-                    {/* Top glowing border line */}
-                    <div className="absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r opacity-0 dark:opacity-100" style={{ backgroundImage: `linear-gradient(to right, transparent, var(--tw-gradient-from), var(--tw-gradient-to), transparent)` }} />
-                    <div className={`absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r ${stat.border} opacity-0 dark:opacity-100`} />
-                    <div className={`absolute top-0 left-1/4 right-1/4 h-[3px] bg-gradient-to-r ${stat.border} blur-[4px] opacity-0 dark:opacity-60`} />
-                    
-                    {/* Top glow for light mode */}
-                    <div className={`absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r ${stat.border} opacity-100 dark:opacity-0`} />
-                    
-                    <h3 className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
-                      {stat.value}
-                    </h3>
-                    <p className="mt-1.5 text-xs sm:text-[0.95rem] text-neutral-600 dark:text-neutral-300 text-center">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        </div>
+      </section>
 
       {/* â”€â”€ Below-hero content container â”€â”€ */}
       <div
         className="relative z-10 mx-auto w-full max-w-[1220px] px-4 pb-24 sm:px-6 lg:px-8 lg:pb-32"
         data-scroll-root
       >
-          {/* Companies Section */}
-          {companyLogos.length > 0 ? (
-            <section
-              className="ui-section-divider"
-              data-scroll-section
-            >
-              <div className="relative z-10 px-1">
-                <div className="ui-section-head">
-                    <p className="ui-kicker">
-                      Experience
-                    </p>
-                    <h2 className="ui-title">
-                      Companies and Client Worked With
-                    </h2>
-                    <div className="mt-3 mx-auto h-px w-40 bg-gradient-to-r from-transparent via-orange-400/70 to-transparent" />
-                    <p className="ui-subtitle">
-                      A selection of brands and teams I&apos;ve contributed to
-                      across product, SaaS, and digital delivery.
-                    </p>
-                </div>
-
-                <div className="ui-section-body space-y-10 sm:space-y-14">
-                  {/* Row 1: 5 Logos */}
-                  <div className="flex flex-wrap justify-center items-center gap-10 sm:gap-16">
-                    {companyLogos.slice(0, 5).map((logo, index) => (
-                      <ScrollReveal key={logo.src} delay={index * 40}>
-                        <a
-                          href={logo.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`Visit ${logo.alt}`}
-                          className="ui-logo-card block"
-                        >
-                          <Image
-                            src={logo.src}
-                            alt={logo.alt}
-                            width={160}
-                            height={70}
-                            className="h-9 w-auto object-contain opacity-90 transition-all hover:opacity-100 sm:h-12"
-                          />
-                        </a>
-                      </ScrollReveal>
-                    ))}
-                  </div>
-                  {/* Row 2: 2 Logos */}
-                  <div className="flex flex-wrap justify-center items-center gap-10 sm:gap-16">
-                    {companyLogos.slice(5).map((logo, index) => (
-                      <ScrollReveal key={logo.src} delay={(index + 5) * 40}>
-                        <a
-                          href={logo.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`Visit ${logo.alt}`}
-                          className="ui-logo-card block"
-                        >
-                          <Image
-                            src={logo.src}
-                            alt={logo.alt}
-                            width={160}
-                            height={70}
-                            className="h-9 w-auto object-contain opacity-90 transition-all hover:opacity-100 sm:h-12"
-                          />
-                        </a>
-                      </ScrollReveal>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
-          ) : null}
-
-          {/* Core Capabilities / Skills */}
+        {/* Companies Section */}
+        {companyLogos.length > 0 ? (
           <section
-            className="ui-section-divider"
+            id="experience"
+            className="ui-section-divider !mt-12 sm:!mt-[5.5rem]"
             data-scroll-section
           >
             <div className="relative z-10 px-1">
               <div className="ui-section-head">
                 <p className="ui-kicker">
-                  Core Capabilities
+                  Experience
                 </p>
                 <h2 className="ui-title">
-                  Skills & Expertise
+                  Companies and Client Worked With
                 </h2>
-                <div className="mt-3 mx-auto h-px w-32 bg-gradient-to-r from-transparent via-fuchsia-400/70 to-transparent" />
+                <div className="mt-3 mx-auto h-px w-40 bg-gradient-to-r from-transparent via-orange-400/70 to-transparent" />
                 <p className="ui-subtitle">
-                  A more detailed view of the stack, delivery tooling, and
-                  engineering strengths behind the products I build.
+                  A selection of brands and teams I&apos;ve contributed to
+                  across product, SaaS, and digital delivery.
                 </p>
               </div>
 
-              <div className="ui-section-body grid auto-rows-fr gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {skillCards.map((card, index) => (
-                  <ScrollReveal
-                    key={card.title}
-                    delay={index * 90}
-                    className="h-full"
-                  >
-                    <article className="ui-card group relative flex h-full flex-col overflow-hidden p-4 sm:p-5">
-                      <div className={`ui-card-glow bg-gradient-to-br ${
-                        card.icon === "frontend" 
-                        ? "from-sky-400 to-blue-600" 
-                        : card.icon === "backend" 
-                        ? "from-emerald-400 to-teal-600" 
-                        : card.icon === "ai"
-                        ? "from-violet-400 via-fuchsia-500 to-amber-400"
-                        : "from-fuchsia-400 to-violet-600"
+              <div className="ui-section-body space-y-10 sm:space-y-14">
+                {/* Row 1: 5 Logos */}
+                <div className="flex flex-wrap justify-center items-center gap-10 sm:gap-16">
+                  {companyLogos.slice(0, 5).map((logo, index) => (
+                    <ScrollReveal key={logo.src} delay={index * 40}>
+                      <a
+                        href={logo.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit ${logo.alt}`}
+                        className="ui-logo-card block"
+                      >
+                        <Image
+                          src={logo.src}
+                          alt={logo.alt}
+                          width={160}
+                          height={70}
+                          className="h-9 w-auto object-contain opacity-90 transition-all hover:opacity-100 sm:h-12"
+                        />
+                      </a>
+                    </ScrollReveal>
+                  ))}
+                </div>
+                {/* Row 2: 2 Logos */}
+                <div className="flex flex-wrap justify-center items-center gap-10 sm:gap-16">
+                  {companyLogos.slice(5).map((logo, index) => (
+                    <ScrollReveal key={logo.src} delay={(index + 5) * 40}>
+                      <a
+                        href={logo.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit ${logo.alt}`}
+                        className="ui-logo-card block"
+                      >
+                        <Image
+                          src={logo.src}
+                          alt={logo.alt}
+                          width={160}
+                          height={70}
+                          className="h-9 w-auto object-contain opacity-90 transition-all hover:opacity-100 sm:h-12"
+                        />
+                      </a>
+                    </ScrollReveal>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {/* Core Capabilities / Skills */}
+        <section
+          className="ui-section-divider"
+          data-scroll-section
+        >
+          <div className="relative z-10 px-1">
+            <div className="ui-section-head">
+              <p className="ui-kicker">
+                Core Capabilities
+              </p>
+              <h2 className="ui-title">
+                Skills & Expertise
+              </h2>
+              <div className="mt-3 mx-auto h-px w-32 bg-gradient-to-r from-transparent via-fuchsia-400/70 to-transparent" />
+              <p className="ui-subtitle">
+                A more detailed view of the stack, delivery tooling, and
+                engineering strengths behind the products I build.
+              </p>
+            </div>
+
+            <div className="ui-section-body grid auto-rows-fr gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {skillCards.map((card, index) => (
+                <ScrollReveal
+                  key={card.title}
+                  delay={index * 90}
+                  className="h-full"
+                >
+                  <article className="ui-card group relative flex h-full flex-col overflow-hidden p-4 sm:p-5">
+                    <div className={`ui-card-glow bg-gradient-to-br ${card.icon === "frontend"
+                        ? "from-sky-400 to-blue-600"
+                        : card.icon === "backend"
+                          ? "from-emerald-400 to-teal-600"
+                          : card.icon === "ai"
+                            ? "from-violet-400 via-fuchsia-500 to-amber-400"
+                            : "from-fuchsia-400 to-violet-600"
                       }`} />
-                      
-                      <div className="relative z-10 mb-4 flex items-start justify-between">
-                        <div className="flex items-center gap-3">
-                          <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br p-[1px] shadow-sm ${
-                            card.icon === "frontend" 
-                            ? "from-sky-400 to-blue-500" 
-                            : card.icon === "backend" 
-                            ? "from-emerald-400 to-teal-500" 
-                            : card.icon === "ai"
-                            ? "from-violet-400 via-fuchsia-500 to-amber-500"
-                            : "from-fuchsia-400 to-violet-500"
+
+                    <div className="relative z-10 mb-4 flex items-start justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br p-[1px] shadow-sm ${card.icon === "frontend"
+                            ? "from-sky-400 to-blue-500"
+                            : card.icon === "backend"
+                              ? "from-emerald-400 to-teal-500"
+                              : card.icon === "ai"
+                                ? "from-violet-400 via-fuchsia-500 to-amber-500"
+                                : "from-fuchsia-400 to-violet-500"
                           }`}>
-                            <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-white dark:bg-neutral-950">
-                              <SkillIcon type={card.icon} />
-                            </div>
-                          </div>
-                          <div>
-                            <h3 className={`text-[0.95rem] font-bold leading-tight ${
-                              card.icon === "frontend"
-                                ? "text-sky-700 dark:text-sky-300"
-                                : card.icon === "backend"
-                                  ? "text-emerald-700 dark:text-emerald-300"
-                                  : card.icon === "ai"
-                                    ? "text-violet-700 dark:text-violet-300"
-                                    : "text-fuchsia-700 dark:text-fuchsia-300"
-                            }`}>
-                              {card.title}
-                            </h3>
+                          <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-white dark:bg-neutral-950">
+                            <SkillIcon type={card.icon} />
                           </div>
                         </div>
-                        <span className="text-[10px] font-bold tabular-nums uppercase tracking-widest text-neutral-400">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
+                        <div>
+                          <h3 className={`text-[0.95rem] font-bold leading-tight ${card.icon === "frontend"
+                              ? "text-sky-700 dark:text-sky-300"
+                              : card.icon === "backend"
+                                ? "text-emerald-700 dark:text-emerald-300"
+                                : card.icon === "ai"
+                                  ? "text-violet-700 dark:text-violet-300"
+                                  : "text-fuchsia-700 dark:text-fuchsia-300"
+                            }`}>
+                            {card.title}
+                          </h3>
+                        </div>
                       </div>
+                      <span className="text-[10px] font-bold tabular-nums uppercase tracking-widest text-neutral-400">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                    </div>
 
-                      <p className="mt-2 text-[0.92rem] leading-6 text-neutral-600 dark:text-neutral-300">
-                        {card.summary}
-                      </p>
+                    <p className="mt-2 text-[0.92rem] leading-6 text-neutral-600 dark:text-neutral-300">
+                      {card.summary}
+                    </p>
 
-                      <div className="mt-4 flex flex-wrap gap-1.5">
-                        {card.highlights.map((item) => {
-                          const logo = techBadgeMap[item];
+                    <div className="mt-4 flex flex-wrap gap-1.5">
+                      {card.highlights.map((item) => {
+                        const logo = techBadgeMap[item];
 
-                          return (
-                            <span
-                              key={item}
-                              className="ui-chip inline-flex items-center gap-1.5 px-2 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.08em]"
-                            >
-                              {logo ? (
-                                <span className={`inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-sm ${logo.bg}`}>
-                                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                                  <img
-                                    src={logo.src}
-                                    alt=""
-                                    width={12}
-                                    height={12}
-                                    className="h-3 w-3 object-contain"
-                                    aria-hidden="true"
-                                  />
-                                </span>
-                              ) : null}
-                              {item}
-                            </span>
-                          );
-                        })}
-                      </div>
-
-                      <ul className="mt-5 space-y-3">
-                        {card.sections.map((section) => (
-                          <li
-                            key={section.label}
-                            className="border-l border-neutral-200/80 pl-3 text-[0.92rem] leading-6 text-neutral-600 dark:border-white/12 dark:text-neutral-300"
+                        return (
+                          <span
+                            key={item}
+                            className="ui-chip inline-flex items-center gap-1.5 px-2 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.08em]"
                           >
-                            <span className="block font-semibold text-neutral-900 dark:text-neutral-100">
-                              {section.label}
-                            </span>
-                            <span className="mt-1 block">
-                              {section.details}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-
-                    </article>
-                  </ScrollReveal>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Workflow Section */}
-          <section
-            className="ui-section-divider"
-            data-scroll-section
-          >
-            <div className="relative z-10 px-1">
-              <div>
-                <div className="ui-section-head">
-                    <p className="ui-kicker">
-                      Workflow
-                    </p>
-                    <h2 className="ui-title">
-                      AI-Powered Productivity Stack
-                    </h2>
-                    <div className="mt-3 mx-auto h-px w-44 bg-gradient-to-r from-transparent via-orange-400/70 to-transparent" />
-                    <p className="ui-subtitle">
-                      A premium toolchain for moving from concept to clean,
-                      production-ready delivery with more speed and precision.
-                    </p>
-                </div>
-
-                <div className="ui-section-body relative overflow-hidden py-4">
-                  <div className="marquee-rtl-track flex w-max items-center hover:[animation-play-state:paused]">
-                    {[0, 1].map((set) => (
-                      <div
-                        key={set}
-                        className="flex shrink-0 items-center gap-6 pr-6"
-                      >
-                        {aiProductivityTools.map((tool) => (
-                          <article key={`${set}-${tool.name}`} className="ui-card relative overflow-hidden group w-[300px] sm:w-[340px] shrink-0 p-6 sm:p-7">
-                            {/* Orbital Accent Background */}
-                            <div className={`ui-card-glow bg-gradient-to-br ${tool.accent}`} />
-                            
-                            <div className="relative z-10 flex items-center justify-between">
-                              <div className="ui-ai-node-icon">
-                                <div className={`absolute inset-0 rounded-2xl opacity-10 bg-gradient-to-br ${tool.accent}`} />
-                                <Image
-                                  src={tool.logo}
+                            {logo ? (
+                              <span className={`inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-sm ${logo.bg}`}>
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src={logo.src}
                                   alt=""
-                                  width={28}
-                                  height={28}
-                                  className="relative z-10 h-7 w-7 object-contain"
+                                  width={12}
+                                  height={12}
+                                  className="h-3 w-3 object-contain"
+                                  aria-hidden="true"
                                 />
-                              </div>
-                              <div className="flex flex-col items-end text-right">
-                                <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-200 transition-colors">
-                                  {tool.role}
-                                </span>
-                                <div className="mt-1 flex gap-1">
-                                  {[1, 2, 3].map((i) => (
-                                    <div 
-                                      key={i} 
-                                      className={`h-1 w-3 rounded-full transition-all duration-300 ${
-                                        i <= 2 
-                                          ? `bg-neutral-800 dark:bg-neutral-200 group-hover:bg-gradient-to-r ${tool.accent}` 
-                                          : 'bg-neutral-200 dark:bg-neutral-800'
-                                      }`} 
-                                    />
-                                  ))}
-                                </div>
+                              </span>
+                            ) : null}
+                            {item}
+                          </span>
+                        );
+                      })}
+                    </div>
+
+                    <ul className="mt-5 space-y-3">
+                      {card.sections.map((section) => (
+                        <li
+                          key={section.label}
+                          className="border-l border-neutral-200/80 pl-3 text-[0.92rem] leading-6 text-neutral-600 dark:border-white/12 dark:text-neutral-300"
+                        >
+                          <span className="block font-semibold text-neutral-900 dark:text-neutral-100">
+                            {section.label}
+                          </span>
+                          <span className="mt-1 block">
+                            {section.details}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+
+                  </article>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Workflow Section */}
+        <section
+          className="ui-section-divider"
+          data-scroll-section
+        >
+          <div className="relative z-10 px-1">
+            <div>
+              <div className="ui-section-head">
+                <p className="ui-kicker">
+                  Workflow
+                </p>
+                <h2 className="ui-title">
+                  AI-Powered Productivity Stack
+                </h2>
+                <div className="mt-3 mx-auto h-px w-44 bg-gradient-to-r from-transparent via-orange-400/70 to-transparent" />
+                <p className="ui-subtitle">
+                  A premium toolchain for moving from concept to clean,
+                  production-ready delivery with more speed and precision.
+                </p>
+              </div>
+
+              <div className="ui-section-body relative overflow-hidden py-4">
+                <div className="marquee-rtl-track flex w-max items-center hover:[animation-play-state:paused]">
+                  {[0, 1].map((set) => (
+                    <div
+                      key={set}
+                      className="flex shrink-0 items-center gap-6 pr-6"
+                    >
+                      {aiProductivityTools.map((tool) => (
+                        <article key={`${set}-${tool.name}`} className="ui-card relative overflow-hidden group w-[300px] sm:w-[340px] shrink-0 p-6 sm:p-7">
+                          {/* Orbital Accent Background */}
+                          <div className={`ui-card-glow bg-gradient-to-br ${tool.accent}`} />
+
+                          <div className="relative z-10 flex items-center justify-between">
+                            <div className="ui-ai-node-icon">
+                              <div className={`absolute inset-0 rounded-2xl opacity-10 bg-gradient-to-br ${tool.accent}`} />
+                              <Image
+                                src={tool.logo}
+                                alt=""
+                                width={28}
+                                height={28}
+                                className="relative z-10 h-7 w-7 object-contain"
+                              />
+                            </div>
+                            <div className="flex flex-col items-end text-right">
+                              <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-200 transition-colors">
+                                {tool.role}
+                              </span>
+                              <div className="mt-1 flex gap-1">
+                                {[1, 2, 3].map((i) => (
+                                  <div
+                                    key={i}
+                                    className={`h-1 w-3 rounded-full transition-all duration-300 ${i <= 2
+                                        ? `bg-neutral-800 dark:bg-neutral-200 group-hover:bg-gradient-to-r ${tool.accent}`
+                                        : 'bg-neutral-200 dark:bg-neutral-800'
+                                      }`}
+                                  />
+                                ))}
                               </div>
                             </div>
+                          </div>
 
-                            <div className="relative z-10 mt-8 space-y-2">
-                              <h3 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
-                                {tool.name}
-                              </h3>
-                              <p className="text-[13px] leading-relaxed text-neutral-600 dark:text-neutral-400">
-                                {tool.focus}
-                              </p>
-                            </div>
+                          <div className="relative z-10 mt-8 space-y-2">
+                            <h3 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                              {tool.name}
+                            </h3>
+                            <p className="text-[13px] leading-relaxed text-neutral-600 dark:text-neutral-400">
+                              {tool.focus}
+                            </p>
+                          </div>
 
-                          </article>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
+                        </article>
+                      ))}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Portfolio Projects */}
-          <section
-            className="ui-section-divider"
-            data-scroll-section
-          >
-            <div className="relative z-10 px-1">
-              <div className="ui-section-head">
-                  <p className="ui-kicker">
-                    Portfolio
-                  </p>
-                  <h2 className="ui-title">
-                    Selected Projects
-                  </h2>
-                  <div className="mt-3 mx-auto h-px w-36 bg-gradient-to-r from-transparent via-fuchsia-400/70 to-transparent" />
-                  <p className="ui-subtitle">
-                    Architecture-led product work across SaaS, commerce,
-                    healthcare, AI, and operational web platforms.
-                    <span className="mt-3 block rounded-md border border-amber-300/60 bg-amber-100/70 px-4 py-2 font-semibold text-amber-950 shadow-sm dark:border-amber-300/30 dark:bg-amber-300/10 dark:text-amber-100">
-                      Some client projects are confidential, so only selected
-                      public work is shown here.
+        {/* Portfolio Projects */}
+        <section
+          className="ui-section-divider"
+          data-scroll-section
+        >
+          <div className="relative z-10 px-1">
+            <div className="ui-section-head">
+              <p className="ui-kicker">
+                Portfolio
+              </p>
+              <h2 className="ui-title">
+                Selected Projects
+              </h2>
+              <div className="mt-3 mx-auto h-px w-36 bg-gradient-to-r from-transparent via-fuchsia-400/70 to-transparent" />
+              <p className="ui-subtitle">
+                Architecture-led product work across SaaS, commerce,
+                healthcare, AI, and operational web platforms.
+                <span className="mt-3 block rounded-md border border-amber-300/60 bg-amber-100/70 px-4 py-2 font-semibold text-amber-950 shadow-sm dark:border-amber-300/30 dark:bg-amber-300/10 dark:text-amber-100">
+                  Some client projects are confidential, so only selected
+                  public work is shown here.
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div className="ui-section-body grid auto-rows-fr gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {projects.map((project, index) => (
+              <ScrollReveal
+                key={project.title}
+                delay={(index % 3) * 90}
+                className="h-full"
+              >
+                <article className="ui-card group relative flex h-full min-h-[520px] flex-col overflow-hidden p-4 sm:min-h-[580px] sm:p-5">
+                  <div className="ui-card-glow bg-gradient-to-tr from-sky-400 via-fuchsia-500 to-amber-400" />
+
+                  <div className="relative z-10 mb-5 flex items-start justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-fuchsia-500 p-[1px] shadow-sm">
+                        <div className="flex h-full w-full items-center justify-center rounded-[11px] bg-white dark:bg-neutral-950">
+                          <svg viewBox="0 0 24 24" className="h-5 w-5 text-neutral-800 dark:text-neutral-200" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
+                          {project.category}
+                        </p>
+                        <h3 className="text-base font-bold text-neutral-900 dark:text-neutral-50">
+                          {project.title}
+                        </h3>
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-bold tabular-nums uppercase tracking-widest text-neutral-400">
+                      {String(index + 1).padStart(2, "0")}
                     </span>
-                  </p>
-              </div>
+                  </div>
+
+                  <div className="relative z-10 overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-100 dark:border-white/10 dark:bg-neutral-900">
+                    <Image
+                      src={resolveProjectCover(project, projectCovers)}
+                      alt={`${project.title} thumbnail`}
+                      width={720}
+                      height={420}
+                      className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-110 sm:h-52"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  </div>
+
+                  <div className="relative z-10 mt-5 flex flex-1 flex-col">
+                    <p className="text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+                      {project.summary}
+                    </p>
+
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {project.stack.map((item) => {
+                        const logo = techBadgeMap[item];
+
+                        return (
+                          <span
+                            key={item}
+                            className="ui-chip inline-flex items-center gap-1.5 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.08em] dark:border-white/20"
+                          >
+                            {logo ? (
+                              <span className={`inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-sm ${logo.bg}`}>
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src={logo.src}
+                                  alt=""
+                                  width={12}
+                                  height={12}
+                                  className="h-3 w-3 object-contain"
+                                  aria-hidden="true"
+                                />
+                              </span>
+                            ) : null}
+                            {item}
+                          </span>
+                        );
+                      })}
+                    </div>
+
+                    <div className="mt-5 space-y-4">
+                      <div className="border-l border-sky-200/80 pl-4 dark:border-sky-400/20">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-sky-700 dark:text-sky-300">
+                          Architecture
+                        </p>
+                        <p className="mt-1 text-sm leading-6 text-neutral-600 dark:text-neutral-300">
+                          {project.architecture}
+                        </p>
+                      </div>
+
+                      <div className="border-l border-fuchsia-200/80 pl-4 dark:border-fuchsia-400/20">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-fuchsia-700 dark:text-fuchsia-300">
+                          Engineering Focus
+                        </p>
+                        <p className="mt-1 text-sm leading-6 text-neutral-600 dark:text-neutral-300">
+                          {project.focus}
+                        </p>
+                      </div>
+                    </div>
+
+                    <ul className="mt-5 flex flex-wrap gap-2">
+                      {project.capabilities.map((point) => (
+                        <li
+                          key={point}
+                          className="ui-chip px-2.5 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.08em] text-neutral-600 dark:border-white/20 dark:text-neutral-300"
+                        >
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-auto pt-6">
+                      <Link
+                        href={project.href}
+                        target="_blank"
+                        className="inline-flex w-full items-center justify-between rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm font-semibold text-neutral-700 transition-all duration-300 hover:border-transparent hover:bg-gradient-to-r hover:from-sky-500 hover:via-fuchsia-500 hover:to-amber-400 hover:text-white dark:border-white/15 dark:bg-white/5 dark:text-neutral-200 dark:hover:border-transparent"
+                      >
+                        <span>Open Project</span>
+                        <svg
+                          viewBox="0 0 24 24"
+                          className="h-4 w-4"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path d="M7 17 17 7M8 7h9v9" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+        </section>
+
+        {/* â”€â”€ Education â”€â”€ */}
+        <section className="ui-section-divider" data-scroll-section>
+          <div className="relative z-10 px-1">
+            <div className="ui-section-head">
+              <p className="ui-kicker">Academic Background</p>
+              <h2 className="ui-title">Education</h2>
+              <div className="mt-3 mx-auto h-px w-32 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent" />
+              <p className="ui-subtitle">
+                Grounded in computer science fundamentals, built on real-world engineering practice.
+              </p>
             </div>
 
-            <div className="ui-section-body grid auto-rows-fr gap-5 md:grid-cols-2 xl:grid-cols-3">
-                {projects.map((project, index) => (
-                  <ScrollReveal
-                    key={project.title}
-                    delay={(index % 3) * 90}
-                    className="h-full"
-                  >
-                    <article className="ui-card group relative flex h-full min-h-[520px] flex-col overflow-hidden p-4 sm:min-h-[580px] sm:p-5">
-                      <div className="ui-card-glow bg-gradient-to-tr from-sky-400 via-fuchsia-500 to-amber-400" />
-                      
-                      <div className="relative z-10 mb-5 flex items-start justify-between">
-                        <div className="flex items-center gap-3">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-fuchsia-500 p-[1px] shadow-sm">
-                            <div className="flex h-full w-full items-center justify-center rounded-[11px] bg-white dark:bg-neutral-950">
-                              <svg viewBox="0 0 24 24" className="h-5 w-5 text-neutral-800 dark:text-neutral-200" fill="none" stroke="currentColor" strokeWidth="2">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" strokeLinecap="round" strokeLinejoin="round"/>
+            <div className="ui-section-body">
+              <ScrollReveal>
+                <div className="ui-card group relative overflow-hidden p-0">
+                  <div className="ui-card-glow bg-gradient-to-br from-sky-400 to-blue-600" />
+
+                  <div className="relative z-10 grid gap-0 lg:grid-cols-[1fr_0.9fr]">
+
+                    {/* â”€â”€ Left: Degree Details â”€â”€ */}
+                    <div className="flex flex-col justify-between gap-8 p-7 sm:p-9">
+
+                      {/* Header */}
+                      <div>
+                        <div className="flex items-start gap-4">
+                          {/* College Logo Badge */}
+                          <div className="flex-shrink-0 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-400 to-blue-600 p-[2px] shadow-lg">
+                            <div className="flex h-full w-full items-center justify-center rounded-[14px] bg-white dark:bg-neutral-950">
+                              <svg viewBox="0 0 24 24" className="h-7 w-7 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
                               </svg>
                             </div>
                           </div>
                           <div>
-                            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
-                              {project.category}
-                            </p>
-                            <h3 className="text-base font-bold text-neutral-900 dark:text-neutral-50">
-                              {project.title}
+                            <h3 className="text-xl font-extrabold leading-tight tracking-tight text-neutral-900 dark:text-neutral-50 sm:text-2xl">
+                              MIT World Peace University
                             </h3>
+                            <p className="mt-0.5 text-sm font-semibold text-sky-600 dark:text-sky-400">
+                              MITWPU · Pune, Maharashtra
+                            </p>
                           </div>
                         </div>
-                        <span className="text-[10px] font-bold tabular-nums uppercase tracking-widest text-neutral-400">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
+
+                        <div className="mt-6 space-y-3">
+                          <div className="flex items-center gap-3">
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-sky-50 px-3 py-1 text-xs font-bold uppercase tracking-widest text-sky-700 ring-1 ring-sky-200/80 dark:bg-sky-500/10 dark:text-sky-300 dark:ring-sky-500/30">
+                              <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 8.25l7.5 7.5 7.5-7.5" /></svg>
+                              Bachelor of Technology
+                            </span>
+                          </div>
+                          <p className="text-base font-semibold text-neutral-800 dark:text-neutral-200">
+                            Computer Engineering
+                          </p>
+                          <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                            School of Computer Engineering &amp; Technology
+                          </p>
+                        </div>
                       </div>
 
-                      <div className="relative z-10 overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-100 dark:border-white/10 dark:bg-neutral-900">
-                        <Image
-                          src={resolveProjectCover(project, projectCovers)}
-                          alt={`${project.title} thumbnail`}
-                          width={720}
-                          height={420}
-                          className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-110 sm:h-52"
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      {/* Meta Grid */}
+                      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                        {[
+                          { label: "Batch", value: "2017 – 2021" },
+                          { label: "Duration", value: "4 Years" },
+                          { label: "Mode", value: "Full-Time" },
+                        ].map((m) => (
+                          <div key={m.label} className="rounded-2xl border border-neutral-200/80 bg-neutral-50/80 p-3 dark:border-white/10 dark:bg-white/[0.04]">
+                            <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-neutral-400 dark:text-neutral-500">{m.label}</p>
+                            <p className="mt-1 text-sm font-bold text-neutral-800 dark:text-neutral-100">{m.value}</p>
+                          </div>
+                        ))}
                       </div>
 
-                      <div className="relative z-10 mt-5 flex flex-1 flex-col">
-                        <p className="text-sm leading-6 text-neutral-600 dark:text-neutral-400">
-                          {project.summary}
+                      {/* Coursework */}
+                      <div>
+                        <p className="mb-3 text-[9px] font-bold uppercase tracking-[0.18em] text-neutral-400 dark:text-neutral-500">
+                          Relevant Coursework
                         </p>
-
-                        <div className="mt-4 flex flex-wrap gap-2">
-                          {project.stack.map((item) => {
-                            const logo = techBadgeMap[item];
-
-                            return (
-                              <span
-                                key={item}
-                                className="ui-chip inline-flex items-center gap-1.5 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.08em] dark:border-white/20"
-                              >
-                                {logo ? (
-                                  <span className={`inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-sm ${logo.bg}`}>
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
-                                      src={logo.src}
-                                      alt=""
-                                      width={12}
-                                      height={12}
-                                      className="h-3 w-3 object-contain"
-                                      aria-hidden="true"
-                                    />
-                                  </span>
-                                ) : null}
-                                {item}
-                              </span>
-                            );
-                          })}
-                        </div>
-
-                        <div className="mt-5 space-y-4">
-                          <div className="border-l border-sky-200/80 pl-4 dark:border-sky-400/20">
-                            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-sky-700 dark:text-sky-300">
-                              Architecture
-                            </p>
-                            <p className="mt-1 text-sm leading-6 text-neutral-600 dark:text-neutral-300">
-                              {project.architecture}
-                            </p>
-                          </div>
-
-                          <div className="border-l border-fuchsia-200/80 pl-4 dark:border-fuchsia-400/20">
-                            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-fuchsia-700 dark:text-fuchsia-300">
-                              Engineering Focus
-                            </p>
-                            <p className="mt-1 text-sm leading-6 text-neutral-600 dark:text-neutral-300">
-                              {project.focus}
-                            </p>
-                          </div>
-                        </div>
-
-                        <ul className="mt-5 flex flex-wrap gap-2">
-                          {project.capabilities.map((point) => (
+                        <ul className="flex flex-wrap gap-2">
+                          {[
+                            "Data Structures & Algorithms",
+                            "Operating Systems",
+                            "Database Management",
+                            "Computer Networks",
+                            "Web Technologies",
+                            "Software Engineering",
+                            "Object-Oriented Programming",
+                            "Cloud Computing",
+                          ].map((course) => (
                             <li
-                              key={point}
-                              className="ui-chip px-2.5 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.08em] text-neutral-600 dark:border-white/20 dark:text-neutral-300"
+                              key={course}
+                              className="ui-chip px-2.5 py-1 text-[0.68rem] font-semibold"
                             >
-                              {point}
+                              {course}
                             </li>
                           ))}
                         </ul>
-
-                        <div className="mt-auto pt-6">
-                          <Link
-                            href={project.href}
-                            target="_blank"
-                            className="inline-flex w-full items-center justify-between rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm font-semibold text-neutral-700 transition-all duration-300 hover:border-transparent hover:bg-gradient-to-r hover:from-sky-500 hover:via-fuchsia-500 hover:to-amber-400 hover:text-white dark:border-white/15 dark:bg-white/5 dark:text-neutral-200 dark:hover:border-transparent"
-                          >
-                            <span>Open Project</span>
-                            <svg
-                              viewBox="0 0 24 24"
-                              className="h-4 w-4"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="1.8"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              aria-hidden="true"
-                            >
-                              <path d="M7 17 17 7M8 7h9v9" />
-                            </svg>
-                          </Link>
-                        </div>
                       </div>
-                    </article>
-                  </ScrollReveal>
-                ))}
-            </div>
-          </section>
+                    </div>
 
-          {/* â”€â”€ Education â”€â”€ */}
-          <section className="ui-section-divider" data-scroll-section>
-            <div className="relative z-10 px-1">
-              <div className="ui-section-head">
-                <p className="ui-kicker">Academic Background</p>
-                <h2 className="ui-title">Education</h2>
-                <div className="mt-3 mx-auto h-px w-32 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent" />
-                <p className="ui-subtitle">
-                  Grounded in computer science fundamentals, built on real-world engineering practice.
-                </p>
-              </div>
-
-              <div className="ui-section-body">
-                <ScrollReveal>
-                  <div className="ui-card group relative overflow-hidden p-0">
-                    <div className="ui-card-glow bg-gradient-to-br from-sky-400 to-blue-600" />
-
-                    <div className="relative z-10 grid gap-0 lg:grid-cols-[1fr_0.9fr]">
-
-                      {/* â”€â”€ Left: Degree Details â”€â”€ */}
-                      <div className="flex flex-col justify-between gap-8 p-7 sm:p-9">
-
-                        {/* Header */}
-                        <div>
-                          <div className="flex items-start gap-4">
-                            {/* College Logo Badge */}
-                            <div className="flex-shrink-0 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-400 to-blue-600 p-[2px] shadow-lg">
-                              <div className="flex h-full w-full items-center justify-center rounded-[14px] bg-white dark:bg-neutral-950">
-                                <svg viewBox="0 0 24 24" className="h-7 w-7 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-                                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
-                                </svg>
-                              </div>
-                            </div>
-                            <div>
-                              <h3 className="text-xl font-extrabold leading-tight tracking-tight text-neutral-900 dark:text-neutral-50 sm:text-2xl">
-                                MIT World Peace University
-                              </h3>
-                              <p className="mt-0.5 text-sm font-semibold text-sky-600 dark:text-sky-400">
-                                MITWPU · Pune, Maharashtra
-                              </p>
-                            </div>
-                          </div>
-
-                          <div className="mt-6 space-y-3">
-                            <div className="flex items-center gap-3">
-                              <span className="inline-flex items-center gap-1.5 rounded-full bg-sky-50 px-3 py-1 text-xs font-bold uppercase tracking-widest text-sky-700 ring-1 ring-sky-200/80 dark:bg-sky-500/10 dark:text-sky-300 dark:ring-sky-500/30">
-                                <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 8.25l7.5 7.5 7.5-7.5" /></svg>
-                                Bachelor of Technology
-                              </span>
-                            </div>
-                            <p className="text-base font-semibold text-neutral-800 dark:text-neutral-200">
-                              Computer Engineering
-                            </p>
-                            <p className="text-sm text-neutral-500 dark:text-neutral-400">
-                              School of Computer Engineering &amp; Technology
-                            </p>
-                          </div>
-                        </div>
-
-                        {/* Meta Grid */}
-                        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                          {[
-                            { label: "Batch", value: "2017 – 2021" },
-                            { label: "Duration", value: "4 Years" },
-                            { label: "Mode", value: "Full-Time" },
-                          ].map((m) => (
-                            <div key={m.label} className="rounded-2xl border border-neutral-200/80 bg-neutral-50/80 p-3 dark:border-white/10 dark:bg-white/[0.04]">
-                              <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-neutral-400 dark:text-neutral-500">{m.label}</p>
-                              <p className="mt-1 text-sm font-bold text-neutral-800 dark:text-neutral-100">{m.value}</p>
-                            </div>
-                          ))}
-                        </div>
-
-                        {/* Coursework */}
-                        <div>
-                          <p className="mb-3 text-[9px] font-bold uppercase tracking-[0.18em] text-neutral-400 dark:text-neutral-500">
-                            Relevant Coursework
-                          </p>
-                          <ul className="flex flex-wrap gap-2">
-                            {[
-                              "Data Structures & Algorithms",
-                              "Operating Systems",
-                              "Database Management",
-                              "Computer Networks",
-                              "Web Technologies",
-                              "Software Engineering",
-                              "Object-Oriented Programming",
-                              "Cloud Computing",
-                            ].map((course) => (
-                              <li
-                                key={course}
-                                className="ui-chip px-2.5 py-1 text-[0.68rem] font-semibold"
-                              >
-                                {course}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                    {/* â”€â”€ Right: Image Gallery â”€â”€ */}
+                    <div className="relative overflow-hidden rounded-b-3xl lg:rounded-r-3xl lg:rounded-bl-none">
+                      {/* Top image */}
+                      <div className="relative h-56 w-full overflow-hidden sm:h-64 lg:h-[55%]">
+                        <Image
+                          src="/education/MIT World Peace University (MITWPU), Pune_banner210501054449.jpg"
+                          alt="MIT World Peace University campus banner"
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/50 via-transparent to-transparent" />
+                        <span className="absolute bottom-3 left-4 rounded-full border border-white/30 bg-white/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur-sm">
+                          MITWPU Campus
+                        </span>
                       </div>
-
-                      {/* â”€â”€ Right: Image Gallery â”€â”€ */}
-                      <div className="relative overflow-hidden rounded-b-3xl lg:rounded-r-3xl lg:rounded-bl-none">
-                        {/* Top image */}
-                        <div className="relative h-56 w-full overflow-hidden sm:h-64 lg:h-[55%]">
+                      {/* Bottom two images */}
+                      <div className="grid h-44 grid-cols-2 lg:h-[45%]">
+                        <div className="relative overflow-hidden border-t border-r border-white/10">
                           <Image
-                            src="/education/MIT World Peace University (MITWPU), Pune_banner210501054449.jpg"
-                            alt="MIT World Peace University campus banner"
+                            src="/education/MIT WPU Pic_20260129180105_original_image_31.webp"
+                            alt="MIT WPU campus view"
                             fill
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
-                            sizes="(max-width: 1024px) 100vw, 50vw"
+                            sizes="25vw"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/50 via-transparent to-transparent" />
-                          <span className="absolute bottom-3 left-4 rounded-full border border-white/30 bg-white/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur-sm">
-                            MITWPU Campus
-                          </span>
                         </div>
-                        {/* Bottom two images */}
-                        <div className="grid h-44 grid-cols-2 lg:h-[45%]">
-                          <div className="relative overflow-hidden border-t border-r border-white/10">
-                            <Image
-                              src="/education/MIT WPU Pic_20260129180105_original_image_31.webp"
-                              alt="MIT WPU campus view"
-                              fill
-                              className="object-cover transition-transform duration-700 group-hover:scale-105"
-                              sizes="25vw"
-                            />
-                          </div>
-                          <div className="relative overflow-hidden border-t border-white/10">
-                            <Image
-                              src="/education/MIT-WPU-1.tif.png"
-                              alt="MIT WPU building"
-                              fill
-                              className="object-cover transition-transform duration-700 group-hover:scale-105"
-                              sizes="25vw"
-                            />
-                          </div>
+                        <div className="relative overflow-hidden border-t border-white/10">
+                          <Image
+                            src="/education/MIT-WPU-1.tif.png"
+                            alt="MIT WPU building"
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            sizes="25vw"
+                          />
                         </div>
                       </div>
-
                     </div>
+
                   </div>
-                </ScrollReveal>
-              </div>
+                </div>
+              </ScrollReveal>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* â”€â”€ Courses & Certifications â”€â”€ */}
-          <section className="ui-section-divider" data-scroll-section>
-            <div className="relative z-10 px-1">
-              <div className="ui-section-head">
-                <p className="ui-kicker">Learning &amp; Development</p>
-                <h2 className="ui-title">Courses &amp; Certifications</h2>
-                <div className="mt-3 mx-auto h-px w-44 bg-gradient-to-r from-transparent via-amber-400/70 to-transparent" />
-                <p className="ui-subtitle">
-                  Continuously upskilling across full-stack development, cloud, and modern web engineering.
-                </p>
-              </div>
-
-              <div className="ui-section-body grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                {[
-                  {
-                    title: "The Complete JavaScript Course 2024: From Zero to Expert!",
-                    platform: "Udemy",
-                    instructor: "Jonas Schmedtmann",
-                    category: "JavaScript",
-                    logo: "https://cdn.simpleicons.org/udemy/A435F0",
-                    accent: "from-violet-400 to-purple-600",
-                    categoryColor: "text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-500/10 ring-violet-200/80 dark:ring-violet-500/30",
-                  },
-                  {
-                    title: "Node.js, Express, MongoDB & More: The Complete Bootcamp",
-                    platform: "Udemy",
-                    instructor: "Jonas Schmedtmann",
-                    category: "Node.js",
-                    logo: "https://cdn.simpleicons.org/udemy/A435F0",
-                    accent: "from-emerald-400 to-teal-600",
-                    categoryColor: "text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 ring-emerald-200/80 dark:ring-emerald-500/30",
-                  },
-                  {
-                    title: "React - The Complete Guide (incl. Next.js, Redux)",
-                    platform: "Udemy",
-                    instructor: "Maximilian Schwarzmüller",
-                    category: "React",
-                    logo: "https://cdn.simpleicons.org/udemy/A435F0",
-                    accent: "from-cyan-400 to-sky-600",
-                    categoryColor: "text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-500/10 ring-cyan-200/80 dark:ring-cyan-500/30",
-                  },
-                  {
-                    title: "Next.js & React — The Complete Guide",
-                    platform: "Udemy",
-                    instructor: "Maximilian Schwarzmüller",
-                    category: "Next.js",
-                    logo: "https://cdn.simpleicons.org/udemy/A435F0",
-                    accent: "from-neutral-400 to-neutral-700",
-                    categoryColor: "text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-white/8 ring-neutral-200/80 dark:ring-white/15",
-                  },
-                  {
-                    title: "The Ultimate MySQL Bootcamp: Go from SQL Beginner to Expert",
-                    platform: "Udemy",
-                    instructor: "Colt Steele",
-                    category: "Database",
-                    logo: "https://cdn.simpleicons.org/udemy/A435F0",
-                    accent: "from-orange-400 to-amber-600",
-                    categoryColor: "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-500/10 ring-amber-200/80 dark:ring-amber-500/30",
-                  },
-                  {
-                    title: "Docker & Kubernetes: The Practical Guide",
-                    platform: "Udemy",
-                    instructor: "Maximilian Schwarzmüller",
-                    category: "DevOps",
-                    logo: "https://cdn.simpleicons.org/udemy/A435F0",
-                    accent: "from-blue-400 to-indigo-600",
-                    categoryColor: "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 ring-blue-200/80 dark:ring-blue-500/30",
-                  },
-                ].map((course, index) => (
-                  <ScrollReveal key={course.title} delay={index * 80} className="h-full">
-                    <article className="ui-card group relative flex h-full flex-col overflow-hidden p-5 sm:p-6">
-                      <div className={`ui-card-glow bg-gradient-to-br ${course.accent}`} />
-
-                      <div className="relative z-10 flex flex-col gap-4 h-full">
-                        {/* Top row: platform logo + completed badge */}
-                        <div className="flex items-center justify-between">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-500/10 ring-1 ring-violet-200/60 dark:ring-violet-500/20">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={course.logo} alt={course.platform} width={20} height={20} className="h-5 w-5 object-contain" aria-hidden="true" />
-                          </div>
-                          <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest text-emerald-700 ring-1 ring-emerald-200/80 dark:bg-emerald-500/10 dark:text-emerald-400 dark:ring-emerald-500/30">
-                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                            Completed
-                          </span>
-                        </div>
-
-                        {/* Course title */}
-                        <h3 className="text-[0.9rem] font-bold leading-snug tracking-tight text-neutral-900 dark:text-neutral-50 flex-1">
-                          {course.title}
-                        </h3>
-
-                        {/* Instructor */}
-                        <p className="text-xs text-neutral-500 dark:text-neutral-400">
-                          by <span className="font-semibold text-neutral-700 dark:text-neutral-300">{course.instructor}</span>
-                        </p>
-
-                        {/* Footer: platform + category */}
-                        <div className="flex items-center justify-between pt-2 border-t border-neutral-100 dark:border-white/8">
-                          <span className="text-xs font-semibold text-neutral-500 dark:text-neutral-400">{course.platform}</span>
-                          <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-widest ring-1 ${course.categoryColor}`}>
-                            {course.category}
-                          </span>
-                        </div>
-                      </div>
-                    </article>
-                  </ScrollReveal>
-                ))}
-              </div>
-            </div>
-          </section>
-
-
-          {/* Footer */}
-          <footer className="mt-24 border-t border-neutral-100 py-12 dark:border-white/5">
-            <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-              <p className="text-sm font-bold tracking-tight text-neutral-500">
-                © {new Date().getFullYear()} Pranay Langhe<span className="text-primary-500">.</span> All rights reserved.
+        {/* â”€â”€ Courses & Certifications â”€â”€ */}
+        <section className="ui-section-divider" data-scroll-section>
+          <div className="relative z-10 px-1">
+            <div className="ui-section-head">
+              <p className="ui-kicker">Learning &amp; Development</p>
+              <h2 className="ui-title">Courses &amp; Certifications</h2>
+              <div className="mt-3 mx-auto h-px w-44 bg-gradient-to-r from-transparent via-amber-400/70 to-transparent" />
+              <p className="ui-subtitle">
+                Continuously upskilling across Agentic AI, full-stack systems, cloud, and modern web architectures.
               </p>
-              <div className="max-w-sm text-center sm:text-right">
-                <p className="text-xs italic leading-relaxed text-neutral-400 dark:text-neutral-500">
-                  &quot;The only way to do great work is to love what you do.&quot;
-                  <span className="mt-1 block font-bold not-italic tracking-widest text-neutral-500 dark:text-neutral-600">
-                    — STEVE JOBS
-                  </span>
-                </p>
-              </div>
             </div>
-          </footer>
+
+            <div className="ui-section-body grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+              {[
+                {
+                  title: "ChatGPT & Generative AI - The Complete Guide",
+                  platform: "Udemy",
+                  instructor: "Maximilian Schwarzmüller",
+                  category: "Generative AI",
+                  logo: "https://cdn.simpleicons.org/udemy/A435F0",
+                  accent: "from-emerald-400 via-teal-500 to-cyan-600",
+                  categoryColor: "text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 ring-emerald-200/80 dark:ring-emerald-500/30",
+                },
+                {
+                  title: "AI For Developers With GitHub Copilot, Cursor AI & ChatGPT",
+                  platform: "Udemy",
+                  instructor: "Maximilian Schwarzmüller",
+                  category: "AI Dev Tools",
+                  logo: "https://cdn.simpleicons.org/udemy/A435F0",
+                  accent: "from-violet-400 via-purple-500 to-indigo-600",
+                  categoryColor: "text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-500/10 ring-violet-200/80 dark:ring-violet-500/30",
+                },
+                {
+                  title: "AI Agents & Workflows - The Practical Guide",
+                  platform: "Udemy",
+                  instructor: "Maximilian Schwarzmüller",
+                  category: "Agentic AI",
+                  logo: "https://cdn.simpleicons.org/udemy/A435F0",
+                  accent: "from-amber-400 via-orange-500 to-rose-600",
+                  categoryColor: "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-500/10 ring-amber-200/80 dark:ring-amber-500/30",
+                },
+                {
+                  title: "The Complete JavaScript Course 2024: From Zero to Expert!",
+                  platform: "Udemy",
+                  instructor: "Jonas Schmedtmann",
+                  category: "JavaScript",
+                  logo: "https://cdn.simpleicons.org/udemy/A435F0",
+                  accent: "from-violet-400 to-purple-600",
+                  categoryColor: "text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-500/10 ring-violet-200/80 dark:ring-violet-500/30",
+                },
+                {
+                  title: "Node.js, Express, MongoDB & More: The Complete Bootcamp",
+                  platform: "Udemy",
+                  instructor: "Jonas Schmedtmann",
+                  category: "Node.js",
+                  logo: "https://cdn.simpleicons.org/udemy/A435F0",
+                  accent: "from-emerald-400 to-teal-600",
+                  categoryColor: "text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 ring-emerald-200/80 dark:ring-emerald-500/30",
+                },
+                {
+                  title: "React - The Complete Guide (incl. Next.js, Redux)",
+                  platform: "Udemy",
+                  instructor: "Maximilian Schwarzmüller",
+                  category: "React",
+                  logo: "https://cdn.simpleicons.org/udemy/A435F0",
+                  accent: "from-cyan-400 to-sky-600",
+                  categoryColor: "text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-500/10 ring-cyan-200/80 dark:ring-cyan-500/30",
+                },
+                {
+                  title: "Next.js & React — The Complete Guide",
+                  platform: "Udemy",
+                  instructor: "Maximilian Schwarzmüller",
+                  category: "Next.js",
+                  logo: "https://cdn.simpleicons.org/udemy/A435F0",
+                  accent: "from-neutral-400 to-neutral-700",
+                  categoryColor: "text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-white/8 ring-neutral-200/80 dark:ring-white/15",
+                },
+                {
+                  title: "The Ultimate MySQL Bootcamp: Go from SQL Beginner to Expert",
+                  platform: "Udemy",
+                  instructor: "Colt Steele",
+                  category: "Database",
+                  logo: "https://cdn.simpleicons.org/udemy/A435F0",
+                  accent: "from-orange-400 to-amber-600",
+                  categoryColor: "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-500/10 ring-amber-200/80 dark:ring-amber-500/30",
+                },
+                {
+                  title: "Docker & Kubernetes: The Practical Guide",
+                  platform: "Udemy",
+                  instructor: "Maximilian Schwarzmüller",
+                  category: "DevOps",
+                  logo: "https://cdn.simpleicons.org/udemy/A435F0",
+                  accent: "from-blue-400 to-indigo-600",
+                  categoryColor: "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 ring-blue-200/80 dark:ring-blue-500/30",
+                },
+              ].map((course, index) => (
+                <ScrollReveal key={course.title} delay={index * 80} className="h-full">
+                  <article className="ui-card group relative flex h-full flex-col overflow-hidden p-5 sm:p-6">
+                    <div className={`ui-card-glow bg-gradient-to-br ${course.accent}`} />
+
+                    <div className="relative z-10 flex flex-col gap-4 h-full">
+                      {/* Top row: platform logo + completed badge */}
+                      <div className="flex items-center justify-between">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-500/10 ring-1 ring-violet-200/60 dark:ring-violet-500/20">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={course.logo} alt={course.platform} width={20} height={20} className="h-5 w-5 object-contain" aria-hidden="true" />
+                        </div>
+                        <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest text-emerald-700 ring-1 ring-emerald-200/80 dark:bg-emerald-500/10 dark:text-emerald-400 dark:ring-emerald-500/30">
+                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                          Completed
+                        </span>
+                      </div>
+
+                      {/* Course title */}
+                      <h3 className="text-[0.9rem] font-bold leading-snug tracking-tight text-neutral-900 dark:text-neutral-50 flex-1">
+                        {course.title}
+                      </h3>
+
+                      {/* Instructor */}
+                      <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                        by <span className="font-semibold text-neutral-700 dark:text-neutral-300">{course.instructor}</span>
+                      </p>
+
+                      {/* Footer: platform + category */}
+                      <div className="flex items-center justify-between pt-2 border-t border-neutral-100 dark:border-white/8">
+                        <span className="text-xs font-semibold text-neutral-500 dark:text-neutral-400">{course.platform}</span>
+                        <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-widest ring-1 ${course.categoryColor}`}>
+                          {course.category}
+                        </span>
+                      </div>
+                    </div>
+                  </article>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
+        {/* Footer */}
+        <footer className="mt-24 border-t border-neutral-100 py-12 dark:border-white/5">
+          <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+            <p className="text-sm font-bold tracking-tight text-neutral-500">
+              © {new Date().getFullYear()} Pranay Langhe<span className="text-primary-500">.</span> All rights reserved.
+            </p>
+            <div className="max-w-sm text-center sm:text-right">
+              <p className="text-xs italic leading-relaxed text-neutral-400 dark:text-neutral-500">
+                &quot;The only way to do great work is to love what you do.&quot;
+                <span className="mt-1 block font-bold not-italic tracking-widest text-neutral-500 dark:text-neutral-600">
+                  — STEVE JOBS
+                </span>
+              </p>
+            </div>
+          </div>
+        </footer>
       </div>
     </main>
   );
